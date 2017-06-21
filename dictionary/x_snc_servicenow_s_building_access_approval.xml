@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Building Access Approval" max_length="40" name="x_snc_servicenow_s_building_access_approval" type="collection">
+        <element label="Building" max_length="32" name="building" reference="cmn_building" type="reference"/>
+        <element label="Name" max_length="40" name="name" type="string"/>
+        <element default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element label="Scripting Record" max_length="32" name="scripting_record" reference="x_snc_servicenow_s_scripting_examples" type="reference"/>
+        <index name="index">
+            <element name="scripting_record"/>
+        </index>
+        <index name="index2">
+            <element name="building"/>
+        </index>
+    </element>
+</database>

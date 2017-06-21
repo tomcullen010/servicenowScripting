@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_documentation element="u_building_access_approval_request" label="Building Access Approval Request" language="en" table="x_snc_servicenow_s_scripting_examples">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>u_building_access_approval_request</element>
+            <help/>
+            <hint/>
+            <label>Building Access Approval Request</label>
+            <language>en</language>
+            <name>x_snc_servicenow_s_scripting_examples</name>
+            <plural>Building Access Approval Requests</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2016-09-16 13:58:37</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>d9ca181b13fde200dd7db5b12244b0aa</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Building Access Approval Request</sys_name>
+            <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+            <sys_update_name>sys_documentation_x_snc_servicenow_s_scripting_examples_u_building_access_approval_request_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2016-09-16 13:58:37</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

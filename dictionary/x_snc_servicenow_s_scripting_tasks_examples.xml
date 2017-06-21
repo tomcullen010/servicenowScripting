@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element extends="task" label="Scripting Tasks Examples" max_length="40" name="x_snc_servicenow_s_scripting_tasks_examples" text_index="true" type="collection">
+        <element label="Scripting Example" max_length="32" name="scripting_example" reference="x_snc_servicenow_s_scripting_examples" type="reference"/>
+    </element>
+</database>

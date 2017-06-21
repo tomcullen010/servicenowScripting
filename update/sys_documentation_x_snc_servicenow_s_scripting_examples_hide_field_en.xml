@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_documentation element="hide_field" label="Hide Field" language="en" table="x_snc_servicenow_s_scripting_examples">
+        <sys_documentation action="INSERT_OR_UPDATE">
+            <element>hide_field</element>
+            <help/>
+            <hint/>
+            <label>Hide Field</label>
+            <language>en</language>
+            <name>x_snc_servicenow_s_scripting_examples</name>
+            <plural>Hide Fields</plural>
+            <sys_class_name>sys_documentation</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2016-08-29 01:37:51</sys_created_on>
+            <sys_customer_update>false</sys_customer_update>
+            <sys_id>9e94c19913a96240e5adbd522244b050</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>Hide Field</sys_name>
+            <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+            <sys_update_name>sys_documentation_x_snc_servicenow_s_scripting_examples_hide_field_en</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2016-08-29 01:37:51</sys_updated_on>
+            <url/>
+            <url_target/>
+        </sys_documentation>
+    </sys_documentation>
+</record_update>

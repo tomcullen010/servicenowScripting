@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element extends="task" label="Scripting Examples" max_length="40" name="x_snc_servicenow_s_scripting_examples" sizeclass="16" text_index="true" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Account Number" max_length="40" name="account_number" type="string"/>
+        <element label="Building" max_length="32" name="building" reference="cmn_building" type="reference"/>
+        <element attributes="no_sort=true,slushbucket_ref_no_expand=true" label="Building List" max_length="1024" name="building_list" reference="cmn_building" type="glide_list"/>
+        <element label="Building List 2" max_length="32" name="building_list_2" reference="x_snc_servicenow_s_building_list" type="reference"/>
+        <element attributes="no_sort=true,slushbucket_ref_no_expand=true" label="Building List 3" max_length="1024" name="building_list_3" reference="x_snc_servicenow_s_building_list" type="glide_list"/>
+        <element attributes="edge_encryption_enabled=true" choice="3" default="No" label="Disable Attachments" max_length="40" name="disable_attachments" type="string">
+            <choice>
+                <element label="No" sequence="0" value="No"/>
+                <element label="Yes" sequence="1" value="Yes"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Email Address" max_length="100" name="email_address" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Email Address Lower Case" max_length="40" name="email_address_lower_case" type="string"/>
+        <element label="End Date" max_length="40" name="end_date" type="glide_date"/>
+        <element attributes="edge_encryption_enabled=true" choice="3" default="No" label="Hide Field" max_length="40" name="hide_field" type="string">
+            <choice>
+                <element label="No" sequence="0" value="No"/>
+                <element label="Yes" sequence="1" value="Yes"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Hide This Field" max_length="40" name="hide_this_field" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Home Phone" max_length="40" name="home_phone" type="string"/>
+        <element default="javascript: gs.getUserID()" label="Logged In User - Default Value" max_length="32" name="logged_in_user_default_value" reference="sys_user" type="reference"/>
+        <element default="javascript:gs.getUserID();" dynamic_default_value="2fd8e97bef3221002841f7f775c0fbc1" label="Logged in User - Default Value 2" max_length="32" name="logged_in_user_default_value_2" reference="sys_user" type="reference" use_dynamic_default="true"/>
+        <element attributes="edge_encryption_enabled=true" choice="3" default="No" label="Mandatory" max_length="40" name="mandatory" type="string">
+            <choice>
+                <element label="No" sequence="0" value="No"/>
+                <element label="Yes" sequence="1" value="Yes"/>
+            </choice>
+        </element>
+        <element label="Mandatory Field" max_length="32" name="mandatory_field" reference="sys_user" type="reference"/>
+        <element label="Owner" max_length="32" name="owner" reference="sys_user" type="reference"/>
+        <element label="Position" max_length="32" name="position" reference="x_snc_servicenow_s_position" type="reference"/>
+        <element label="Show Alert" max_length="40" name="show_alert" type="boolean"/>
+        <element label="Show Confirm" max_length="40" name="show_confirm" type="boolean"/>
+        <element label="Show Error Box" max_length="40" name="show_error_box" type="boolean"/>
+        <element label="Show Field Message" max_length="40" name="show_field_message" type="boolean"/>
+        <element label="Show Messages" max_length="40" name="show_messages" type="boolean"/>
+        <element label="Start Date" max_length="40" name="start_date" type="glide_date"/>
+        <element label="Submitted By" max_length="32" name="submitted_by" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Submitted By Location" max_length="40" name="submitted_by_location" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Submitted By LowerCase" max_length="40" name="submitted_by_lowercase" type="string"/>
+        <element label="Building Access Approval Request" max_length="32" name="u_building_access_approval_request" reference="cmn_building" type="reference"/>
+    </element>
+</database>

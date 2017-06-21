@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_snc_servicenow_s.PassCodeAJAX</api_name>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>PassCodeAJAX</name>
+        <script><![CDATA[/*
+Purpose:  Search a table based on a variable provided by a client script.  This is required because it is part of a scope application.  This requires a Client Script and a Script Include.
+Example Detais:  Searches a building request table to see if a request has already been submitted
+Used in: This Client script can be used for forms or Service Catalog
+NOTE:  Set Script Include "Client callable" field checked to allow Client Script to call Script Include
+*/
+var PassCodeAJAX = Class.create();
+PassCodeAJAX.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+	
+	//based on field passed by Client Script, search a table and return response if a record already exist
+	checkExisting : function() {
+		//set variable with field being passed by Client Script
+		var reqFor = this.getParameter("sysparm_req_for");
+		
+		//set query against table you need based on variable that was passed by Client Script
+		var passCardRec = new GlideRecord("x_snc_servicenow_s_building_access_approval");
+		passCardRec.addQuery("building", reqFor);
+		passCardRec.query();
+		//if a record already exist then return a value and if it does not exist return a different value
+		//you could modify the return to return the record or records if needed
+		if (passCardRec.hasNext()) {
+			return "record_already_exist";
+		} else {
+			return "none";
+		}
+	},
+	
+	type: 'PassCodeAJAX'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-09-16 14:07:17</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>088c185b13fde200dd7db5b12244b0c9</sys_id>
+        <sys_mod_count>5</sys_mod_count>
+        <sys_name>PassCodeAJAX</sys_name>
+        <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+        <sys_update_name>sys_script_include_088c185b13fde200dd7db5b12244b0c9</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-09-16 14:35:37</sys_updated_on>
+    </sys_script_include>
+</record_update>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_ui_action">
+    <sys_ui_action action="INSERT_OR_UPDATE">
+        <action_name/>
+        <active>true</active>
+        <client>true</client>
+        <comments/>
+        <condition/>
+        <form_action>true</form_action>
+        <form_button>true</form_button>
+        <form_context_menu>false</form_context_menu>
+        <form_link>false</form_link>
+        <hint/>
+        <list_action>false</list_action>
+        <list_banner_button>false</list_banner_button>
+        <list_button>false</list_button>
+        <list_choice>false</list_choice>
+        <list_context_menu>false</list_context_menu>
+        <list_link>false</list_link>
+        <list_save_with_form_button>false</list_save_with_form_button>
+        <name>Create Building Request</name>
+        <onclick>showMyForm()</onclick>
+        <order>100</order>
+        <script><![CDATA[function showMyForm(){
+	var tableName = 'x_snc_servicenow_s_building_access_approval';
+	
+	//Create and open the dialog form
+	var dialog = new GlideDialogForm('Create Building Access', tableName); //Provide dialog title and table name
+	dialog.setSysID(-1); //Pass in sys_id to edit existing record, -1 to create new record
+	//   dialog.addParm('sysparm_view', 'ResolveDialog'); //Specify a form view
+	dialog.addParm('sysparm_form_only', 'true'); //Add or remove related lists
+	dialog.addParm('sysparm_collection','x_snc_servicenow_s_scripting_examples'); //table the glidedialogform is being invoked from
+	dialog.addParm('sysparm_collection_key','scripting_record'); //the field that has the reference back to the incident table
+	dialog.addParm('sysparm_collectionID','b517503713892a00e5adbd522244b08c');// sys id of the incident record that we want to populate the u_task
+	
+	dialog.setSysID(sysID);
+	
+	dialog.render(); //Open the dialog
+}]]></script>
+        <show_insert>true</show_insert>
+        <show_multiple_update>false</show_multiple_update>
+        <show_query>false</show_query>
+        <show_update>true</show_update>
+        <sys_class_name>sys_ui_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-08-12 00:36:43</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>67b2557b13012a00dd7db5b12244b093</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Create Building Request</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+        <sys_update_name>sys_ui_action_67b2557b13012a00dd7db5b12244b093</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-08-12 00:41:12</sys_updated_on>
+        <table>x_snc_servicenow_s_scripting_examples</table>
+        <ui11_compatible>true</ui11_compatible>
+        <ui16_compatible>true</ui16_compatible>
+    </sys_ui_action>
+</record_update>

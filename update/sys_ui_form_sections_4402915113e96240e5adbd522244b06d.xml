@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update>
+    <sys_ui_form_sections form_id="4402915113e96240e5adbd522244b06d" sys_domain="global" table="x_snc_servicenow_s_scripting_examples" version="3">
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>0</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2016-08-29 02:36:24</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>d802915113e96240e5adbd522244b06d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_snc_servicenow_s_scripting_examples" name="x_snc_servicenow_s_scripting_examples" sys_domain="global" view="Default view">4402915113e96240e5adbd522244b06d</sys_ui_form>
+            <sys_ui_section caption="NULL" display_value="" name="x_snc_servicenow_s_scripting_examples" sys_domain="global" view="Default view">0e1650f313892a00e5adbd522244b02c</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2016-08-29 02:36:24</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>1</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2016-08-29 02:54:12</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>701611d113e96240e5adbd522244b065</sys_id>
+            <sys_mod_count>4</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_snc_servicenow_s_scripting_examples" name="x_snc_servicenow_s_scripting_examples" sys_domain="global" view="Default view">4402915113e96240e5adbd522244b06d</sys_ui_form>
+            <sys_ui_section caption="Create Related Records from a List" display_value="Create Related Records from a List" name="x_snc_servicenow_s_scripting_examples" sys_domain="global" view="Default view">f81611d113e96240e5adbd522244b064</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2016-09-16 13:58:37</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>2</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2016-08-29 02:36:24</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>5c02915113e96240e5adbd522244b06d</sys_id>
+            <sys_mod_count>4</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_snc_servicenow_s_scripting_examples" name="x_snc_servicenow_s_scripting_examples" sys_domain="global" view="Default view">4402915113e96240e5adbd522244b06d</sys_ui_form>
+            <sys_ui_section caption="Date Validation" display_value="Date Validation" name="x_snc_servicenow_s_scripting_examples" sys_domain="global" view="Default view">0c02915113e96240e5adbd522244b06a</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2016-09-16 13:58:37</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>3</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2016-08-29 02:36:25</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>5802915113e96240e5adbd522244b06e</sys_id>
+            <sys_mod_count>5</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_snc_servicenow_s_scripting_examples" name="x_snc_servicenow_s_scripting_examples" sys_domain="global" view="Default view">4402915113e96240e5adbd522244b06d</sys_ui_form>
+            <sys_ui_section caption="Default Value" display_value="Default Value" name="x_snc_servicenow_s_scripting_examples" sys_domain="global" view="Default view">0002915113e96240e5adbd522244b06c</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2016-09-16 13:58:37</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>4</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2016-08-29 02:36:25</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>2c02915113e96240e5adbd522244b06e</sys_id>
+            <sys_mod_count>5</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_snc_servicenow_s_scripting_examples" name="x_snc_servicenow_s_scripting_examples" sys_domain="global" view="Default view">4402915113e96240e5adbd522244b06d</sys_ui_form>
+            <sys_ui_section caption="Disable Attachments" display_value="Disable Attachments" name="x_snc_servicenow_s_scripting_examples" sys_domain="global" view="Default view">4402915113e96240e5adbd522244b06c</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2016-09-16 13:58:37</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>5</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2016-08-29 02:36:26</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>a002915113e96240e5adbd522244b06f</sys_id>
+            <sys_mod_count>5</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_snc_servicenow_s_scripting_examples" name="x_snc_servicenow_s_scripting_examples" sys_domain="global" view="Default view">4402915113e96240e5adbd522244b06d</sys_ui_form>
+            <sys_ui_section caption="Hide Field" display_value="Hide Field" name="x_snc_servicenow_s_scripting_examples" sys_domain="global" view="Default view">cc02915113e96240e5adbd522244b06c</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2016-09-16 13:58:37</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>6</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2016-09-16 13:58:37</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>8dca181b13fde200dd7db5b12244b0a8</sys_id>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_snc_servicenow_s_scripting_examples" name="x_snc_servicenow_s_scripting_examples" sys_domain="global" view="Default view">4402915113e96240e5adbd522244b06d</sys_ui_form>
+            <sys_ui_section caption="Lookup values in a different table" display_value="Lookup values in a different table" name="x_snc_servicenow_s_scripting_examples" sys_domain="global" view="Default view">49ca181b13fde200dd7db5b12244b0a8</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2016-09-16 13:58:37</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>7</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2016-08-29 03:25:05</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>a12ddd9913ed2240dd7db5b12244b00a</sys_id>
+            <sys_mod_count>3</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_snc_servicenow_s_scripting_examples" name="x_snc_servicenow_s_scripting_examples" sys_domain="global" view="Default view">4402915113e96240e5adbd522244b06d</sys_ui_form>
+            <sys_ui_section caption="Mandatory Field" display_value="Mandatory Field" name="x_snc_servicenow_s_scripting_examples" sys_domain="global" view="Default view">1d2ddd9913ed2240dd7db5b12244b009</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2016-09-16 13:58:37</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>8</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2016-08-29 03:43:25</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>3151ad1d13ed2240dd7db5b12244b092</sys_id>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_snc_servicenow_s_scripting_examples" name="x_snc_servicenow_s_scripting_examples" sys_domain="global" view="Default view">4402915113e96240e5adbd522244b06d</sys_ui_form>
+            <sys_ui_section caption="Set Field Based on Logged In User" display_value="Set Field Based on Logged In User" name="x_snc_servicenow_s_scripting_examples" sys_domain="global" view="Default view">b951ad1d13ed2240dd7db5b12244b091</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2016-09-16 13:58:37</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>9</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2016-08-29 02:36:24</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>1002915113e96240e5adbd522244b06e</sys_id>
+            <sys_mod_count>4</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_snc_servicenow_s_scripting_examples" name="x_snc_servicenow_s_scripting_examples" sys_domain="global" view="Default view">4402915113e96240e5adbd522244b06d</sys_ui_form>
+            <sys_ui_section caption="Show Message" display_value="Show Message" name="x_snc_servicenow_s_scripting_examples" sys_domain="global" view="Default view">4002915113e96240e5adbd522244b06b</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2016-09-16 13:58:37</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form_section action="INSERT_OR_UPDATE">
+            <position>10</position>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2016-08-29 02:36:25</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>9402915113e96240e5adbd522244b06e</sys_id>
+            <sys_mod_count>5</sys_mod_count>
+            <sys_overrides/>
+            <sys_ui_form display_value="x_snc_servicenow_s_scripting_examples" name="x_snc_servicenow_s_scripting_examples" sys_domain="global" view="Default view">4402915113e96240e5adbd522244b06d</sys_ui_form>
+            <sys_ui_section caption="Validate field and lower case" display_value="Validate field and lower case" name="x_snc_servicenow_s_scripting_examples" sys_domain="global" view="Default view">c802915113e96240e5adbd522244b06b</sys_ui_section>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2016-09-16 13:58:37</sys_updated_on>
+        </sys_ui_form_section>
+        <sys_ui_form action="INSERT_OR_UPDATE">
+            <name>x_snc_servicenow_s_scripting_examples</name>
+            <roles/>
+            <sys_class_name>sys_ui_form</sys_class_name>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2016-08-29 02:36:24</sys_created_on>
+            <sys_customer_update>true</sys_customer_update>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_id>4402915113e96240e5adbd522244b06d</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>x_snc_servicenow_s_scripting_examples</sys_name>
+            <sys_overrides/>
+            <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+            <sys_policy/>
+            <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+            <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+            <sys_update_name>sys_ui_form_sections_4402915113e96240e5adbd522244b06d</sys_update_name>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2016-08-29 02:36:24</sys_updated_on>
+            <sys_user/>
+            <view display_value="Default view" name="NULL">Default view</view>
+            <view_name/>
+        </sys_ui_form>
+    </sys_ui_form_sections>
+</record_update>

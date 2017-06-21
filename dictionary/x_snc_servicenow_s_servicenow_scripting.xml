@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="ServiceNow Scripting" max_length="40" name="x_snc_servicenow_s_servicenow_scripting" type="collection">
+        <element label="Code URL" max_length="1024" name="code_url" type="url"/>
+        <element label="Code URL 2" max_length="1024" name="code_url_2" type="url"/>
+        <element attributes="edge_encryption_enabled=true" label="Details" max_length="4000" name="details" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Example - Steps" max_length="4000" name="example_steps" type="string"/>
+        <element label="Example URL" max_length="1024" name="example_url" type="url"/>
+        <element attributes="no_sort=true,slushbucket_ref_no_expand=true" label="Module" max_length="1024" name="module" reference="x_snc_servicenow_s_module" type="glide_list"/>
+        <element default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element label="Replaced By" max_length="32" name="replaced_by" reference="x_snc_servicenow_s_servicenow_scripting" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Script" max_length="4000" name="script" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Script 2" max_length="1000" name="script_2" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Script Type" max_length="40" name="script_type" type="string">
+            <choice>
+                <element label="Access Control" sequence="0" value="Access Control"/>
+                <element label="Background Script" sequence="1" value="Background Script"/>
+                <element label="Business Rule" sequence="2" value="Business Rule"/>
+                <element label="Client Script" sequence="3" value="Client Script"/>
+                <element label="Default Value" sequence="4" value="Default Value"/>
+                <element label="Inbound Email Action" sequence="5" value="Inbound Email Action"/>
+                <element label="Relationship" sequence="6" value="Relationship"/>
+                <element label="Scheduled Jobs" sequence="7" value="Scheduled Jobs"/>
+                <element label="Script Actions" sequence="8" value="Script Actions"/>
+                <element label="Script Includes" sequence="9" value="Script Includes"/>
+                <element label="SysParm URL" sequence="10" value="SysParm URL"/>
+                <element label="UI Action" sequence="11" value="UI Action"/>
+                <element label="UI Macro" sequence="12" value="UI Macro"/>
+                <element label="UI Policy" sequence="13" value="UI Policy"/>
+                <element label="Workflow" sequence="14" value="Workflow"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Short Description" max_length="100" name="short_description" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="3" default="Submitted" label="State" max_length="40" name="state" type="string">
+            <choice>
+                <element label="Submitted" sequence="0" value="Submitted"/>
+                <element label="Tested" sequence="1" value="Tested"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="3" default="No" label="Tested on Helsinki" max_length="40" name="tested_on_helsinki" type="string">
+            <choice>
+                <element label="No" sequence="0" value="No"/>
+                <element label="Yes" sequence="1" value="Yes"/>
+            </choice>
+        </element>
+        <index name="index">
+            <element name="replaced_by"/>
+        </index>
+    </element>
+</database>

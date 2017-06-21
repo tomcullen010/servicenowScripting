@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sys_script">
+    <sys_script action="INSERT_OR_UPDATE">
+        <abort_action>false</abort_action>
+        <access>package_private</access>
+        <action_delete>false</action_delete>
+        <action_insert>true</action_insert>
+        <action_query>false</action_query>
+        <action_update>false</action_update>
+        <active>true</active>
+        <add_message>true</add_message>
+        <advanced>true</advanced>
+        <change_fields>false</change_fields>
+        <client_callable>false</client_callable>
+        <collection>x_snc_servicenow_s_scripting_examples</collection>
+        <condition/>
+        <description/>
+        <execute_function>false</execute_function>
+        <filter_condition table="x_snc_servicenow_s_scripting_examples">building_listISNOTEMPTY^EQ<item endquery="false" field="building_list" goto="false" newquery="false" operator="ISNOTEMPTY" or="false" value=""/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <is_rest>false</is_rest>
+        <message><![CDATA[<p>A record for each building selected has been created under Related List</p>]]></message>
+        <name>Create Related Records from a List</name>
+        <order>100</order>
+        <priority>100</priority>
+        <rest_method/>
+        <rest_method_text/>
+        <rest_service/>
+        <rest_service_text/>
+        <rest_variables/>
+        <role_conditions/>
+        <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
+	/*
+	Purpose:  This business rule will create a record for each items in a list of a form and have the new records point to the main record.
+	Example Details:  When entering one or multiple buildings in a list, a record is created that has a link to the Scripting Example record
+	Used in: This Business Rule can be used for any tables
+ 	*/
+	//store the value of the building list glide list in a variable
+	var locationArray = current.building_list.split(',');
+	//create a variable of type of table where you are creating record
+	var ccAssignment = new GlideRecord("x_snc_servicenow_s_building_access_approval");
+	//for each item in the array
+	for (var i = 0; i < locationArray.length; i++) {
+		//initialize a new record, set values and then insert the record
+		ccAssignment.initialize();
+		ccAssignment.name = current.opened_by.name;
+		//creates a link back to scripting example table record
+		ccAssignment.scripting_record = current.sys_id;
+		//stores value of single building in the record
+		ccAssignment.building = locationArray[i];
+		ccAssignment.insert();
+	}
+})(current, previous);]]></script>
+        <sys_class_name>sys_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-08-28 23:05:58</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>5f10a85913696240e5adbd522244b081</sys_id>
+        <sys_mod_count>18</sys_mod_count>
+        <sys_name>Create Related Records from a List</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+        <sys_update_name>sys_script_5f10a85913696240e5adbd522244b081</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-10-18 14:30:32</sys_updated_on>
+        <template/>
+        <when>after</when>
+    </sys_script>
+    <sys_translated_text action="delete_multiple" query="documentkey=5f10a85913696240e5adbd522244b081"/>
+</record_update>

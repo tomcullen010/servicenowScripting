@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update sys_domain="global" table="sysevent_in_email_action">
+    <sysevent_in_email_action action="INSERT_OR_UPDATE">
+        <action>record_action</action>
+        <active>true</active>
+        <assignment_operator/>
+        <condition_script/>
+        <description/>
+        <event_name>email.read</event_name>
+        <filter_condition table="sys_email">subjectLIKEemailatt^EQ<item endquery="false" field="subject" goto="false" newquery="false" operator="LIKE" or="false" value="emailatt"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter_condition>
+        <from/>
+        <name>Create Data Source</name>
+        <order>-20</order>
+        <reply_email/>
+        <required_roles/>
+        <script><![CDATA[// Create the datasource record
+current.name = "emailatt import from: " + email.from;
+current.import_set_table_label = "u_scripting_example_excel";
+current.import_set_table_name = "u_scripting_example_excel";
+current.file_retrieval_method = "Attachment";
+current.type = "File";
+current.format = "Excel";
+current.header_row = 1;
+current.sheet_number = 1;
+current.sys_package.setDisplayValue("ServiceNow Scripting");
+current.sys_scope.setDisplayValue("ServiceNow Scripting");
+current.insert();
+
+// Load Attachment
+new global.EmailAttGlobalUtils().scheduleImport(current.sys_id);
+]]></script>
+        <stop_processing>true</stop_processing>
+        <sys_class_name>sysevent_in_email_action</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2017-02-15 20:45:16</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>f3d82c5c1305ba00dd7db5b12244b042</sys_id>
+        <sys_mod_count>8</sys_mod_count>
+        <sys_name>Create Data Source</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+        <sys_update_name>sysevent_in_email_action_f3d82c5c1305ba00dd7db5b12244b042</sys_update_name>
+        <sys_updated_by>michael.ritchie</sys_updated_by>
+        <sys_updated_on>2017-02-16 14:26:06</sys_updated_on>
+        <table>sys_data_source</table>
+        <template/>
+        <type>new</type>
+    </sysevent_in_email_action>
+</record_update>
