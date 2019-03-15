@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<database>
+<?xml version="1.0" encoding="UTF-8"?><database>
     <element label="Position" max_length="40" name="x_snc_servicenow_s_position" type="collection">
         <element label="Name" max_length="40" name="name" type="string"/>
         <element attributes="edge_encryption_enabled=true" label="Title" max_length="40" name="title" type="string"/>

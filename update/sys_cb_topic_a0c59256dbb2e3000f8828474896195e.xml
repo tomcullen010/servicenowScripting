@@ -1,0 +1,1785 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic">
+    <sys_cb_topic action="INSERT_OR_UPDATE">
+        <applicability/>
+        <connect_queue/>
+        <description>ServiceNow Client-Side Scripting</description>
+        <graph>{
+  "graph_api_version": "1.0.3",
+  "goals": {
+    "d9c99994f9cb4f65be6135c640606807": {
+      "id": "d9c99994f9cb4f65be6135c640606807",
+      "trigger": {
+        "type": "primary"
+      },
+      "name": "primary",
+      "applicability": "",
+      "description": "",
+      "nodes": {
+        "437dc09c917c4703862c2c016a2d4ae0": {
+          "id": "437dc09c917c4703862c2c016a2d4ae0",
+          "stepType": "Start",
+          "name": "Start",
+          "greetingResponse": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "8f0ecedc308845bdbecfd3035e02bb6c": {
+          "id": "8f0ecedc308845bdbecfd3035e02bb6c",
+          "stepType": "TerminateGoal",
+          "name": "End",
+          "confirmationMessage": {
+            "value": "I hope this has made your scripting easier.",
+            "mode": "simple"
+          }
+        },
+        "00761196b20c42cc8f3f1512523764ac": {
+          "stepType": "ChoicePrompt",
+          "name": "Type of Action",
+          "prompt": {
+            "value": "What type of action are you looking to do?",
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": "",
+          "optional": false,
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "e56c8dcf1fab431799f4698a9146d309",
+          "id": "00761196b20c42cc8f3f1512523764ac"
+        },
+        "9ea6ae840f9c42f1a52117c3c99933ce": {
+          "id": "9ea6ae840f9c42f1a52117c3c99933ce",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "cdb54d27f6c74b37b24c7ff8892c18af": {
+          "stepType": "ChoicePrompt",
+          "name": "Where is the field to read",
+          "prompt": {
+            "value": "Where is the field you are looking to read?",
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": "",
+          "optional": false,
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "6193dbfd04e4491790b1be207184f10a",
+          "id": "cdb54d27f6c74b37b24c7ff8892c18af"
+        },
+        "b92f5620f7ca46faba1e0331abd79294": {
+          "id": "b92f5620f7ca46faba1e0331abd79294",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "c1f7b84f310849f6ae43f546f139a3f1": {
+          "stepType": "ChoicePrompt",
+          "name": "Where is the field to update",
+          "prompt": {
+            "value": "Where is the field to update?",
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": "",
+          "optional": false,
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "c381006f01c544c0b588684b3c4f35b5",
+          "id": "c1f7b84f310849f6ae43f546f139a3f1"
+        },
+        "3a72f07d7da0469badafde9834cf3c06": {
+          "id": "3a72f07d7da0469badafde9834cf3c06",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "51937b91439f4f39be80aad907b3410b": {
+          "stepType": "ChoicePrompt",
+          "name": "Type of field to read",
+          "prompt": {
+            "value": "What type of field is it?",
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": "",
+          "optional": false,
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "0d936d34a81c45e5a2bad5c62c208832",
+          "id": "51937b91439f4f39be80aad907b3410b"
+        },
+        "5fc647e73a8f4ebaa697e44169f3966b": {
+          "stepType": "ChoicePrompt",
+          "name": "Scratchpad or Hide",
+          "prompt": {
+            "value": "How would you like to get the field value?",
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": "",
+          "optional": false,
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "6325e2d943264be7bd4144697d37dbdf",
+          "id": "5fc647e73a8f4ebaa697e44169f3966b"
+        },
+        "9f186627674c4c36abc633a33443a85e": {
+          "id": "9f186627674c4c36abc633a33443a85e",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "3b0f7e40af124718b7d451aa39b195a4": {
+          "id": "3b0f7e40af124718b7d451aa39b195a4",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "b6f0a67dc76e4f9bbd47fc5ce472a8ce": {
+          "stepType": "ChoicePrompt",
+          "name": "Value or Display Value of Choice",
+          "prompt": {
+            "value": "Do you want the value of the field or the display value?",
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": "",
+          "optional": false,
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "4d7ee1ee84e64cfa83fbb3de24c67129",
+          "id": "b6f0a67dc76e4f9bbd47fc5ce472a8ce"
+        },
+        "910f990d85584577a24b75363f0f5b11": {
+          "id": "910f990d85584577a24b75363f0f5b11",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "ecab0ffe179c4e33adf937b915c2ce81": {
+          "stepType": "ChoicePrompt",
+          "name": "Helpful",
+          "prompt": {
+            "value": "Was this helpful?",
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": "",
+          "optional": false,
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "e6bd2dcab18b48a1880ca343bb690ea3",
+          "id": "ecab0ffe179c4e33adf937b915c2ce81"
+        },
+        "7928488d333a4c2585abf01e508074cb": {
+          "stepType": "ChoicePrompt",
+          "name": "UI Policy Scripting",
+          "prompt": {
+            "value": "Would you still like to learn how to do this via scripting instead of a UI Policy?",
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": "",
+          "optional": false,
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "efb5559bcfc340a9880b93629b4e3a23",
+          "id": "7928488d333a4c2585abf01e508074cb"
+        },
+        "5617e01ea2c34cb99ccf30eb70a8c3bd": {
+          "id": "5617e01ea2c34cb99ccf30eb70a8c3bd",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "f0827c3c20b44862bce0df848767a1b4": {
+          "id": "f0827c3c20b44862bce0df848767a1b4",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "78f060a7999d48d181481791805f13c4": {
+          "stepType": "ChoicePrompt",
+          "name": "Type of field to update",
+          "prompt": {
+            "value": "What type of field is it?",
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": "",
+          "optional": false,
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "3c8a75d494ed4341a6db10c63aea48a2",
+          "id": "78f060a7999d48d181481791805f13c4"
+        },
+        "c4d2d4a267f34983bd26695859dd5685": {
+          "id": "c4d2d4a267f34983bd26695859dd5685",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "e377ea69f3d2402f83b1bae5a1ce8ec5": {
+          "stepType": "ChoicePrompt",
+          "name": "field you are looking to read",
+          "prompt": {
+            "value": "What field are you looking to read?",
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": "",
+          "optional": false,
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "a08193695b084dc09b982ff8dc0a2261",
+          "id": "e377ea69f3d2402f83b1bae5a1ce8ec5"
+        },
+        "6ab89abe1f1b4a399939cca6aedbedbe": {
+          "id": "6ab89abe1f1b4a399939cca6aedbedbe",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "46dc6861be3e4a3db6de610747fa8d33": {
+          "id": "46dc6861be3e4a3db6de610747fa8d33",
+          "stepType": "HtmlOutput",
+          "name": "Client Script",
+          "value": "&lt;html&gt;\n    &lt;body&gt;\n    \n  function onChange(control, oldValue, newValue, isLoading, isTemplate) { &lt;br&gt;\n\tif (newValue === '') { &lt;br&gt;\n\t\tg_form.hideFieldMsg('cmdb_ci'); &lt;br&gt;\n\t\treturn; &lt;br&gt;\n\t} &lt;br&gt;\n\tvar ajax = new GlideAjax('ConfigurationItemAjax'); &lt;br&gt;\n\tajax.addParam('sysparm_name', 'getManagedBy'); &lt;br&gt;\n\tajax.addParam('sysparm_ciSysId', newValue); &lt;br&gt;\n\tajax.getXML(getConfigManagedByCallBack); &lt;br&gt;\n\tfunction getConfigManagedByCallBack(response){ &lt;br&gt;\n\t\tvar answer = response.responseXML.documentElement.getAttribute(\"answer\"); &lt;br&gt;\n\t\talert (answer); &lt;br&gt;\n\t} &lt;br&gt;\n} &lt;br&gt;\n\n    &lt;/body&gt;\n&lt;/html&gt;\n",
+          "height": "0",
+          "width": "0",
+          "applicability": ""
+        },
+        "e88182d75fb441b586a58c1424c41649": {
+          "id": "e88182d75fb441b586a58c1424c41649",
+          "stepType": "HtmlOutput",
+          "name": "Client Script",
+          "value": "&lt;html&gt;\n    &lt;body&gt;\n    \n  function onChange(control, oldValue, newValue, isLoading, isTemplate) { &lt;br&gt;\n\tif (newValue === '') { &lt;br&gt;\n\t\tg_form.hideFieldMsg('cmdb_ci'); &lt;br&gt;\n\t\treturn; &lt;br&gt;\n\t} &lt;br&gt;\n\tvar ajax = new GlideAjax('ConfigurationItemAjax'); &lt;br&gt;\n\tajax.addParam('sysparm_name', 'getManagedBy'); &lt;br&gt;\n\tajax.addParam('sysparm_ciSysId', newValue); &lt;br&gt;\n\tajax.getXML(getConfigManagedByCallBack); &lt;br&gt;\n\tfunction getConfigManagedByCallBack(response){ &lt;br&gt;\n\t\tvar answer = response.responseXML.documentElement.getAttribute(\"answer\"); &lt;br&gt;\n\t\talert (answer); &lt;br&gt;\n\t} &lt;br&gt;\n} &lt;br&gt;\n\n    &lt;/body&gt;\n&lt;/html&gt;\n",
+          "height": "0",
+          "width": "0",
+          "applicability": ""
+        },
+        "99dd4270183b4b24921f7c66c1e6817e": {
+          "id": "99dd4270183b4b24921f7c66c1e6817e",
+          "stepType": "HtmlOutput",
+          "name": "Client Script",
+          "value": "&lt;html&gt;\n    &lt;body&gt;\n    \n  function onChange(control, oldValue, newValue, isLoading, isTemplate) { &lt;br&gt;\n\tif (newValue === '') { &lt;br&gt;\n\t\tg_form.hideFieldMsg('cmdb_ci'); &lt;br&gt;\n\t\treturn; &lt;br&gt;\n\t} &lt;br&gt;\n\tvar ajax = new GlideAjax('ConfigurationItemAjax'); &lt;br&gt;\n\tajax.addParam('sysparm_name', 'getManagedBy'); &lt;br&gt;\n\tajax.addParam('sysparm_ciSysId', newValue); &lt;br&gt;\n\tajax.getXML(getConfigManagedByCallBack); &lt;br&gt;\n\tfunction getConfigManagedByCallBack(response){ &lt;br&gt;\n\t\tvar answer = response.responseXML.documentElement.getAttribute(\"answer\"); &lt;br&gt;\n\t\talert (answer); &lt;br&gt;\n\t} &lt;br&gt;\n} &lt;br&gt;\n\n    &lt;/body&gt;\n&lt;/html&gt;\n",
+          "height": "0",
+          "width": "0",
+          "applicability": ""
+        },
+        "0ead61be14294f9e82f678ca61f97b3a": {
+          "id": "0ead61be14294f9e82f678ca61f97b3a",
+          "stepType": "HtmlOutput",
+          "name": "Script Includes",
+          "value": "&lt;html&gt;\n    &lt;body&gt;\n    \n   function onChange(control, oldValue, newValue, isLoading, isTemplate) { &lt;br&gt;\n\tif (newValue === '') { &lt;br&gt;\n\t\tg_form.hideFieldMsg('cmdb_ci'); &lt;br&gt;\n\t\treturn; &lt;br&gt;\n\t} &lt;br&gt;\n\tvar ajax = new GlideAjax('ConfigurationItemAjax'); &lt;br&gt;\n\tajax.addParam('sysparm_name', 'getManagedBy'); &lt;br&gt;\n\tajax.addParam('sysparm_ciSysId', newValue); &lt;br&gt;\n\tajax.getXML(getConfigManagedByCallBack); &lt;br&gt;\n\tfunction getConfigManagedByCallBack(response){ &lt;br&gt;\n\t\tvar answer = response.responseXML.documentElement.getAttribute(\"answer\"); &lt;br&gt;\n\t\talert (answer); &lt;br&gt;\n\t} &lt;br&gt;\n} &lt;br&gt;\n    \n    &lt;/body&gt;\n&lt;/html&gt;\n",
+          "height": "0",
+          "width": "0",
+          "applicability": ""
+        },
+        "cd3ff1e1716a40c493d096287f0489df": {
+          "id": "cd3ff1e1716a40c493d096287f0489df",
+          "stepType": "HtmlOutput",
+          "name": "Script Includes",
+          "value": "&lt;html&gt;\n    &lt;body&gt;\n    \n   var ConfigurationItemAjax = Class.create(); &lt;br&gt;\nConfigurationItemAjax.prototype = Object.extendsObject(global.AbstractAjaxProcessor, { &lt;br&gt;\n\tgetManagedBy: function() { &lt;br&gt;\n\t\tvar result = ''; &lt;br&gt;\n\t\tvar ciSysId = this.getParameter('sysparm_ciSysId'); &lt;br&gt;\n\t\tvar grConfigItem = new GlideRecord('incident'); &lt;br&gt;\n\t\tgrConfigItem.initialize(); &lt;br&gt;\n\t\tgrConfigItem.parent = ciSysId; &lt;br&gt;\n\t\tgrConfigItem.short_description = 'myNewCi'; &lt;br&gt;\n\t\tvar myNewSysId = grConfigItem.insert(); &lt;br&gt;\n\t\tresult = grConfigItem; &lt;br&gt;\n\t\treturn myNewSysId; &lt;br&gt;\n\t}, &lt;br&gt;\n\ttype: 'ConfigurationItemAjax' &lt;br&gt;\n}); &lt;br&gt;\n    \n    &lt;/body&gt;\n&lt;/html&gt;\n",
+          "height": "0",
+          "width": "0",
+          "applicability": ""
+        },
+        "c3966b47a18a42f58af0f9e82045df42": {
+          "id": "c3966b47a18a42f58af0f9e82045df42",
+          "stepType": "HtmlOutput",
+          "name": "Script Includes",
+          "value": "&lt;html&gt;\n    &lt;body&gt;\n    \nvar ConfigurationItemAjax = Class.create(); &lt;br&gt;\nConfigurationItemAjax.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {  &lt;br&gt;\t \tgetManagedBy: function() &lt;br&gt;\n\t{ &lt;br&gt;\n\t\tvar result = ''; &lt;br&gt;\n\t\tvar ciSysId = this.getParameter('sysparm_ciSysId'); &lt;br&gt;\n\t\tvar grConfigItem = new GlideRecord('cmdb_ci'); &lt;br&gt;\n\t\tif(grConfigItem.get(ciSysId)){ &lt;br&gt;\n\t\t\tresult = grConfigItem.managed_by.getDisplayValue(); &lt;br&gt;\n\t\t} &lt;br&gt;\n\t\treturn result; &lt;br&gt;\n\t}, &lt;br&gt;\n\ttype: 'ConfigurationItemAjax' }); &lt;br&gt;\n    \n    &lt;/body&gt;\n&lt;/html&gt;\n",
+          "height": "0",
+          "width": "0",
+          "applicability": ""
+        },
+        "64ab21aa586a4ba69cfd45d172b40b01": {
+          "id": "64ab21aa586a4ba69cfd45d172b40b01",
+          "stepType": "HtmlOutput",
+          "name": "Create Scratchpad Variable",
+          "value": "&lt;html&gt;\n    &lt;body&gt;\n\nCreate a Display Business Rule to store the value in the scratch pad &lt;br&gt;\nIn Display Business Rule  &lt;br&gt;&lt;br&gt;\n\ng_scratchpad.my_field_value = current.my_field_value;  //current. is used as this is a server script. &lt;br&gt;\n    \n    &lt;/body&gt;\n&lt;/html&gt;\n",
+          "height": "0",
+          "width": "0",
+          "applicability": ""
+        },
+        "9f30d8838000489694b79360f7c52d82": {
+          "id": "9f30d8838000489694b79360f7c52d82",
+          "stepType": "HtmlOutput",
+          "name": "Introduction",
+          "value": "&lt;html&gt;\n    &lt;body&gt;\n    \nSince finding the right client-side script to perform an action can be challenging, let me help you find the script for what you are looking to do.\n    \n    &lt;/body&gt;\n&lt;/html&gt;\n",
+          "height": "0",
+          "width": "0",
+          "applicability": ""
+        },
+        "bcdfdbe9b90e4bb59db021a78cf0f57f": {
+          "id": "bcdfdbe9b90e4bb59db021a78cf0f57f",
+          "stepType": "HtmlOutput",
+          "name": "Client Script",
+          "value": "&lt;html&gt;\n    &lt;body&gt;\n    \nWe will use a Client Script to perform this action.  &lt;br&gt;\nFirst, let me ask you a few questions in order for me to let you know what script you need.\n    \n    &lt;/body&gt;\n&lt;/html&gt;\n",
+          "height": "0",
+          "width": "0",
+          "applicability": ""
+        },
+        "9c3af78d877a4031af531169d7aaa4f0": {
+          "id": "9c3af78d877a4031af531169d7aaa4f0",
+          "stepType": "HtmlOutput",
+          "name": "Use a UI Policy",
+          "value": "&lt;html&gt;\n    &lt;body&gt;\n    \nA UI Policy is more efficient to set afield to read-only, mandatory, visible or clear the field value.  &lt;br&gt;\nThis can also be done via scripting if needed inside a Client Script.\n    \n    &lt;/body&gt;\n&lt;/html&gt;\n",
+          "height": "0",
+          "width": "0",
+          "applicability": ""
+        },
+        "8a9446b9aaa747cf9238b41d55cf1d31": {
+          "id": "8a9446b9aaa747cf9238b41d55cf1d31",
+          "stepType": "HtmlOutput",
+          "name": "UI Policy Scripting",
+          "value": "&lt;html&gt;\n    &lt;body&gt;\n    \nThe following 4 scripts can do the same as a UI policy.    &lt;br&gt;&lt;br&gt;\ng_form.setDisplay('name_of_your_field', false);  &lt;br&gt;\ng_form.clearValue('name_of_your_field_reference'); &lt;br&gt;\ng_form.setMandatory('name_of_your_field_date', true); &lt;br&gt;\ng_form.setReadOnly('name_of_your_field_date_time', true);\n    \n    &lt;/body&gt;\n&lt;/html&gt;\n",
+          "height": "0",
+          "width": "0",
+          "applicability": ""
+        },
+        "dcfea619f5e248f188c8df3c09f798c5": {
+          "id": "dcfea619f5e248f188c8df3c09f798c5",
+          "stepType": "HtmlOutput",
+          "name": "String Script",
+          "value": "&lt;html&gt;\n    &lt;body&gt;\n    \nThe g_form.setValue can be used to update any fields on the record even if they are not on the form. &lt;br&gt;&lt;br&gt;\ng_form.setValue('name_of_your_field','this is new text');\n    \n    &lt;/body&gt;\n&lt;/html&gt;\n",
+          "height": "0",
+          "width": "0",
+          "applicability": ""
+        },
+        "60000296e878445889dd0b6461a382f2": {
+          "id": "60000296e878445889dd0b6461a382f2",
+          "stepType": "HtmlOutput",
+          "name": "Value Script",
+          "value": "&lt;html&gt;\n    &lt;body&gt;\n    \nThe g_form.setValue can be used to update any fields on the record even if they are not on the form. &lt;br&gt;&lt;br&gt;\ng_form.setValue('name_of_your_field','1abb1a5a3b300300d901655593efc461');\n    \n    &lt;/body&gt;\n&lt;/html&gt;\n",
+          "height": "0",
+          "width": "0",
+          "applicability": ""
+        },
+        "51ca118195fe44faa360e03f2fbb543e": {
+          "id": "51ca118195fe44faa360e03f2fbb543e",
+          "stepType": "HtmlOutput",
+          "name": "Date Script",
+          "value": "&lt;html&gt;\n    &lt;body&gt;\n    \nThe g_form.setValue can be used to update any fields on the record even if they are not on the form.   &lt;br&gt;&lt;br&gt;\ng_form.setValue('name_of_your_field', '2018-05-12'); //Use this format for Date field &lt;br&gt;\ng_form.setValue('name_of_your_field, '2019-01-18 17:20:41');  //Use this format for Date/Time Field\n    \n    &lt;/body&gt;\n&lt;/html&gt;\n",
+          "height": "0",
+          "width": "0",
+          "applicability": ""
+        },
+        "5672658278504747b1bb5bd961fb5a1a": {
+          "id": "5672658278504747b1bb5bd961fb5a1a",
+          "stepType": "HtmlOutput",
+          "name": "AJAX",
+          "value": "&lt;html&gt;\n    &lt;body&gt;\n    \nSince GlideRecord is not available in a Scoped Application, then you must use GlideAjax.  &lt;br&gt;\nSince the record is on a different table, you have to use a client script to call a server script using a script include.  This will allow you to leverage server-scripting initiated from a client-script.\n    \n    &lt;/body&gt;\n&lt;/html&gt;\n",
+          "height": "0",
+          "width": "0",
+          "applicability": ""
+        },
+        "2234c377aeb04c199d3d13a125831391": {
+          "id": "2234c377aeb04c199d3d13a125831391",
+          "stepType": "HtmlOutput",
+          "name": "sys_id Script",
+          "value": "&lt;html&gt;\n    &lt;body&gt;\n    \nThe g_form.setValue can be used to update any fields on the record even if they are not on the form. &lt;br&gt;&lt;br&gt;\ng_form.setValue('name_of_your_field', ' 859c0103db3ee700b6c4b6c9689619b0'); \n    \n    &lt;/body&gt;\n&lt;/html&gt;\n",
+          "height": "0",
+          "width": "0",
+          "applicability": ""
+        },
+        "349ac638fdb246c2a2bf3bd8f3ec2794": {
+          "id": "349ac638fdb246c2a2bf3bd8f3ec2794",
+          "stepType": "HtmlOutput",
+          "name": "AJAX",
+          "value": "&lt;html&gt;\n    &lt;body&gt;\n    \nSince GlideRecord is not available in a Scoped Application, then you must use GlideAjax.  &lt;br&gt;\nSince the record is on a different table, you have to use a client script to call a server script using a script include.  This will allow you to leverage server-scripting initiated from a client-script.\n    \n    &lt;/body&gt;\n&lt;/html&gt;\n",
+          "height": "0",
+          "width": "0",
+          "applicability": ""
+        },
+        "e6dfed08c28e4ebeab63bdce4e3622bf": {
+          "id": "e6dfed08c28e4ebeab63bdce4e3622bf",
+          "stepType": "HtmlOutput",
+          "name": "Format",
+          "value": "&lt;html&gt;\n    &lt;body&gt;\n    \n An if statement can be used by itself or with one or multiple else if and also followed by else &lt;br&gt;&lt;br&gt;\n if (True) { } &lt;br&gt;\n else if (True) { } &lt;br&gt;\n else { }\n    \n    &lt;/body&gt;\n&lt;/html&gt;\n",
+          "height": "0",
+          "width": "0",
+          "applicability": ""
+        },
+        "bd91b717488c41468986f2ed1a4cb02d": {
+          "id": "bd91b717488c41468986f2ed1a4cb02d",
+          "stepType": "HtmlOutput",
+          "name": "Expression Examples",
+          "value": "&lt;html&gt;\n    &lt;body&gt;\n    \n  Some of the most common conditions to evaluate are: &lt;br&gt;&lt;br&gt;\n  if (strEmail === null || strEmail === \"\") &lt;br&gt;\n  if (valuex &lt; than valuey)  you can also use ==, !=, &gt;, &gt;=, &lt;, &lt;= &lt;br&gt;\n  if (g_form.getValue('start_date') != '') &lt;br&gt;\n  if (!g_form.hasField('close_notes') &lt;br&gt;\n  if (g_user.userID == ‘admin) &lt;br&gt;\n  if (g_user.hasRole(admin) &lt;br&gt;\n  if (!groupLookupGr.hasNext())\n    \n    &lt;/body&gt;\n&lt;/html&gt;\n",
+          "height": "0",
+          "width": "0",
+          "applicability": ""
+        },
+        "74e80e0d22ac4bf48bc77e444b30cbde": {
+          "id": "74e80e0d22ac4bf48bc77e444b30cbde",
+          "stepType": "HtmlOutput",
+          "name": "AJAX",
+          "value": "&lt;html&gt;\n    &lt;body&gt;\n    \nSince GlideRecord is not available in a Scoped Application, then you must use GlideAjax.  &lt;br&gt;\nSince the record is on a different table, you have to use a client script to call a server script using a script include.  This will allow you to leverage server-scripting initiated from a client-script.\n    \n    &lt;/body&gt;\n&lt;/html&gt;\n",
+          "height": "0",
+          "width": "0",
+          "applicability": ""
+        },
+        "1e7762e96bae4308861794fa5426d13c": {
+          "id": "1e7762e96bae4308861794fa5426d13c",
+          "stepType": "HtmlOutput",
+          "name": "Read field",
+          "value": "&lt;html&gt;\n    &lt;body&gt;\n    \nNow that you have a way to read the field, lets figure how to get the proper value based on the type of field.\n    \n    &lt;/body&gt;\n&lt;/html&gt;\n",
+          "height": "0",
+          "width": "0",
+          "applicability": ""
+        },
+        "703865d57c5b47de833506a5c222953c": {
+          "id": "703865d57c5b47de833506a5c222953c",
+          "stepType": "HtmlOutput",
+          "name": "Hide",
+          "value": "&lt;html&gt;\n    &lt;body&gt;\n    \nAdd the field to the form and then use a UI Policy or client script to hide the field.\n    \n    &lt;/body&gt;\n&lt;/html&gt;\n",
+          "height": "0",
+          "width": "0",
+          "applicability": ""
+        },
+        "112a78f81e4a478180cf2c8ab2f6f958": {
+          "id": "112a78f81e4a478180cf2c8ab2f6f958",
+          "stepType": "HtmlOutput",
+          "name": "Date Script",
+          "value": "&lt;html&gt;\n    &lt;body&gt;\n    \nvar value_of_my_field_name = g_form.getValue(‘my_field_name);\n    \n    &lt;/body&gt;\n&lt;/html&gt;\n",
+          "height": "0",
+          "width": "0",
+          "applicability": ""
+        },
+        "2569069a1c214134b9d77408ed919d21": {
+          "id": "2569069a1c214134b9d77408ed919d21",
+          "stepType": "HtmlOutput",
+          "name": "String Script",
+          "value": "&lt;html&gt;\n    &lt;body&gt;\n    \nvar value_of_my_field_name = g_form.getValue(‘my_field_name);\n    \n    &lt;/body&gt;\n&lt;/html&gt;\n",
+          "height": "0",
+          "width": "0",
+          "applicability": ""
+        },
+        "e7b283a222a34bc0bb039f6565bfbd63": {
+          "id": "e7b283a222a34bc0bb039f6565bfbd63",
+          "stepType": "HtmlOutput",
+          "name": "Scratchpad Script",
+          "value": "&lt;html&gt;\n    &lt;body&gt;\nYou can use the variable that you stored in the scratchpad g_scratchpad.my_field_value;\n    \n    &lt;/body&gt;\n&lt;/html&gt;\n",
+          "height": "0",
+          "width": "0",
+          "applicability": ""
+        },
+        "f2ab34842dcc463fb5464339a9b6f908": {
+          "id": "f2ab34842dcc463fb5464339a9b6f908",
+          "stepType": "HtmlOutput",
+          "name": "AJAX",
+          "value": "&lt;html&gt;\n    &lt;body&gt;\n    \nSince GlideRecord is not available in a Scoped Application, then you must use GlideAjax.  &lt;br&gt;\nSince the record is on a different table, you have to use a client script to call a server script using a script include.  This will allow you to leverage server-scripting initiated from a client-script.\n    \n    &lt;/body&gt;\n&lt;/html&gt;\n",
+          "height": "0",
+          "width": "0",
+          "applicability": ""
+        },
+        "eddd247b915346d0b154f11a397c9ca6": {
+          "id": "eddd247b915346d0b154f11a397c9ca6",
+          "stepType": "HtmlOutput",
+          "name": "Scratchpad or hide",
+          "value": "&lt;html&gt;\n    &lt;body&gt;\n    \n If a field for the record you are looking at is not on the form, you can either send it using the scratchpad or add it to the form and use a UI Policy to hide it.\n    \n    &lt;/body&gt;\n&lt;/html&gt;\n",
+          "height": "0",
+          "width": "0",
+          "applicability": ""
+        },
+        "89feeb33c16948a7bdaa334ac4c40437": {
+          "id": "89feeb33c16948a7bdaa334ac4c40437",
+          "stepType": "HtmlOutput",
+          "name": "Display Script",
+          "value": "&lt;html&gt;\n    &lt;body&gt;\n    \nvar my_field_value = g_form.getValue('my_field_name'); \t&lt;br&gt;\nalert('The getOption is ' + g_form.getOption('my_field_name', my_field_value).text);\n    \n    &lt;/body&gt;\n&lt;/html&gt;\n",
+          "height": "0",
+          "width": "0",
+          "applicability": ""
+        },
+        "93519d4672d14a0089d9f6e5e9a54090": {
+          "id": "93519d4672d14a0089d9f6e5e9a54090",
+          "stepType": "HtmlOutput",
+          "name": "Value Script",
+          "value": "&lt;html&gt;\n    &lt;body&gt;\n    \nvar value_of_my_field_name = g_form.getValue(‘my_field_name);\n    \n    &lt;/body&gt;\n&lt;/html&gt;\n",
+          "height": "0",
+          "width": "0",
+          "applicability": ""
+        },
+        "215df762715c49a4b75420b542160ba7": {
+          "id": "215df762715c49a4b75420b542160ba7",
+          "stepType": "HtmlOutput",
+          "name": "Sys_id Script",
+          "value": "&lt;html&gt;\n    &lt;body&gt;\n    \n The g_form.getValue can only read fields on the form. &lt;br&gt;&lt;br&gt;\n var my_field_value=g_form.getValue('name_of_your_field');\n    \n    &lt;/body&gt;\n&lt;/html&gt;\n",
+          "height": "0",
+          "width": "0",
+          "applicability": ""
+        },
+        "e4cd239b39604b3a869f90e743fbc4d3": {
+          "id": "e4cd239b39604b3a869f90e743fbc4d3",
+          "stepType": "HtmlOutput",
+          "name": "Other Script",
+          "value": "&lt;html&gt;\n    &lt;body&gt;\n    \nThe g_form.getValue can only read fields on the form. Since you are looking for a field of the reference field on your form, we must first get the record information from the server and then we have access to any fields for the reference field.&lt;br&gt;&lt;br&gt;\nvar my_field_value = g_form.getReference('name_of_your_reference_field',getmyfieldvalue);\t \t&lt;br&gt;\nfunction getmyfieldvalue(my_field_value) {&lt;br&gt;\n \t\talert (my_field_value.name);&lt;br&gt;\n          \t}\n    \n    &lt;/body&gt;\n&lt;/html&gt;\n",
+          "height": "0",
+          "width": "0",
+          "applicability": ""
+        },
+        "ce51942e44fc426ab2489dad1c35adcf": {
+          "id": "ce51942e44fc426ab2489dad1c35adcf",
+          "stepType": "HtmlOutput",
+          "name": "Client Script",
+          "value": "&lt;html&gt;\n    &lt;body&gt;\n    \n  function onChange(control, oldValue, newValue, isLoading, isTemplate) { &lt;br&gt;\n\tif (newValue === '') { &lt;br&gt;\n\t\tg_form.hideFieldMsg('cmdb_ci'); &lt;br&gt;\n\t\treturn; &lt;br&gt;\n\t} &lt;br&gt;\n\tvar ajax = new GlideAjax('ConfigurationItemAjax'); &lt;br&gt;\n\tajax.addParam('sysparm_name', 'getManagedBy'); &lt;br&gt;\n\tajax.addParam('sysparm_ciSysId', newValue); &lt;br&gt;\n\tajax.getXML(getConfigManagedByCallBack); &lt;br&gt;\n\tfunction getConfigManagedByCallBack(response){ &lt;br&gt;\n\t\tvar answer = response.responseXML.documentElement.getAttribute(\"answer\"); &lt;br&gt;\n\t\talert (answer); &lt;br&gt;\n\t} &lt;br&gt;\n} &lt;br&gt;\n\n    &lt;/body&gt;\n&lt;/html&gt;\n",
+          "height": "0",
+          "width": "0",
+          "applicability": ""
+        },
+        "c7db5219cf5a4852ad402adbcbf6e20f": {
+          "id": "c7db5219cf5a4852ad402adbcbf6e20f",
+          "stepType": "HtmlOutput",
+          "name": "Script Includes",
+          "value": "&lt;html&gt;\n    &lt;body&gt;\n    \nvar ConfigurationItemAjax = Class.create(); &lt;br&gt;\nConfigurationItemAjax.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {  &lt;br&gt;\t \tgetManagedBy: function() &lt;br&gt;\n\t{ &lt;br&gt;\n\t\tvar result = ''; &lt;br&gt;\n\t\tvar ciSysId = this.getParameter('sysparm_ciSysId'); &lt;br&gt;\n\t\tvar grConfigItem = new GlideRecord('cmdb_ci'); &lt;br&gt;\n\t\tif(grConfigItem.get(ciSysId)){ &lt;br&gt;\n\t\t\tresult = grConfigItem.managed_by.getDisplayValue(); &lt;br&gt;\n\t\t} &lt;br&gt;\n\t\treturn result; &lt;br&gt;\n\t}, &lt;br&gt;\n\ttype: 'ConfigurationItemAjax' }); &lt;br&gt;\n    \n    &lt;/body&gt;\n&lt;/html&gt;\n",
+          "height": "0",
+          "width": "0",
+          "applicability": ""
+        },
+        "d729fbe86a6b4d178cbe4ebaeaf382a4": {
+          "id": "d729fbe86a6b4d178cbe4ebaeaf382a4",
+          "stepType": "HtmlOutput",
+          "name": "Lower case",
+          "value": "&lt;html&gt;\n    &lt;body&gt;\n    \nfunction onChange(control, oldValue, newValue, isLoading, isTemplate) { &lt;br&gt;\n/*&lt;br&gt;\nPurpose:  Takes value from one field and saves same value all in lower case to a different&lt;br&gt;\nExample Detais:  User enters email address which is then saved in email_address_lower_case in a different field&lt;br&gt;\nUsed in: This Client script can be used for forms or Service Catalog&lt;br&gt;\n*/&lt;br&gt;\n\tif (isLoading || newValue === '') {&lt;br&gt;\n\t\treturn;&lt;br&gt;\n\t}&lt;br&gt;\n\t//get value of email_address field and set to lower case&lt;br&gt;\n\tvar email = g_form.getValue('email_address').toLowerCase();&lt;br&gt;\n\t//set lower case value to new field&lt;br&gt;\n\tg_form.setValue('email_address_lower_case', email);&lt;br&gt;\n}&lt;br&gt;\n    \n    &lt;/body&gt;\n&lt;/html&gt;\n",
+          "height": "0",
+          "width": "0",
+          "applicability": ""
+        },
+        "cedd21c5d5d94cb7a3ecb4566ee97e7f": {
+          "id": "cedd21c5d5d94cb7a3ecb4566ee97e7f",
+          "stepType": "HtmlOutput",
+          "name": "Display a message",
+          "value": "&lt;html&gt;\n    &lt;body&gt;\n    \nfunction onChange(control, oldValue, newValue, isLoading, isTemplate) { &lt;br&gt;\n/* &lt;br&gt;\nPurpose:  Display different type of messages on a form &lt;br&gt;\nExample Detais:  Displays 4 types of messages when the show_messages field is modified &lt;br&gt;\nUsed in: This Client script can be used for forms or Service Catalog &lt;br&gt;\n*/ &lt;br&gt;\n\tif (isLoading || newValue === '') { &lt;br&gt;\n\t\treturn; &lt;br&gt;\n\t} &lt;br&gt;\n\t//Display a message in green under a field &lt;br&gt;\n\tg_form.showFieldMsg('show_messages','Show Field Msg Info- You must assign a group before you can assign an individual','info'); &lt;br&gt;\n\t//Display a message in red under a field &lt;br&gt;\n\tg_form.showFieldMsg('show_messages', 'Show Field Msg Error - Management Absentee Advice Form Required','error'); &lt;br&gt;\n\t//Display a pop up with OK button &lt;br&gt;\n\talert('Alert - There are major delays in the delivery of email'); &lt;br&gt;\n\t//Display a pop up with OK and cancel button &lt;br&gt;\n\tconfirm('Confirm - Please ensure to read the documentation and guidelines regarding job lead times, otherwise your form may be declined.'); &lt;br&gt;\n} &lt;br&gt;\n    \n    &lt;/body&gt;\n&lt;/html&gt;\n",
+          "height": "0",
+          "width": "0",
+          "applicability": ""
+        },
+        "714844e819d543a797246d03643d827b": {
+          "id": "714844e819d543a797246d03643d827b",
+          "stepType": "HtmlOutput",
+          "name": "Disable Attachments",
+          "value": "&lt;html&gt;\n    &lt;body&gt;\n    \nfunction onChange(control, oldValue, newValue, isLoading, isTemplate) { &lt;br&gt;\n/* &lt;br&gt;\nPurpose:  Based on a Yes/No Field on a form, the attachment icon is removed or available &lt;br&gt;\nExample Detais:  The Disable Attachments field controls if the attachment icon is displayed or not &lt;br&gt;\nUsed in: This Client script can be used for forms or Service Catalog &lt;br&gt;\n*/ &lt;br&gt;\n\tif (isLoading || newValue === '') { &lt;br&gt;\n\t\treturn; &lt;br&gt;\n\t} &lt;br&gt;\n\t//if disable_attachement field is set to yes &lt;br&gt;\n\tif (g_form.getValue('disable_attachments') == 'Yes') { &lt;br&gt;\n\t\t//disable attachments by removing paperclip icon &lt;br&gt;\n\t\tg_form.disableAttachments(); &lt;br&gt;\n\t} &lt;br&gt;\n\telse if (g_form.getValue('disable_attachments') == 'No') { &lt;br&gt;\n\t\t//enable attachments by displaying paperclip icon &lt;br&gt;\n\t\tg_form.enableAttachments(); &lt;br&gt;\n\t} &lt;br&gt;\n} &lt;br&gt;\n    \n    &lt;/body&gt;\n&lt;/html&gt;\n",
+          "height": "0",
+          "width": "0",
+          "applicability": ""
+        },
+        "97b6d3a5b9d74c71a82617c9e763507d": {
+          "id": "97b6d3a5b9d74c71a82617c9e763507d",
+          "stepType": "HtmlOutput",
+          "name": "Validate an email address",
+          "value": "&lt;html&gt;\n    &lt;body&gt;\n    \nfunction onChange(control, oldValue, newValue, isLoading, isTemplate) { &lt;br&gt;\n/* &lt;br&gt;\nPurpose:  Validate a string to be a valid email address &lt;br&gt;\nExample Detais:  Enter an email in the email address field &lt;br&gt;\nUsed in: This Client script can be used for forms or Service Catalog &lt;br&gt;\n*/ &lt;br&gt;\n\tif (isLoading || newValue === '') { &lt;br&gt;\n\t\treturn; &lt;br&gt;\n\t} &lt;br&gt;\n\t//set value of email address in a variable &lt;br&gt;\n\tvar strEmail = g_form.getValue(\"email_address\"); &lt;br&gt;\n\t//hide error message before validating string &lt;br&gt;\n\tg_form.hideErrorBox(\"email_address\"); &lt;br&gt;\n\t//if there are no values then do nothing &lt;br&gt;\n\tif (strEmail === null || strEmail === \"\") &lt;br&gt;\n\t\treturn true; &lt;br&gt;\n\t//if email is valid format do nothing &lt;br&gt;\n\tif (isEmailValid(strEmail)) &lt;br&gt;\n\t\treturn true; &lt;br&gt;\n\t//if email is not valid format then display error message &lt;br&gt;\n\telse{ &lt;br&gt;\n\t\tg_form.showErrorBox(\"email_address\", \"Invalid email address\"); &lt;br&gt;\n\t\treturn false;\t\t &lt;br&gt;\n\t} &lt;br&gt;\n} &lt;br&gt;\n    \n    &lt;/body&gt;\n&lt;/html&gt;\n",
+          "height": "0",
+          "width": "0",
+          "applicability": ""
+        },
+        "a42aa550e8be4ea6a4231cf749fd65ae": {
+          "stepType": "ChoicePrompt",
+          "name": "Another Client-Side Scripting",
+          "prompt": {
+            "value": "Do you have another Client-Side scripting question?",
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": "",
+          "optional": false,
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "79b0d24468b54a88a0809bb1eaeaf4c0",
+          "id": "a42aa550e8be4ea6a4231cf749fd65ae"
+        },
+        "ca717c5445b94d37a40373bff5fd0aca": {
+          "id": "ca717c5445b94d37a40373bff5fd0aca",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "e108fec48d754e1e80cb776cad1d81ab": {
+          "id": "e108fec48d754e1e80cb776cad1d81ab",
+          "stepType": "HtmlOutput",
+          "name": "Validate a String",
+          "value": "&lt;html&gt;\n    &lt;body&gt;\n    \nfunction onChange(control, oldValue, newValue, isLoading, isTemplate) { &lt;br&gt;\n\t/* &lt;br&gt;\n\tPurpose:  Validate a string &lt;br&gt;\n\tExample Detais:  When entering a string, the script will confirm it matches the desired pattern and only allow strings with the proper format &lt;br&gt;\n\tUsed in: Service Catalog or any forms &lt;br&gt;\n \t*/ &lt;br&gt;\n\tif (isLoading || newValue == '') { &lt;br&gt;\n\t\treturn; &lt;br&gt;\n\t} &lt;br&gt;\n\t//set value of field in variable &lt;br&gt;\n\tvar str = g_form.getValue('account_number'); &lt;br&gt;\n\t//var str = newValue; &lt;br&gt;\n\t\n\t//Create a variable for each character and 1 extra &lt;br&gt;\n\t//In this case we expect an account number to be 8 characters &lt;br&gt;\n\tvar res1 = str.charAt(0); &lt;br&gt;\n\tvar res2 = str.charAt(1); &lt;br&gt;\n\tvar res3 = str.charAt(2); &lt;br&gt;\n\tvar res4 = str.charAt(3); &lt;br&gt;\n\tvar res5 = str.charAt(4); &lt;br&gt;\n\tvar res6 = str.charAt(5); &lt;br&gt;\n\tvar res7 = str.charAt(6); &lt;br&gt;\n\tvar res8 = str.charAt(7); &lt;br&gt;\n\tvar res9 = str.charAt(8); &lt;br&gt;\n\t &lt;br&gt;\n\t//If the values match the desired format then do nothing &lt;br&gt;\n\tif ((res1=='T')&amp;&amp;(res2=='2')&amp;&amp;(res5=='T')&amp;&amp;(res8!='')&amp;&amp;(res9=='') ){ &lt;br&gt;\n\t} &lt;br&gt;\n\t &lt;br&gt;\n\t//If the values do not match the desired format &lt;br&gt;\n\telse { &lt;br&gt;\n\t\t//Show error message &lt;br&gt;\n\t\talert('Enter a Proper Name of with format T2**T***'); &lt;br&gt;\n\t\t//Clear incorrect value &lt;br&gt;\n\t\tg_form.setValue('account_number', ''); &lt;br&gt;\n\t} &lt;br&gt;\n} &lt;br&gt;\n    \n    &lt;/body&gt;\n&lt;/html&gt;\n",
+          "height": "0",
+          "width": "0",
+          "applicability": ""
+        },
+        "938c8eadf34243879aa9ed064931b4bb": {
+          "id": "938c8eadf34243879aa9ed064931b4bb",
+          "stepType": "HtmlOutput",
+          "name": "Validate on Submit",
+          "value": "&lt;html&gt;\n    &lt;body&gt;\n    \nfunction onSubmit() { &lt;br&gt;\n/* &lt;br&gt;\nPurpose:  Display a pop up message which requires user to click OK to proceed &lt;br&gt;\nExample Detais:  A pop up message requires user to click OK before proceeding to Save, Update or Submit the form &lt;br&gt;\nUsed in: This Client script can be used for forms or Service Catalog &lt;br&gt;\n*/ &lt;br&gt;\n\t//Display message which request users to confirm.  The getMessage is used to provide ability to display the message in different languages based on entries in sys_ui_message table. &lt;br&gt;\n\treturn confirm(getMessage('You are about to submit this record.  Click OK to continue.')); &lt;br&gt;\n} &lt;br&gt;\n    \n    &lt;/body&gt;\n&lt;/html&gt;\n",
+          "height": "0",
+          "width": "0",
+          "applicability": ""
+        },
+        "c354e923302d4452b855ebd0fa425ca6": {
+          "id": "c354e923302d4452b855ebd0fa425ca6",
+          "stepType": "HtmlOutput",
+          "name": "Logged in User",
+          "value": "&lt;html&gt;\n    &lt;body&gt;\n    \nfunction onLoad() { &lt;br&gt;\n\t/* &lt;br&gt;\n\tPurpose:  Set field to logged in user &lt;br&gt;\n\tExample Detais:  Create new record and see value for Submitted By &lt;br&gt;\n\tUsed in: This Client script can be used for forms or Service Catalog &lt;br&gt;\n \t*/ &lt;br&gt;\n\t &lt;br&gt;\n\t//Set value of field to logged in user &lt;br&gt;\n\tg_form.setValue('submitted_by', g_user.userID); &lt;br&gt;\n} &lt;br&gt;\n    \n    &lt;/body&gt;\n&lt;/html&gt;\n",
+          "height": "0",
+          "width": "0",
+          "applicability": ""
+        }
+      },
+      "edges": [
+        {
+          "id": "9c54d7da2530400191542195a15461e0",
+          "edgeType": "Edge",
+          "source": "1e7762e96bae4308861794fa5426d13c",
+          "target": "51937b91439f4f39be80aad907b3410b",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "7cfcfb5f4fea47e0abeeeecb76a69c85",
+          "edgeType": "Edge",
+          "source": "9f30d8838000489694b79360f7c52d82",
+          "target": "bcdfdbe9b90e4bb59db021a78cf0f57f",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "940a8bc6d4364874898f0ecf31ebc2b3",
+          "edgeType": "Branch",
+          "source": "9ea6ae840f9c42f1a52117c3c99933ce",
+          "target": "d729fbe86a6b4d178cbe4ebaeaf382a4",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.type_of_action == 'lower';\n})()\n",
+          "label": "Change field value to lower case"
+        },
+        {
+          "id": "b61b4a2db2e84ef29df9bdb99f67c072",
+          "edgeType": "Branch",
+          "source": "6ab89abe1f1b4a399939cca6aedbedbe",
+          "target": "e4cd239b39604b3a869f90e743fbc4d3",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.field_you_are_looking_to_read == 'other';\n})()",
+          "label": "Other"
+        },
+        {
+          "id": "4a1c2b501e8e4c3694513ec7b817df39",
+          "edgeType": "Branch",
+          "source": "6ab89abe1f1b4a399939cca6aedbedbe",
+          "target": "215df762715c49a4b75420b542160ba7",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.field_you_are_looking_to_read == 'sysid';\n})()",
+          "label": "Sys_id"
+        },
+        {
+          "id": "f339f92238994d048109b2d270500b8a",
+          "edgeType": "Branch",
+          "source": "910f990d85584577a24b75363f0f5b11",
+          "target": "93519d4672d14a0089d9f6e5e9a54090",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.value_or_display_value_of_choice == 'value';\n})",
+          "label": "Value"
+        },
+        {
+          "id": "bf1315bd740740beb91cc7ec525f3dd3",
+          "edgeType": "Branch",
+          "source": "910f990d85584577a24b75363f0f5b11",
+          "target": "89feeb33c16948a7bdaa334ac4c40437",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.value_or_display_value_of_choice == 'display';\n})",
+          "label": "Display"
+        },
+        {
+          "id": "0a1ac3aa7b7a4eacb0ec4687cdac080f",
+          "edgeType": "Branch",
+          "source": "b92f5620f7ca46faba1e0331abd79294",
+          "target": "eddd247b915346d0b154f11a397c9ca6",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.where_is_the_field_to_read == 'record';\n})()\n",
+          "label": "Record"
+        },
+        {
+          "id": "eb4d0aa074174ff089035be2f38dbf0a",
+          "edgeType": "Branch",
+          "source": "b92f5620f7ca46faba1e0331abd79294",
+          "target": "e7b283a222a34bc0bb039f6565bfbd63",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.where_is_the_field_to_read == 'scratchpad';\n})()\n",
+          "label": "Scratchpad"
+        },
+        {
+          "id": "d308a5be69234e629e2723cad55f5565",
+          "edgeType": "Branch",
+          "source": "b92f5620f7ca46faba1e0331abd79294",
+          "target": "f2ab34842dcc463fb5464339a9b6f908",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.where_is_the_field_to_read == 'table';\n})()\n",
+          "label": "Table"
+        },
+        {
+          "id": "dfec2be4993d4eda875edd8d2ed16ba5",
+          "edgeType": "Branch",
+          "source": "3b0f7e40af124718b7d451aa39b195a4",
+          "target": "2569069a1c214134b9d77408ed919d21",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.type_of_field_to_read == 'string';\n})()\n",
+          "label": "String"
+        },
+        {
+          "id": "f2b56fe710bf40309db9d7a1627adbfe",
+          "edgeType": "Branch",
+          "source": "3b0f7e40af124718b7d451aa39b195a4",
+          "target": "112a78f81e4a478180cf2c8ab2f6f958",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.type_of_field_to_read == 'date';\n})()\n",
+          "label": "Date"
+        },
+        {
+          "id": "f26e8f0303db4a1a9d8698214393136c",
+          "edgeType": "Branch",
+          "source": "9f186627674c4c36abc633a33443a85e",
+          "target": "703865d57c5b47de833506a5c222953c",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.scratchpad_or_hide == 'hide';\n})()\n",
+          "label": "Hide"
+        },
+        {
+          "id": "bf77b0e9c39b46ddb1dd8d38cb428843",
+          "edgeType": "Branch",
+          "source": "3a72f07d7da0469badafde9834cf3c06",
+          "target": "74e80e0d22ac4bf48bc77e444b30cbde",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.where_is_the_field_to_update == 'table';\n})()\n",
+          "label": "Table"
+        },
+        {
+          "id": "9d2df7f743024e26a99d50f67a8f9557",
+          "edgeType": "Edge",
+          "source": "bd91b717488c41468986f2ed1a4cb02d",
+          "target": "ecab0ffe179c4e33adf937b915c2ce81",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "0d8130d99dbe4666b6ea83e63b555128",
+          "edgeType": "Edge",
+          "source": "e6dfed08c28e4ebeab63bdce4e3622bf",
+          "target": "bd91b717488c41468986f2ed1a4cb02d",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "56c8b064fe70433b9c9a4c2f84371143",
+          "edgeType": "Branch",
+          "source": "9ea6ae840f9c42f1a52117c3c99933ce",
+          "target": "349ac638fdb246c2a2bf3bd8f3ec2794",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.type_of_action == 'create';\n})()\n",
+          "label": "Create a Record"
+        },
+        {
+          "id": "f93638dd08de4ed1bfb4ae7c0a72869d",
+          "edgeType": "Edge",
+          "source": "51ca118195fe44faa360e03f2fbb543e",
+          "target": "ecab0ffe179c4e33adf937b915c2ce81",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "da3ef0f2e46a482ca6ce61f1cc9edb95",
+          "edgeType": "Edge",
+          "source": "60000296e878445889dd0b6461a382f2",
+          "target": "ecab0ffe179c4e33adf937b915c2ce81",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "199b0cf1ba44402b93076d892c87877e",
+          "edgeType": "Edge",
+          "source": "2234c377aeb04c199d3d13a125831391",
+          "target": "ecab0ffe179c4e33adf937b915c2ce81",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "d53b3dd683ee4e2a9d3871f7e2dacd8e",
+          "edgeType": "Edge",
+          "source": "dcfea619f5e248f188c8df3c09f798c5",
+          "target": "ecab0ffe179c4e33adf937b915c2ce81",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "c29013742ee143e0a1c8d84239b9ba2f",
+          "edgeType": "Edge",
+          "source": "8a9446b9aaa747cf9238b41d55cf1d31",
+          "target": "ecab0ffe179c4e33adf937b915c2ce81",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "6a0fc073a84342fd931df6039676b51d",
+          "edgeType": "Edge",
+          "source": "9c3af78d877a4031af531169d7aaa4f0",
+          "target": "7928488d333a4c2585abf01e508074cb",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "e15d3c855d084038be1242c481d2f4fe",
+          "edgeType": "Edge",
+          "source": "64ab21aa586a4ba69cfd45d172b40b01",
+          "target": "e7b283a222a34bc0bb039f6565bfbd63",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "de1ca380f78d4aaa87a14f0bd1fa07f9",
+          "edgeType": "Edge",
+          "source": "c3966b47a18a42f58af0f9e82045df42",
+          "target": "ecab0ffe179c4e33adf937b915c2ce81",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "3931eb4db4494a92bdce5a5f7d1fe8d5",
+          "edgeType": "Edge",
+          "source": "46dc6861be3e4a3db6de610747fa8d33",
+          "target": "cd3ff1e1716a40c493d096287f0489df",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "e0f6ccfc6957442cb8cae5e0a1e98213",
+          "edgeType": "Edge",
+          "source": "99dd4270183b4b24921f7c66c1e6817e",
+          "target": "0ead61be14294f9e82f678ca61f97b3a",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "331d56cda13041a387cb4d5c4b259994",
+          "edgeType": "Branch",
+          "source": "3b0f7e40af124718b7d451aa39b195a4",
+          "target": "e377ea69f3d2402f83b1bae5a1ce8ec5",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.type_of_field_to_read == 'reference';\n})()\n",
+          "label": "Reference"
+        },
+        {
+          "id": "3ebdff534e2748eda9f3531bc4accd1d",
+          "edgeType": "Edge",
+          "source": "00761196b20c42cc8f3f1512523764ac",
+          "target": "9ea6ae840f9c42f1a52117c3c99933ce",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "ca3e374ccfb64e2097083330a4d36f16",
+          "edgeType": "Branch",
+          "source": "9ea6ae840f9c42f1a52117c3c99933ce",
+          "target": "cdb54d27f6c74b37b24c7ff8892c18af",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.type_of_action == 'read';\n})()\n",
+          "label": "Read a Field"
+        },
+        {
+          "id": "2cb0f37412e64c968eac2063a795d936",
+          "edgeType": "Edge",
+          "source": "cdb54d27f6c74b37b24c7ff8892c18af",
+          "target": "b92f5620f7ca46faba1e0331abd79294",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "b5ef656757c048b6b209edde09f3e6b2",
+          "edgeType": "Branch",
+          "source": "9ea6ae840f9c42f1a52117c3c99933ce",
+          "target": "c1f7b84f310849f6ae43f546f139a3f1",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.type_of_action == 'update';\n})()\n",
+          "label": "Update a Field"
+        },
+        {
+          "id": "72ca69fdcf6d4b32a21acab002558119",
+          "edgeType": "Edge",
+          "source": "c1f7b84f310849f6ae43f546f139a3f1",
+          "target": "3a72f07d7da0469badafde9834cf3c06",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "c2e14b539d6243fa98652de09ec24212",
+          "edgeType": "Branch",
+          "source": "b92f5620f7ca46faba1e0331abd79294",
+          "target": "51937b91439f4f39be80aad907b3410b",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.where_is_the_field_to_read == 'form';\n})()\n",
+          "label": "Form"
+        },
+        {
+          "id": "ef6714ff0d774df6af54f2b4c28d15b4",
+          "edgeType": "Edge",
+          "source": "5fc647e73a8f4ebaa697e44169f3966b",
+          "target": "9f186627674c4c36abc633a33443a85e",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "cab351cfcd5948acbad1fdf37ba1a447",
+          "edgeType": "Edge",
+          "source": "51937b91439f4f39be80aad907b3410b",
+          "target": "3b0f7e40af124718b7d451aa39b195a4",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "43f37c6b152b42e38ff1e2b301138c8a",
+          "edgeType": "Branch",
+          "source": "3b0f7e40af124718b7d451aa39b195a4",
+          "target": "b6f0a67dc76e4f9bbd47fc5ce472a8ce",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.type_of_field_to_read == 'choice';\n})()\n",
+          "label": "Choice"
+        },
+        {
+          "id": "27b63e7902114e1f9e63b222706e6dac",
+          "edgeType": "Edge",
+          "source": "b6f0a67dc76e4f9bbd47fc5ce472a8ce",
+          "target": "910f990d85584577a24b75363f0f5b11",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "9ed68364db964a928238d18d74964139",
+          "edgeType": "Edge",
+          "source": "7928488d333a4c2585abf01e508074cb",
+          "target": "5617e01ea2c34cb99ccf30eb70a8c3bd",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "f2c085eea0bc4746968be89e20f558d6",
+          "edgeType": "Branch",
+          "source": "5617e01ea2c34cb99ccf30eb70a8c3bd",
+          "target": "ecab0ffe179c4e33adf937b915c2ce81",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.ui_policy_scripting == 'no';\n})()\n",
+          "label": "No"
+        },
+        {
+          "id": "a09e3a71cc2a4e4999fb143eb66aca2d",
+          "edgeType": "Edge",
+          "source": "ecab0ffe179c4e33adf937b915c2ce81",
+          "target": "f0827c3c20b44862bce0df848767a1b4",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "1b7ed730d65e4eb494b83a8fae07e880",
+          "edgeType": "Branch",
+          "source": "3a72f07d7da0469badafde9834cf3c06",
+          "target": "78f060a7999d48d181481791805f13c4",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.where_is_the_field_to_update == 'form_record';\n})()\n",
+          "label": "Form or Record"
+        },
+        {
+          "id": "4320988d6ce7400aa9c6bca29424727b",
+          "edgeType": "Edge",
+          "source": "78f060a7999d48d181481791805f13c4",
+          "target": "c4d2d4a267f34983bd26695859dd5685",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "ab1772c8080047b6bc99894c101621e4",
+          "edgeType": "Edge",
+          "source": "e377ea69f3d2402f83b1bae5a1ce8ec5",
+          "target": "6ab89abe1f1b4a399939cca6aedbedbe",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "44eb0bf6aba6467bb6d50fea9f140360",
+          "edgeType": "Edge",
+          "source": "0ead61be14294f9e82f678ca61f97b3a",
+          "target": "ecab0ffe179c4e33adf937b915c2ce81",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "c0c0e334ea934479982853ebe1223026",
+          "edgeType": "Edge",
+          "source": "cd3ff1e1716a40c493d096287f0489df",
+          "target": "ecab0ffe179c4e33adf937b915c2ce81",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "2c190357e93e4838b74664a7517b2d8d",
+          "edgeType": "Edge",
+          "source": "e88182d75fb441b586a58c1424c41649",
+          "target": "c3966b47a18a42f58af0f9e82045df42",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "73fae816a5484630a383f7d78eac6c6b",
+          "edgeType": "Branch",
+          "source": "9f186627674c4c36abc633a33443a85e",
+          "target": "64ab21aa586a4ba69cfd45d172b40b01",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.scratchpad_or_hide == 'scratchpad';\n})()\n",
+          "label": "Scratchpad"
+        },
+        {
+          "id": "5b81a4e232374520a8fc69baafe21ba7",
+          "edgeType": "Edge",
+          "source": "437dc09c917c4703862c2c016a2d4ae0",
+          "target": "9f30d8838000489694b79360f7c52d82",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "9a0deebd31b747c2864ed0938c2baeaa",
+          "edgeType": "Edge",
+          "source": "bcdfdbe9b90e4bb59db021a78cf0f57f",
+          "target": "00761196b20c42cc8f3f1512523764ac",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "a792d1d78b8b4721b8acd943415d974a",
+          "edgeType": "Branch",
+          "source": "9ea6ae840f9c42f1a52117c3c99933ce",
+          "target": "9c3af78d877a4031af531169d7aaa4f0",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.type_of_action == 'ui_policy';\n})()\n",
+          "label": "UI Policy"
+        },
+        {
+          "id": "5a54b54d121c4c119b6fedb3f68d26bb",
+          "edgeType": "Branch",
+          "source": "5617e01ea2c34cb99ccf30eb70a8c3bd",
+          "target": "8a9446b9aaa747cf9238b41d55cf1d31",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.ui_policy_scripting == 'yes';\n})()\n",
+          "label": "Yes"
+        },
+        {
+          "id": "8d484377d34a4522928eb442a76d3f42",
+          "edgeType": "Branch",
+          "source": "c4d2d4a267f34983bd26695859dd5685",
+          "target": "dcfea619f5e248f188c8df3c09f798c5",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.type_of_field_to_update == 'string';\n})()\n",
+          "label": "String"
+        },
+        {
+          "id": "3e589191e95c4e4d9770b51c0194765f",
+          "edgeType": "Branch",
+          "source": "c4d2d4a267f34983bd26695859dd5685",
+          "target": "60000296e878445889dd0b6461a382f2",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.type_of_field_to_update == 'choice';\n})()\n",
+          "label": "Choice"
+        },
+        {
+          "id": "e55e0dc4add148d993113327285009b0",
+          "edgeType": "Branch",
+          "source": "c4d2d4a267f34983bd26695859dd5685",
+          "target": "51ca118195fe44faa360e03f2fbb543e",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.type_of_field_to_update == 'date';\n})()\n",
+          "label": "Date"
+        },
+        {
+          "id": "bd909f7c1f954101a056c4e0a0ea9789",
+          "edgeType": "Branch",
+          "source": "c4d2d4a267f34983bd26695859dd5685",
+          "target": "5672658278504747b1bb5bd961fb5a1a",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.type_of_field_to_update == 'field_on_reference';\n})()\n",
+          "label": "Field on Reference"
+        },
+        {
+          "id": "a48bd49430024e4eb939817543e0e907",
+          "edgeType": "Branch",
+          "source": "c4d2d4a267f34983bd26695859dd5685",
+          "target": "2234c377aeb04c199d3d13a125831391",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.type_of_field_to_update == 'reference';\n})()\n",
+          "label": "Reference"
+        },
+        {
+          "id": "e131f338fbc347ba8b8ef8b448a095bb",
+          "edgeType": "Edge",
+          "source": "349ac638fdb246c2a2bf3bd8f3ec2794",
+          "target": "46dc6861be3e4a3db6de610747fa8d33",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "5cb2e8ae67a347bfaaf4e470bf5ed816",
+          "edgeType": "Branch",
+          "source": "9ea6ae840f9c42f1a52117c3c99933ce",
+          "target": "e6dfed08c28e4ebeab63bdce4e3622bf",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.type_of_action == 'if_statement';\n})()\n",
+          "label": "if Statement"
+        },
+        {
+          "id": "786540596a3443dbb480931cc85418e7",
+          "edgeType": "Edge",
+          "source": "74e80e0d22ac4bf48bc77e444b30cbde",
+          "target": "99dd4270183b4b24921f7c66c1e6817e",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "b0dab6e6ee384fa3b80ae497221df949",
+          "edgeType": "Edge",
+          "source": "703865d57c5b47de833506a5c222953c",
+          "target": "1e7762e96bae4308861794fa5426d13c",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "7e6c610f7a1446edad5ec6a0ab6839bb",
+          "edgeType": "Edge",
+          "source": "112a78f81e4a478180cf2c8ab2f6f958",
+          "target": "ecab0ffe179c4e33adf937b915c2ce81",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "6ccda0b8f9054272b1c83131c37b9976",
+          "edgeType": "Edge",
+          "source": "2569069a1c214134b9d77408ed919d21",
+          "target": "ecab0ffe179c4e33adf937b915c2ce81",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "c291668135c34cf8acc4c7bf44b63fb7",
+          "edgeType": "Edge",
+          "source": "e7b283a222a34bc0bb039f6565bfbd63",
+          "target": "ecab0ffe179c4e33adf937b915c2ce81",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "7efa39789a47410a9e6419eb48e73da5",
+          "edgeType": "Edge",
+          "source": "f2ab34842dcc463fb5464339a9b6f908",
+          "target": "e88182d75fb441b586a58c1424c41649",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "e154e34888144381bb1cb606f1cbbb09",
+          "edgeType": "Edge",
+          "source": "eddd247b915346d0b154f11a397c9ca6",
+          "target": "5fc647e73a8f4ebaa697e44169f3966b",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "0f47138e406348238c1dea8ca7f68396",
+          "edgeType": "Edge",
+          "source": "89feeb33c16948a7bdaa334ac4c40437",
+          "target": "ecab0ffe179c4e33adf937b915c2ce81",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "6e9bfb7549cc46d4a0c37d6bc8d468e6",
+          "edgeType": "Edge",
+          "source": "93519d4672d14a0089d9f6e5e9a54090",
+          "target": "ecab0ffe179c4e33adf937b915c2ce81",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "cd41ca0e22d34feb8c06f0a490d4a0c6",
+          "edgeType": "Edge",
+          "source": "215df762715c49a4b75420b542160ba7",
+          "target": "ecab0ffe179c4e33adf937b915c2ce81",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "215b920d1ea34a4b80d22bc35ef511ee",
+          "edgeType": "Edge",
+          "source": "e4cd239b39604b3a869f90e743fbc4d3",
+          "target": "ecab0ffe179c4e33adf937b915c2ce81",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "603310ae2591480db6b77ee0c3e2302a",
+          "edgeType": "Edge",
+          "source": "5672658278504747b1bb5bd961fb5a1a",
+          "target": "ce51942e44fc426ab2489dad1c35adcf",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "a6872dbb912441d8afd576bb1abfcfe4",
+          "edgeType": "Edge",
+          "source": "ce51942e44fc426ab2489dad1c35adcf",
+          "target": "c7db5219cf5a4852ad402adbcbf6e20f",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "3558da687d114440851ece999a03341c",
+          "edgeType": "Edge",
+          "source": "c7db5219cf5a4852ad402adbcbf6e20f",
+          "target": "ecab0ffe179c4e33adf937b915c2ce81",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "7fe1920d99f647f18d623f4c38ff1d54",
+          "edgeType": "Edge",
+          "source": "d729fbe86a6b4d178cbe4ebaeaf382a4",
+          "target": "ecab0ffe179c4e33adf937b915c2ce81",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "bfaf3665b40e493c9db2588ef99b1481",
+          "edgeType": "Branch",
+          "source": "9ea6ae840f9c42f1a52117c3c99933ce",
+          "target": "cedd21c5d5d94cb7a3ecb4566ee97e7f",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.type_of_action == 'message';\n})()\n",
+          "label": "Display a message"
+        },
+        {
+          "id": "39d989f49a964116997a7a95dfd1b385",
+          "edgeType": "Edge",
+          "source": "cedd21c5d5d94cb7a3ecb4566ee97e7f",
+          "target": "ecab0ffe179c4e33adf937b915c2ce81",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "c2f6d8ebec18466690e9c62e90cdecb3",
+          "edgeType": "Branch",
+          "source": "9ea6ae840f9c42f1a52117c3c99933ce",
+          "target": "714844e819d543a797246d03643d827b",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.type_of_action == 'attachment';\n})()\n",
+          "label": "Attachment"
+        },
+        {
+          "id": "521522da7f4149359118026b38f65f1a",
+          "edgeType": "Edge",
+          "source": "714844e819d543a797246d03643d827b",
+          "target": "ecab0ffe179c4e33adf937b915c2ce81",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "43ea2644ecbd416b85568e6fe11a2143",
+          "edgeType": "Branch",
+          "source": "9ea6ae840f9c42f1a52117c3c99933ce",
+          "target": "97b6d3a5b9d74c71a82617c9e763507d",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.type_of_action == 'email';\n})()\n",
+          "label": "Validate an email"
+        },
+        {
+          "id": "e22f860104b04e19b312eae7b4aa247f",
+          "edgeType": "Edge",
+          "source": "97b6d3a5b9d74c71a82617c9e763507d",
+          "target": "ecab0ffe179c4e33adf937b915c2ce81",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "c15dd163c324428dbeb30d0607f3c8e6",
+          "edgeType": "Branch",
+          "source": "f0827c3c20b44862bce0df848767a1b4",
+          "target": "a42aa550e8be4ea6a4231cf749fd65ae",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "",
+          "label": "Always"
+        },
+        {
+          "id": "b12b27ff511e462e87a4cb3276c493d3",
+          "edgeType": "Edge",
+          "source": "a42aa550e8be4ea6a4231cf749fd65ae",
+          "target": "ca717c5445b94d37a40373bff5fd0aca",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "c2cbbfd785fa4e9d8d1f34530bfc4ef9",
+          "edgeType": "Branch",
+          "source": "ca717c5445b94d37a40373bff5fd0aca",
+          "target": "8f0ecedc308845bdbecfd3035e02bb6c",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.another_client_side_scripting == 'no';\n})()",
+          "label": "No"
+        },
+        {
+          "id": "582513095ec84d8c9f40dfae2b037484",
+          "edgeType": "Branch",
+          "source": "ca717c5445b94d37a40373bff5fd0aca",
+          "target": "00761196b20c42cc8f3f1512523764ac",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.another_client_side_scripting == 'yes';\n})()",
+          "label": "Yes"
+        },
+        {
+          "id": "0a3eb4edc1e24744b8857bcd6f537f15",
+          "edgeType": "Branch",
+          "source": "9ea6ae840f9c42f1a52117c3c99933ce",
+          "target": "e108fec48d754e1e80cb776cad1d81ab",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.type_of_action == 'validate_string';\n})()\n",
+          "label": "Validate a string"
+        },
+        {
+          "id": "948bdac8ad964af888aa301b6d4a159c",
+          "edgeType": "Edge",
+          "source": "e108fec48d754e1e80cb776cad1d81ab",
+          "target": "ecab0ffe179c4e33adf937b915c2ce81",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "d04f8ef54b454ea4bdc4933580b8870f",
+          "edgeType": "Branch",
+          "source": "9ea6ae840f9c42f1a52117c3c99933ce",
+          "target": "938c8eadf34243879aa9ed064931b4bb",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.type_of_action == 'validate_form';\n})()\n",
+          "label": "Validate on Submit"
+        },
+        {
+          "id": "d1d202474a1f48e7b4c989516402d5e6",
+          "edgeType": "Edge",
+          "source": "938c8eadf34243879aa9ed064931b4bb",
+          "target": "ecab0ffe179c4e33adf937b915c2ce81",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "d9e48df6e97148d39643751cf7a9a785",
+          "edgeType": "Branch",
+          "source": "9ea6ae840f9c42f1a52117c3c99933ce",
+          "target": "c354e923302d4452b855ebd0fa425ca6",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.type_of_action == 'user';\n})()\n",
+          "label": "Logged in User"
+        },
+        {
+          "id": "6b3d19d76fd945fb881bf4ec64863714",
+          "edgeType": "Edge",
+          "source": "c354e923302d4452b855ebd0fa425ca6",
+          "target": "ecab0ffe179c4e33adf937b915c2ce81",
+          "sourcePort": "",
+          "targetPort": ""
+        }
+      ]
+    }
+  },
+  "variables": {
+    "e56c8dcf1fab431799f4698a9146d309": {
+      "id": "e56c8dcf1fab431799f4698a9146d309",
+      "name": "type_of_action",
+      "label": "Type Of Action",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Set a field to read-only, mandatory, visible or clear the field value",
+          "value": "ui_policy"
+        },
+        {
+          "label": "Read a Field",
+          "value": "read"
+        },
+        {
+          "label": "Update a Field",
+          "value": "update"
+        },
+        {
+          "label": "Create a Record",
+          "value": "create"
+        },
+        {
+          "label": "Use an if statement in a client script",
+          "value": "if_statement"
+        },
+        {
+          "label": "Change field value to lower case",
+          "value": "lower"
+        },
+        {
+          "label": "Display a message",
+          "value": "message"
+        },
+        {
+          "label": "Disable an attachment",
+          "value": "attachment"
+        },
+        {
+          "label": "Validate Email Address",
+          "value": "email"
+        },
+        {
+          "label": "Validate a String",
+          "value": "validate_string"
+        },
+        {
+          "label": "Validate a From on Submit",
+          "value": "validate_form"
+        },
+        {
+          "label": "Set field based on logged in user",
+          "value": "user"
+        }
+      ]
+    },
+    "6193dbfd04e4491790b1be207184f10a": {
+      "id": "6193dbfd04e4491790b1be207184f10a",
+      "name": "where_is_the_field_to_read",
+      "label": "Where Is The Field To Read",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "On the form",
+          "value": "form"
+        },
+        {
+          "label": "On the record but not on the form",
+          "value": "record"
+        },
+        {
+          "label": "On a different table without a related field linking to it from this record",
+          "value": "table"
+        },
+        {
+          "label": "On scratchpad",
+          "value": "scratchpad"
+        }
+      ]
+    },
+    "c381006f01c544c0b588684b3c4f35b5": {
+      "id": "c381006f01c544c0b588684b3c4f35b5",
+      "name": "where_is_the_field_to_update",
+      "label": "Where Is The Field To Update",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "On the form and/or record",
+          "value": "form_record"
+        },
+        {
+          "label": "On a different table",
+          "value": "table"
+        }
+      ]
+    },
+    "0d936d34a81c45e5a2bad5c62c208832": {
+      "id": "0d936d34a81c45e5a2bad5c62c208832",
+      "name": "type_of_field_to_read",
+      "label": "Type Of Field To Read",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "String",
+          "value": "string"
+        },
+        {
+          "label": "Date",
+          "value": "date"
+        },
+        {
+          "label": "Reference",
+          "value": "reference"
+        },
+        {
+          "label": "Choice",
+          "value": "choice"
+        }
+      ]
+    },
+    "6325e2d943264be7bd4144697d37dbdf": {
+      "id": "6325e2d943264be7bd4144697d37dbdf",
+      "name": "scratchpad_or_hide",
+      "label": "Scratchpad Or Hide",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Using the scratchpad",
+          "value": "scratchpad"
+        },
+        {
+          "label": "Adding the field and hiding it",
+          "value": "hide"
+        }
+      ]
+    },
+    "4d7ee1ee84e64cfa83fbb3de24c67129": {
+      "id": "4d7ee1ee84e64cfa83fbb3de24c67129",
+      "name": "value_or_display_value_of_choice",
+      "label": "Value Or Display Value Of Choice",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Value",
+          "value": "value"
+        },
+        {
+          "label": "Display",
+          "value": "display"
+        }
+      ]
+    },
+    "e6bd2dcab18b48a1880ca343bb690ea3": {
+      "id": "e6bd2dcab18b48a1880ca343bb690ea3",
+      "name": "helpful",
+      "label": "Helpful",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Yes",
+          "value": "yes"
+        },
+        {
+          "label": "No",
+          "value": "no"
+        }
+      ]
+    },
+    "efb5559bcfc340a9880b93629b4e3a23": {
+      "id": "efb5559bcfc340a9880b93629b4e3a23",
+      "name": "ui_policy_scripting",
+      "label": "UI Policy Scripting",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Yes",
+          "value": "yes"
+        },
+        {
+          "label": "No",
+          "value": "no"
+        }
+      ]
+    },
+    "3c8a75d494ed4341a6db10c63aea48a2": {
+      "id": "3c8a75d494ed4341a6db10c63aea48a2",
+      "name": "type_of_field_to_update",
+      "label": "Type Of Field To Update",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "String",
+          "value": "string"
+        },
+        {
+          "label": "Date",
+          "value": "date"
+        },
+        {
+          "label": "Reference",
+          "value": "reference"
+        },
+        {
+          "label": "Field on Reference",
+          "value": "field_on_reference"
+        },
+        {
+          "label": "Choice",
+          "value": "choice"
+        }
+      ]
+    },
+    "a08193695b084dc09b982ff8dc0a2261": {
+      "id": "a08193695b084dc09b982ff8dc0a2261",
+      "name": "field_you_are_looking_to_read",
+      "label": "Field You Are Looking To Read",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "sys_id",
+          "value": "sysid"
+        },
+        {
+          "label": "Any other field on that record",
+          "value": "other"
+        }
+      ]
+    },
+    "79b0d24468b54a88a0809bb1eaeaf4c0": {
+      "id": "79b0d24468b54a88a0809bb1eaeaf4c0",
+      "name": "another_client_side_scripting",
+      "label": "Another Client-Side Scripting",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Yes",
+          "value": "yes"
+        },
+        {
+          "label": "No",
+          "value": "no"
+        }
+      ]
+    }
+  }
+}</graph>
+        <key_phrases>ServiceNow Client-Side Scripting,javascript,client script,ui policy,business rule,server side scripting</key_phrases>
+        <live_agent>false</live_agent>
+        <name>ServiceNow Client-Side Scripting</name>
+        <roles>public</roles>
+        <sys_class_name>sys_cb_topic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-01-06 22:09:28</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_id>a0c59256dbb2e3000f8828474896195e</sys_id>
+        <sys_mod_count>66</sys_mod_count>
+        <sys_name>ServiceNow Client-Side Scripting</sys_name>
+        <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+        <sys_update_name>sys_cb_topic_a0c59256dbb2e3000f8828474896195e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-01-13 20:59:38</sys_updated_on>
+        <variables/>
+    </sys_cb_topic>
+    <sys_variable_value action="delete_multiple" query="document_key=a0c59256dbb2e3000f8828474896195e"/>
+</record_update>

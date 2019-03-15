@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<database>
+<?xml version="1.0" encoding="UTF-8"?><database>
     <element extends="sys_import_set_row" label="ScriptingExampleExcel" max_length="40" name="u_scripting_example_excel" type="collection">
         <element attributes="import_attribute_name=Account Number,edge_encryption_enabled=true" label="Account Number" max_length="40" name="u_account_number" type="string"/>
         <element attributes="import_attribute_name=Active,edge_encryption_enabled=true" label="Active" max_length="40" name="u_active" type="string"/>

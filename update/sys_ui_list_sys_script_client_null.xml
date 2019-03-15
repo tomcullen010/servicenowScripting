@@ -1,80 +1,94 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update>
+<?xml version="1.0" encoding="UTF-8"?><record_update>
     <sys_ui_list parent="" relationship="" sys_domain="global" table="sys_script_client" version="2" view="">
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>name</element>
-            <list_id display_value="sys_script_client" element="NULL" name="sys_script_client" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">82c48bd513133200e5adbd522244b07c</list_id>
+            <list_id display_value="sys_script_client" element="NULL" name="sys_script_client" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">fa56a532d700310066f70eca5e61039b</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>0</position>
             <sum>false</sum>
-            <sys_created_by>system</sys_created_by>
-            <sys_created_on>2017-06-11 06:58:54</sys_created_on>
-            <sys_id>4ac48bd513133200e5adbd522244b07c</sys_id>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2014-11-01 17:48:34</sys_created_on>
+            <sys_id>fe56a532d700310066f70eca5e61039b</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>system</sys_updated_by>
-            <sys_updated_on>2017-06-11 06:58:54</sys_updated_on>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2014-11-01 17:48:34</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>active</element>
-            <list_id display_value="sys_script_client" element="NULL" name="sys_script_client" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">82c48bd513133200e5adbd522244b07c</list_id>
+            <list_id display_value="sys_script_client" element="NULL" name="sys_script_client" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">fa56a532d700310066f70eca5e61039b</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>1</position>
             <sum>false</sum>
-            <sys_created_by>system</sys_created_by>
-            <sys_created_on>2017-06-11 06:58:54</sys_created_on>
-            <sys_id>cac48bd513133200e5adbd522244b07c</sys_id>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2014-11-01 17:48:34</sys_created_on>
+            <sys_id>3256a532d700310066f70eca5e61039c</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>system</sys_updated_by>
-            <sys_updated_on>2017-06-11 06:58:54</sys_updated_on>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2014-11-01 17:48:34</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>table</element>
-            <list_id display_value="sys_script_client" element="NULL" name="sys_script_client" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">82c48bd513133200e5adbd522244b07c</list_id>
+            <list_id display_value="sys_script_client" element="NULL" name="sys_script_client" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">fa56a532d700310066f70eca5e61039b</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>2</position>
             <sum>false</sum>
-            <sys_created_by>system</sys_created_by>
-            <sys_created_on>2017-06-11 06:58:54</sys_created_on>
-            <sys_id>4ec48bd513133200e5adbd522244b07c</sys_id>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2014-11-01 17:48:34</sys_created_on>
+            <sys_id>7256a532d700310066f70eca5e61039c</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>system</sys_updated_by>
-            <sys_updated_on>2017-06-11 06:58:54</sys_updated_on>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2014-11-01 17:48:34</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>view</element>
-            <list_id display_value="sys_script_client" element="NULL" name="sys_script_client" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">82c48bd513133200e5adbd522244b07c</list_id>
+            <element>sys_scope</element>
+            <list_id display_value="sys_script_client" element="NULL" name="sys_script_client" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">fa56a532d700310066f70eca5e61039b</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>3</position>
             <sum>false</sum>
-            <sys_created_by>system</sys_created_by>
-            <sys_created_on>2017-06-11 06:58:54</sys_created_on>
-            <sys_id>cec48bd513133200e5adbd522244b07c</sys_id>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2014-11-01 17:48:34</sys_created_on>
+            <sys_id>b256a532d700310066f70eca5e61039c</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>system</sys_updated_by>
-            <sys_updated_on>2017-06-11 06:58:54</sys_updated_on>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2014-11-01 17:48:34</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>type</element>
-            <list_id display_value="sys_script_client" element="NULL" name="sys_script_client" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">82c48bd513133200e5adbd522244b07c</list_id>
+            <element>view</element>
+            <list_id display_value="sys_script_client" element="NULL" name="sys_script_client" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">fa56a532d700310066f70eca5e61039b</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>4</position>
             <sum>false</sum>
-            <sys_created_by>system</sys_created_by>
-            <sys_created_on>2017-06-11 06:58:54</sys_created_on>
-            <sys_id>42c48bd513133200e5adbd522244b07d</sys_id>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2014-11-01 17:48:34</sys_created_on>
+            <sys_id>f256a532d700310066f70eca5e61039c</sys_id>
             <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>system</sys_updated_by>
-            <sys_updated_on>2017-06-11 06:58:54</sys_updated_on>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2014-11-01 17:48:34</sys_updated_on>
+        </sys_ui_list_element>
+        <sys_ui_list_element action="INSERT_OR_UPDATE">
+            <average_value>false</average_value>
+            <element>type</element>
+            <list_id display_value="sys_script_client" element="NULL" name="sys_script_client" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">fa56a532d700310066f70eca5e61039b</list_id>
+            <max_value>false</max_value>
+            <min_value>false</min_value>
+            <position>5</position>
+            <sum>false</sum>
+            <sys_created_by>admin</sys_created_by>
+            <sys_created_on>2014-11-01 17:48:34</sys_created_on>
+            <sys_id>3656a532d700310066f70eca5e61039c</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>admin</sys_updated_by>
+            <sys_updated_on>2014-11-01 17:48:34</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list action="INSERT_OR_UPDATE">
             <average_value>false</average_value>

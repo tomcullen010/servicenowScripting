@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update>
+<?xml version="1.0" encoding="UTF-8"?><record_update>
     <sys_documentation element="" label="Building List" language="en" table="x_snc_servicenow_s_building_list">
         <sys_documentation action="INSERT_OR_UPDATE">
             <element/>

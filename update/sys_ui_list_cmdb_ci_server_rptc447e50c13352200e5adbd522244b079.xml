@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update>
+<?xml version="1.0" encoding="UTF-8"?><record_update>
     <sys_ui_list parent="" relationship="" sys_domain="global" table="cmdb_ci_server" version="2" view="RPTc447e50c13352200e5adbd522244b079">
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>

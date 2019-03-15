@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update>
+<?xml version="1.0" encoding="UTF-8"?><record_update>
     <sys_ui_section caption="Date Validation" section_id="0c02915113e96240e5adbd522244b06a" sys_domain="global" table="x_snc_servicenow_s_scripting_examples" version="3" view="">
         <sys_ui_element action="INSERT_OR_UPDATE">
             <element>start_date</element>

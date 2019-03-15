@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update table="sys_number">
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_number">
     <sys_number action="INSERT_OR_UPDATE">
         <category display_value="" name="x_snc_servicenow_s_building_access_approval">x_snc_servicenow_s_building_access_approval</category>
         <maximum_digits>7</maximum_digits>

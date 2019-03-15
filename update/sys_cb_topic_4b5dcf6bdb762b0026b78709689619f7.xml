@@ -1,0 +1,1645 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_cb_topic">
+    <sys_cb_topic action="INSERT_OR_UPDATE">
+        <applicability/>
+        <connect_queue/>
+        <description>ServiceNow Scripting</description>
+        <graph>{
+  "goals": {
+    "ff968b99448c45919cdbcd415b438a23": {
+      "id": "ff968b99448c45919cdbcd415b438a23",
+      "trigger": {
+        "type": "primary"
+      },
+      "name": "primary",
+      "applicability": "",
+      "description": "",
+      "nodes": {
+        "5441467849a54dde8bf93409c63afff5": {
+          "id": "5441467849a54dde8bf93409c63afff5",
+          "stepType": "Start",
+          "name": "Start",
+          "greetingResponse": {
+            "mode": "simple",
+            "value": ""
+          }
+        },
+        "26ae07dbcda34032bd405bdb4252faff": {
+          "id": "26ae07dbcda34032bd405bdb4252faff",
+          "stepType": "TerminateGoal",
+          "name": "End",
+          "confirmationMessage": {
+            "value": "I hope this has made your scripting easier.",
+            "mode": "simple"
+          }
+        },
+        "43954caed7e545cab862927dc26edfda": {
+          "stepType": "ChoicePrompt",
+          "name": "When does script need to occur",
+          "prompt": {
+            "value": "Can the action be done after the user saves the record?  If the action can be done after the user saves the record, we will use server-side scripting which is more efficient and the preferred approach. ",
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": "",
+          "optional": false,
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "ce8703f855704d4f9b4422eb21b7f11f",
+          "id": "43954caed7e545cab862927dc26edfda"
+        },
+        "01d1b4ce967a47098c524c897454db48": {
+          "id": "01d1b4ce967a47098c524c897454db48",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "b840a73eb42742fc84f8e93ca3eca559": {
+          "stepType": "ChoicePrompt",
+          "name": "Type of Action",
+          "prompt": {
+            "value": "What type of action are you looking to do?",
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": "",
+          "optional": false,
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "ad514d8885bf47f5a051dda778d1250e",
+          "id": "b840a73eb42742fc84f8e93ca3eca559"
+        },
+        "f0063153756e4096a6908da5cb88f7de": {
+          "id": "f0063153756e4096a6908da5cb88f7de",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "96ea7afc601e4213873aaae59f8adf21": {
+          "stepType": "ChoicePrompt",
+          "name": "Where is the field to read",
+          "prompt": {
+            "value": "Where is the field you are looking to read?",
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": "",
+          "optional": false,
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "8de10c0425b8415f8fef4b04aed588c8",
+          "id": "96ea7afc601e4213873aaae59f8adf21"
+        },
+        "de3038d65a264b8b960fa17d13031e56": {
+          "id": "de3038d65a264b8b960fa17d13031e56",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "122e83d20aff4d93b9a2618720f0f35e": {
+          "stepType": "ChoicePrompt",
+          "name": "Where is the field to update",
+          "prompt": {
+            "value": "Where is the field to update?",
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": "",
+          "optional": false,
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "89308d6a01904056a0120aaf209b9983",
+          "id": "122e83d20aff4d93b9a2618720f0f35e"
+        },
+        "476c027fd7c04387bc6abdcac720366a": {
+          "id": "476c027fd7c04387bc6abdcac720366a",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "081c29c029234175995f7afc1bff7a8e": {
+          "id": "081c29c029234175995f7afc1bff7a8e",
+          "stepType": "TextOutput",
+          "name": "AJAX",
+          "value": {
+            "value": "Since GlideRecord is not available in a Scoped Application, then you must use GlideAjax.. Since the record is on a different table, you have to use a client script to call a server script using a script include.  This will allow you to leverage server-scripting initiated from a client-script.",
+            "mode": "simple"
+          },
+          "applicability": ""
+        },
+        "f00f2feac9564957beb11af24319ab31": {
+          "id": "f00f2feac9564957beb11af24319ab31",
+          "stepType": "TextOutput",
+          "name": "Use a UI Policy",
+          "value": {
+            "value": "A UI Policy is more efficient to set afield to read-only, mandatory, visible or clear the field value.  This can also be done via scripting if needed inside a Client Script.",
+            "mode": "simple"
+          },
+          "applicability": ""
+        },
+        "0fc3b194f33c4ca1ac0bc5303d1eac47": {
+          "id": "0fc3b194f33c4ca1ac0bc5303d1eac47",
+          "stepType": "TextOutput",
+          "name": "Still Learning",
+          "value": {
+            "value": "You will need to leverage server side scripting.  I continue to learn every day.  At this time, I am focused on client scripts only.",
+            "mode": "simple"
+          },
+          "applicability": ""
+        },
+        "7678b27435374230bf79b118702a4c0f": {
+          "stepType": "ChoicePrompt",
+          "name": "Type of field to read",
+          "prompt": {
+            "value": "What type of field is it?",
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": "",
+          "optional": false,
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "8301af42f5d34e9f9aa875d20db56b5a",
+          "id": "7678b27435374230bf79b118702a4c0f"
+        },
+        "f4fda6d18fd742fba528af9ea1c7f31e": {
+          "id": "f4fda6d18fd742fba528af9ea1c7f31e",
+          "stepType": "TextOutput",
+          "name": "Scratchpad or hide",
+          "value": {
+            "value": "If a field for the record you are looking at is not on the form, you can either send it using the scratchpad or add it to the form and use a UI Policy to hide it.",
+            "mode": "simple"
+          },
+          "applicability": ""
+        },
+        "0a62c080c2004149a6a605bf4c2ede5f": {
+          "stepType": "ChoicePrompt",
+          "name": "Scratchpad or Hide",
+          "prompt": {
+            "value": "How would you like to get the field value?",
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": "",
+          "optional": false,
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "e3750fe7255f42f1873fb43fa6fa01d4",
+          "id": "0a62c080c2004149a6a605bf4c2ede5f"
+        },
+        "8b93180d9e1d44b58da1baad553ab994": {
+          "id": "8b93180d9e1d44b58da1baad553ab994",
+          "stepType": "TextOutput",
+          "name": "Create Scratchpad Variable",
+          "value": {
+            "value": "Create a Display Business Rule to store the value in the scratch pad In Display Business Rule g_scratchpad.my_field_value = current.my_field_value;  //current. is used as this is a server script.",
+            "mode": "simple"
+          },
+          "applicability": ""
+        },
+        "ace9322ec8ea41c2ae7891ecafa5ea8d": {
+          "id": "ace9322ec8ea41c2ae7891ecafa5ea8d",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "b26472732d574d7fbd5e0ef34cdba188": {
+          "id": "b26472732d574d7fbd5e0ef34cdba188",
+          "stepType": "TextOutput",
+          "name": "Hide",
+          "value": {
+            "value": "Add the field to the form and then use a UI Policy or client script to hide the field",
+            "mode": "simple"
+          },
+          "applicability": ""
+        },
+        "117ed43cb2684b8c992ad68c91c1c60d": {
+          "id": "117ed43cb2684b8c992ad68c91c1c60d",
+          "stepType": "TextOutput",
+          "name": "Read field",
+          "value": {
+            "value": "Now that you have a way to read the field, lets figure how to get the proper value based on the type of field.",
+            "mode": "simple"
+          },
+          "applicability": ""
+        },
+        "88d56559a61641e6bad7af5878d7c38b": {
+          "id": "88d56559a61641e6bad7af5878d7c38b",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "a71a96e805e94851b4e1840ca1d87368": {
+          "id": "a71a96e805e94851b4e1840ca1d87368",
+          "stepType": "TextOutput",
+          "name": "String Script",
+          "value": {
+            "value": "var value_of_my_field_name = g_form.getValue(‘my_field_name);",
+            "mode": "simple"
+          },
+          "applicability": ""
+        },
+        "28aebb504e0a4240a5a4c7e24594af52": {
+          "id": "28aebb504e0a4240a5a4c7e24594af52",
+          "stepType": "TextOutput",
+          "name": "Date Script",
+          "value": {
+            "value": "var value_of_my_field_name = g_form.getValue(‘my_field_name);",
+            "mode": "simple"
+          },
+          "applicability": ""
+        },
+        "ff92b897370a4656961ffb5bc60bf912": {
+          "stepType": "ChoicePrompt",
+          "name": "Value or Display Value of Choice",
+          "prompt": {
+            "value": "Do you want the value of the field or the display value?",
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": "",
+          "optional": false,
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "586d60a73bad445a834ad0531326ba82",
+          "id": "ff92b897370a4656961ffb5bc60bf912"
+        },
+        "cc4bcd6951744164b45811659bfd6ad4": {
+          "id": "cc4bcd6951744164b45811659bfd6ad4",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "787d364f5b334274aba5227e4f10105a": {
+          "id": "787d364f5b334274aba5227e4f10105a",
+          "stepType": "TextOutput",
+          "name": "Display Script",
+          "value": {
+            "value": "var my_field_value = g_form.getValue('my_field_name'); \talert('The getOption is ' + g_form.getOption('my_field_name', my_field_value).text);",
+            "mode": "simple"
+          },
+          "applicability": ""
+        },
+        "64ac47466c064fb086f0cb24bbfa2b87": {
+          "id": "64ac47466c064fb086f0cb24bbfa2b87",
+          "stepType": "TextOutput",
+          "name": "Value Script",
+          "value": {
+            "value": "var value_of_my_field_name = g_form.getValue(‘my_field_name);",
+            "mode": "simple"
+          },
+          "applicability": ""
+        },
+        "ec158eca230141fbb761fa33c34efc67": {
+          "stepType": "ChoicePrompt",
+          "name": "Helpful",
+          "prompt": {
+            "value": "Was this helpful?",
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": "",
+          "optional": false,
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "6172058c58bb4caeba342f5a794ed563",
+          "id": "ec158eca230141fbb761fa33c34efc67"
+        },
+        "7cde8e026d964afca6af502978e17939": {
+          "stepType": "ChoicePrompt",
+          "name": "UI Policy Scripting",
+          "prompt": {
+            "value": "Would you still like to learn how to do this via scripting instead of a UI Policy?",
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": "",
+          "optional": false,
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "7657d909db5449ecb5e23ae7e87b03f4",
+          "id": "7cde8e026d964afca6af502978e17939"
+        },
+        "c35cb0df6a0e44c49812ddfa6f26ccc8": {
+          "id": "c35cb0df6a0e44c49812ddfa6f26ccc8",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "76cca5dd25374e34a29292dc7f48c1ca": {
+          "id": "76cca5dd25374e34a29292dc7f48c1ca",
+          "stepType": "TextOutput",
+          "name": "UI Policy Scripting",
+          "value": {
+            "value": "The following 4 scripts can do the same as a UI policy.  \\n  g_form.setDisplay('name_of_your_field', false);  g_form.clearValue('name_of_your_field_reference'); g_form.setMandatory('name_of_your_field_date', true); g_form.setReadOnly('name_of_your_field_date_time', true);",
+            "mode": "simple"
+          },
+          "applicability": ""
+        },
+        "a27210f37f614e42bc8ff378f97f6779": {
+          "id": "a27210f37f614e42bc8ff378f97f6779",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "438f708cbe5a4d949ba1af0bf895db2a": {
+          "stepType": "ChoicePrompt",
+          "name": "Another Scripting Question",
+          "prompt": {
+            "value": "Do you have another scripting question?",
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": "",
+          "optional": false,
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "5acdbef8f26f477abd81b6ebd694306d",
+          "id": "438f708cbe5a4d949ba1af0bf895db2a"
+        },
+        "eea9477be1b5407890b229c7b1344440": {
+          "id": "eea9477be1b5407890b229c7b1344440",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "4b41e4e035544d58bbcd4b6ef86bb2ed": {
+          "stepType": "ChoicePrompt",
+          "name": "Type of field to update",
+          "prompt": {
+            "value": "What type of field is it?",
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": "",
+          "optional": false,
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "8df7b2edc02f412db9d895e167424bb4",
+          "id": "4b41e4e035544d58bbcd4b6ef86bb2ed"
+        },
+        "aa0cd68113ec427a801f9a0aa2d385d6": {
+          "id": "aa0cd68113ec427a801f9a0aa2d385d6",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "f18afaebd3164533821acf0e8476b425": {
+          "id": "f18afaebd3164533821acf0e8476b425",
+          "stepType": "TextOutput",
+          "name": "String Script",
+          "value": {
+            "value": "The g_form.setValue can be used to update any fields on the record even if they are not on the form. \\n  g_form.setValue('name_of_your_field','this is new text');",
+            "mode": "simple"
+          },
+          "applicability": ""
+        },
+        "24764327a496478f80c17b348e0929a1": {
+          "id": "24764327a496478f80c17b348e0929a1",
+          "stepType": "TextOutput",
+          "name": "Value Script",
+          "value": {
+            "value": "The g_form.setValue can be used to update any fields on the record even if they are not on the form. \\n  g_form.setValue('name_of_your_field','1abb1a5a3b300300d901655593efc461');",
+            "mode": "simple"
+          },
+          "applicability": ""
+        },
+        "c2166c314cea484ebe98f98e2af2976a": {
+          "id": "c2166c314cea484ebe98f98e2af2976a",
+          "stepType": "TextOutput",
+          "name": "Introduction",
+          "value": {
+            "value": "Since finding the right script to perform an action can be challenging, let me help you find the right script for what you are looking to do.",
+            "mode": "simple"
+          },
+          "applicability": ""
+        },
+        "402ebda953af4d9c9fd8c8fa9f883fec": {
+          "id": "402ebda953af4d9c9fd8c8fa9f883fec",
+          "stepType": "TextOutput",
+          "name": "AJAX",
+          "value": {
+            "value": "Since the record is on a different table, you have to use a client script to call a server script using a script include.  This will allow you to leverage server-scripting initiated from a client-script.",
+            "mode": "simple"
+          },
+          "applicability": ""
+        },
+        "837a285d4cab49929e14daf2a8197820": {
+          "id": "837a285d4cab49929e14daf2a8197820",
+          "stepType": "TextOutput",
+          "name": "Scratchpad Script",
+          "value": {
+            "value": "You can use the variable that you stored in the scratchpad g_scratchpad.my_field_value;",
+            "mode": "simple"
+          },
+          "applicability": ""
+        },
+        "4fc4f322dce34b3cbbf801e5a0fb666f": {
+          "id": "4fc4f322dce34b3cbbf801e5a0fb666f",
+          "stepType": "TextOutput",
+          "name": "Date Script",
+          "value": {
+            "value": "The g_form.setValue can be used to update any fields on the record even if they are not on the form. \\n  g_form.setValue('name_of_your_field', '2018-05-12'); //Use this format for Date field g_form.setValue('name_of_your_field, '2019-01-18 17:20:41');  //Use this format for Date/Time Field",
+            "mode": "simple"
+          },
+          "applicability": ""
+        },
+        "c633414dd7c84429be7f3a38b7e6a332": {
+          "id": "c633414dd7c84429be7f3a38b7e6a332",
+          "stepType": "TextOutput",
+          "name": "Get Table Name and Sys_id",
+          "value": {
+            "value": "Get the Table Name and Sys_id.",
+            "mode": "simple"
+          },
+          "applicability": ""
+        },
+        "b632371e9303455ab1e4bf66258e8c02": {
+          "stepType": "ChoicePrompt",
+          "name": "field you are looking to read",
+          "prompt": {
+            "value": "What field are you looking to read?",
+            "mode": "simple"
+          },
+          "confirmMessage": {
+            "value": "",
+            "mode": "simple"
+          },
+          "acknowledgeMsg": {
+            "value": "",
+            "mode": "simple"
+          },
+          "applicability": "",
+          "optional": false,
+          "defaultValue": {
+            "value": "",
+            "mode": "simple"
+          },
+          "variableId": "cefb2e99b80c4bca88ff97ce168462e2",
+          "id": "b632371e9303455ab1e4bf66258e8c02"
+        },
+        "517589b6e1d748afa20b9d19445b9a89": {
+          "id": "517589b6e1d748afa20b9d19445b9a89",
+          "stepType": "Decision",
+          "name": "Decision"
+        },
+        "8d2ffc5c3eb1447dafbb3cf0f99a7d0f": {
+          "id": "8d2ffc5c3eb1447dafbb3cf0f99a7d0f",
+          "stepType": "TextOutput",
+          "name": "Sys_id Script",
+          "value": {
+            "value": "The g_form.getValue can only read fields on the form. \\n  Var my_field_value=g_form.getValue('name_of_your_field');",
+            "mode": "simple"
+          },
+          "applicability": ""
+        },
+        "daf33a58196a4a9bb760a6234da72f21": {
+          "id": "daf33a58196a4a9bb760a6234da72f21",
+          "stepType": "TextOutput",
+          "name": "Other Script",
+          "value": {
+            "value": "The g_form.getValue can only read fields on the form. Since you are looking for a field of the reference field on your form, we must first get the record information from the server and then we have access to any fields for the reference field.\\n  var my_field_value = g_form.getReference('name_of_your_reference_field',getmyfieldvalue);\t \tfunction getmyfieldvalue(my_field_value) { \t\talert (my_field_value.name); \t}",
+            "mode": "simple"
+          },
+          "applicability": ""
+        },
+        "f4cfdff3e0234a32bcea8332850efea2": {
+          "id": "f4cfdff3e0234a32bcea8332850efea2",
+          "stepType": "TextOutput",
+          "name": "Client Script",
+          "value": {
+            "value": "We will use a Client Script to perform this action.  First, let me ask you a few questions in order for me to let you know what script you need.",
+            "mode": "simple"
+          },
+          "applicability": ""
+        },
+        "606d3f8bb53e415a87d63c66cccac91c": {
+          "id": "606d3f8bb53e415a87d63c66cccac91c",
+          "stepType": "TextOutput",
+          "name": "sys_id Script",
+          "value": {
+            "value": "The g_form.setValue can be used to update any fields on the record even if they are not on the form. \\n  g_form.setValue('name_of_your_field', ' 859c0103db3ee700b6c4b6c9689619b0'); ",
+            "mode": "simple"
+          },
+          "applicability": ""
+        },
+        "15461a2d85e84d058c308164fd0e5f8a": {
+          "id": "15461a2d85e84d058c308164fd0e5f8a",
+          "stepType": "TextOutput",
+          "name": "AJAX",
+          "value": {
+            "value": "Since GlideRecord is not available in a Scoped Application, then you must use GlideAjax.. Since the record is on a different table, you have to use a client script to call a server script using a script include.  This will allow you to leverage server-scripting initiated from a client-script.",
+            "mode": "simple"
+          },
+          "applicability": ""
+        },
+        "70804d5bc41142b5b47f2fb13136c49f": {
+          "id": "70804d5bc41142b5b47f2fb13136c49f",
+          "stepType": "TextOutput",
+          "name": "Script Include",
+          "value": {
+            "value": "/* Purpose:  Search a table based on a variable provided by a client script.  This is required because it is part of a scope application.  This requires a Client Script and a Script Include. Example Detais:  Searches a building request table to see if a request has already been submitted Used in: This Client script can be used for forms or Service Catalog NOTE:  Set Script Include \"Client callable\" field checked to allow Client Script to call Script Include */ var PassCodeAJAX = Class.create(); PassCodeAJAX.prototype = Object.extendsObject(global.AbstractAjaxProcessor, { \t \t//based on field passed by Client Script, search a table and return response if a record already exist \tcheckExisting : function() { \t\t//set variable with field being passed by Client Script \t\tvar reqFor = this.getParameter(\"sysparm_req_for\"); \t\t \t\t//set query against table you need based on variable that was passed by Client Script \t\tvar passCardRec = new GlideRecord(\"x_snc_servicenow_s_building_access_approval\"); \t\tpassCardRec.addQuery(\"building\", reqFor); \t\tpassCardRec.query(); \t\t//if a record already exist then return a value and if it does not exist return a different value \t\t//you could modify the return to return the record or records if needed \t\tif (passCardRec.hasNext()) { \t\t\treturn \"record_already_exist\"; \t\t} else { \t\t\treturn \"none\"; \t\t} \t}, \t \ttype: 'PassCodeAJAX' });",
+            "mode": "simple"
+          },
+          "applicability": ""
+        },
+        "23572c33e5054bf2a2fa26be44e58993": {
+          "id": "23572c33e5054bf2a2fa26be44e58993",
+          "stepType": "TextOutput",
+          "name": "Client Script",
+          "value": {
+            "value": "Client Script   function onChange(control, oldValue, newValue, isLoading, isTemplate) { //CLIENT SCRIPT /* Purpose:  Search a table based on a variable provided by a client script.  This is required because it is part of a scope application.  This requires a Client Script and a Script Include. Example Detais:  Searches a building request table to see if a request has already been submitted Used in: This Client script can be used for forms or Service Catalog */ \t \tif (isLoading || newValue === '') { \t\treturn; \t} \t \t//Do GlideAjax call to search a different table to confirm if record already exist \t//You must create a Script Include to search the table which in this case is PassCodeAJAX \tvar ga = new GlideAjax('PassCodeAJAX'); \tga.addParam('sysparm_name','checkExisting'); \tga.addParam('sysparm_req_for', newValue); \tga.getXML(checkExistingResponse); \t \tfunction checkExistingResponse(response) { \t\t//set response received by Glide Ajax in answer variable \t\tvar answer = response.responseXML.documentElement.getAttribute(\"answer\"); \t\t \t\t//if the answer is not none, then a record already exist and show message \t\tif (answer != \"none\") { \t\t\tg_form.showFieldMsg(\"u_building_access_approval_request\", \"A record already exist for this building\", \"error\"); \t\t\t//if the answer is none then do nothing \t\t} else { \t\t\tg_form.hideFieldMsg(\"u_building_access_approval_request\", true); \t\t} \t} }",
+            "mode": "simple"
+          },
+          "applicability": ""
+        },
+        "52fc4f3f65904250ad6be78ff0dc9729": {
+          "id": "52fc4f3f65904250ad6be78ff0dc9729",
+          "stepType": "TextOutput",
+          "name": "Script Include",
+          "value": {
+            "value": "/* Purpose:  Search a table based on a variable provided by a client script.  This is required because it is part of a scope application.  This requires a Client Script and a Script Include. Example Detais:  Searches a building request table to see if a request has already been submitted Used in: This Client script can be used for forms or Service Catalog NOTE:  Set Script Include \"Client callable\" field checked to allow Client Script to call Script Include */ var PassCodeAJAX = Class.create(); PassCodeAJAX.prototype = Object.extendsObject(global.AbstractAjaxProcessor, { \t \t//based on field passed by Client Script, search a table and return response if a record already exist \tcheckExisting : function() { \t\t//set variable with field being passed by Client Script \t\tvar reqFor = this.getParameter(\"sysparm_req_for\"); \t\t \t\t//set query against table you need based on variable that was passed by Client Script \t\tvar passCardRec = new GlideRecord(\"x_snc_servicenow_s_building_access_approval\"); \t\tpassCardRec.addQuery(\"building\", reqFor); \t\tpassCardRec.query(); \t\t//if a record already exist then return a value and if it does not exist return a different value \t\t//you could modify the return to return the record or records if needed \t\tif (passCardRec.hasNext()) { \t\t\treturn \"record_already_exist\"; \t\t} else { \t\t\treturn \"none\"; \t\t} \t}, \t \ttype: 'PassCodeAJAX' });",
+            "mode": "simple"
+          },
+          "applicability": ""
+        },
+        "f6a1837fa58b4005bc14c06f234064be": {
+          "id": "f6a1837fa58b4005bc14c06f234064be",
+          "stepType": "TextOutput",
+          "name": "Client Script",
+          "value": {
+            "value": "Client Script   function onChange(control, oldValue, newValue, isLoading, isTemplate) { //CLIENT SCRIPT /* Purpose:  Search a table based on a variable provided by a client script.  This is required because it is part of a scope application.  This requires a Client Script and a Script Include. Example Detais:  Searches a building request table to see if a request has already been submitted Used in: This Client script can be used for forms or Service Catalog */ \t \tif (isLoading || newValue === '') { \t\treturn; \t} \t \t//Do GlideAjax call to search a different table to confirm if record already exist \t//You must create a Script Include to search the table which in this case is PassCodeAJAX \tvar ga = new GlideAjax('PassCodeAJAX'); \tga.addParam('sysparm_name','checkExisting'); \tga.addParam('sysparm_req_for', newValue); \tga.getXML(checkExistingResponse); \t \tfunction checkExistingResponse(response) { \t\t//set response received by Glide Ajax in answer variable \t\tvar answer = response.responseXML.documentElement.getAttribute(\"answer\"); \t\t \t\t//if the answer is not none, then a record already exist and show message \t\tif (answer != \"none\") { \t\t\tg_form.showFieldMsg(\"u_building_access_approval_request\", \"A record already exist for this building\", \"error\"); \t\t\t//if the answer is none then do nothing \t\t} else { \t\t\tg_form.hideFieldMsg(\"u_building_access_approval_request\", true); \t\t} \t} }",
+            "mode": "simple"
+          },
+          "applicability": ""
+        },
+        "0bc0fa31e39b49c49e24ef817f18750c": {
+          "id": "0bc0fa31e39b49c49e24ef817f18750c",
+          "stepType": "TextOutput",
+          "name": "Client Script",
+          "value": {
+            "value": "Client Script   function onChange(control, oldValue, newValue, isLoading, isTemplate) { //CLIENT SCRIPT /* Purpose:  Search a table based on a variable provided by a client script.  This is required because it is part of a scope application.  This requires a Client Script and a Script Include. Example Detais:  Searches a building request table to see if a request has already been submitted Used in: This Client script can be used for forms or Service Catalog */ \t \tif (isLoading || newValue === '') { \t\treturn; \t} \t \t//Do GlideAjax call to search a different table to confirm if record already exist \t//You must create a Script Include to search the table which in this case is PassCodeAJAX \tvar ga = new GlideAjax('PassCodeAJAX'); \tga.addParam('sysparm_name','checkExisting'); \tga.addParam('sysparm_req_for', newValue); \tga.getXML(checkExistingResponse); \t \tfunction checkExistingResponse(response) { \t\t//set response received by Glide Ajax in answer variable \t\tvar answer = response.responseXML.documentElement.getAttribute(\"answer\"); \t\t \t\t//if the answer is not none, then a record already exist and show message \t\tif (answer != \"none\") { \t\t\tg_form.showFieldMsg(\"u_building_access_approval_request\", \"A record already exist for this building\", \"error\"); \t\t\t//if the answer is none then do nothing \t\t} else { \t\t\tg_form.hideFieldMsg(\"u_building_access_approval_request\", true); \t\t} \t} }",
+            "mode": "simple"
+          },
+          "applicability": ""
+        },
+        "35026d63624c4b54a807a072fbc113fd": {
+          "id": "35026d63624c4b54a807a072fbc113fd",
+          "stepType": "TextOutput",
+          "name": "Script Include",
+          "value": {
+            "value": "/* Purpose:  Search a table based on a variable provided by a client script.  This is required because it is part of a scope application.  This requires a Client Script and a Script Include. Example Detais:  Searches a building request table to see if a request has already been submitted Used in: This Client script can be used for forms or Service Catalog NOTE:  Set Script Include \"Client callable\" field checked to allow Client Script to call Script Include */ var PassCodeAJAX = Class.create(); PassCodeAJAX.prototype = Object.extendsObject(global.AbstractAjaxProcessor, { \t \t//based on field passed by Client Script, search a table and return response if a record already exist \tcheckExisting : function() { \t\t//set variable with field being passed by Client Script \t\tvar reqFor = this.getParameter(\"sysparm_req_for\"); \t\t \t\t//set query against table you need based on variable that was passed by Client Script \t\tvar passCardRec = new GlideRecord(\"x_snc_servicenow_s_building_access_approval\"); \t\tpassCardRec.addQuery(\"building\", reqFor); \t\tpassCardRec.query(); \t\t//if a record already exist then return a value and if it does not exist return a different value \t\t//you could modify the return to return the record or records if needed \t\tif (passCardRec.hasNext()) { \t\t\treturn \"record_already_exist\"; \t\t} else { \t\t\treturn \"none\"; \t\t} \t}, \t \ttype: 'PassCodeAJAX' });",
+            "mode": "simple"
+          },
+          "applicability": ""
+        },
+        "14d7b1de3da846a39aa1a11003960c87": {
+          "id": "14d7b1de3da846a39aa1a11003960c87",
+          "stepType": "MultiPartOutput",
+          "name": "",
+          "applicability": "",
+          "navigationLabel": "",
+          "messages": [
+            {
+              "type": "Text",
+              "value": "THis is my script ; ' "
+            },
+            {
+              "type": "Text",
+              "value": "This is just the beginning",
+              "height": "",
+              "width": "",
+              "header": {
+                "mode": "simple",
+                "value": ""
+              },
+              "label": {
+                "mode": "simple",
+                "value": ""
+              },
+              "url": {
+                "mode": "simple",
+                "value": ""
+              }
+            }
+          ]
+        }
+      },
+      "edges": [
+        {
+          "id": "04655eafc4244284b4fec38345fb06f6",
+          "edgeType": "Edge",
+          "source": "35026d63624c4b54a807a072fbc113fd",
+          "target": "ec158eca230141fbb761fa33c34efc67",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "46b6036739d048128d2385e727759214",
+          "edgeType": "Branch",
+          "source": "88d56559a61641e6bad7af5878d7c38b",
+          "target": "28aebb504e0a4240a5a4c7e24594af52",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.type_of_field_to_read == 'date';\n})()\n",
+          "label": "Date"
+        },
+        {
+          "id": "3d1cb876d31f42e6bee5e3923cdb8b93",
+          "edgeType": "Branch",
+          "source": "88d56559a61641e6bad7af5878d7c38b",
+          "target": "b632371e9303455ab1e4bf66258e8c02",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.type_of_field_to_read == 'reference';\n})()\n",
+          "label": "Reference"
+        },
+        {
+          "id": "967373a44ffb4d74a84ed3f75ea47706",
+          "edgeType": "Branch",
+          "source": "aa0cd68113ec427a801f9a0aa2d385d6",
+          "target": "4fc4f322dce34b3cbbf801e5a0fb666f",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.type_of_field_to_update == 'date';\n})()\n",
+          "label": "Date"
+        },
+        {
+          "id": "03ad46d36748451e932a8db1f0da186f",
+          "edgeType": "Branch",
+          "source": "aa0cd68113ec427a801f9a0aa2d385d6",
+          "target": "606d3f8bb53e415a87d63c66cccac91c",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.type_of_field_to_update == 'reference';\n})()\n",
+          "label": "Reference"
+        },
+        {
+          "id": "0aba98b2d472428592475f14e5ec5afb",
+          "edgeType": "Branch",
+          "source": "aa0cd68113ec427a801f9a0aa2d385d6",
+          "target": "24764327a496478f80c17b348e0929a1",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.type_of_field_to_update == 'choice';\n})()\n",
+          "label": "Choice"
+        },
+        {
+          "id": "e4741fac69594844a414c3a71c6f0032",
+          "edgeType": "Branch",
+          "source": "aa0cd68113ec427a801f9a0aa2d385d6",
+          "target": "c633414dd7c84429be7f3a38b7e6a332",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.type_of_field_to_update == 'field_on_reference';\n})()\n",
+          "label": "Field on Reference"
+        },
+        {
+          "id": "320865bd720d45ac97e01643f9e449f1",
+          "edgeType": "Edge",
+          "source": "76cca5dd25374e34a29292dc7f48c1ca",
+          "target": "ec158eca230141fbb761fa33c34efc67",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "6fc54ea779004c7c9cc3aa4ca73cd494",
+          "edgeType": "Edge",
+          "source": "0fc3b194f33c4ca1ac0bc5303d1eac47",
+          "target": "438f708cbe5a4d949ba1af0bf895db2a",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "5be614ac1693495e9f6896cd3e5f6788",
+          "edgeType": "Edge",
+          "source": "43954caed7e545cab862927dc26edfda",
+          "target": "01d1b4ce967a47098c524c897454db48",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "087e14a71d0444369b10fef8ee098ecb",
+          "edgeType": "Edge",
+          "source": "b840a73eb42742fc84f8e93ca3eca559",
+          "target": "f0063153756e4096a6908da5cb88f7de",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "1c78a29b520741389c968bc588336e20",
+          "edgeType": "Branch",
+          "source": "f0063153756e4096a6908da5cb88f7de",
+          "target": "96ea7afc601e4213873aaae59f8adf21",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.type_of_action == 'read';\n})()\n",
+          "label": "Read a Field"
+        },
+        {
+          "id": "fa97e22067d24a25900e91745de0f54a",
+          "edgeType": "Edge",
+          "source": "96ea7afc601e4213873aaae59f8adf21",
+          "target": "de3038d65a264b8b960fa17d13031e56",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "8e4a606fd087421082612aae80989b15",
+          "edgeType": "Branch",
+          "source": "f0063153756e4096a6908da5cb88f7de",
+          "target": "122e83d20aff4d93b9a2618720f0f35e",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.type_of_action == 'update';\n})()\n",
+          "label": "Update a Field"
+        },
+        {
+          "id": "ec6897cc69c446de87865abd17f47916",
+          "edgeType": "Edge",
+          "source": "122e83d20aff4d93b9a2618720f0f35e",
+          "target": "476c027fd7c04387bc6abdcac720366a",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "eca92c5b223a49ad9767e79f4fe5c9fc",
+          "edgeType": "Branch",
+          "source": "f0063153756e4096a6908da5cb88f7de",
+          "target": "081c29c029234175995f7afc1bff7a8e",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.type_of_action == 'create';\n})()\n",
+          "label": "Create a Record"
+        },
+        {
+          "id": "d16a65ceb47a49c485bb2c365156f867",
+          "edgeType": "Branch",
+          "source": "f0063153756e4096a6908da5cb88f7de",
+          "target": "f00f2feac9564957beb11af24319ab31",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.type_of_action == 'ui_policy';\n})()\n",
+          "label": "UI Policy"
+        },
+        {
+          "id": "4c7671ac61b14eebbec3276260be99cb",
+          "edgeType": "Branch",
+          "source": "01d1b4ce967a47098c524c897454db48",
+          "target": "0fc3b194f33c4ca1ac0bc5303d1eac47",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.when_does_script_need_to_occur == 'yes';\n})()\n",
+          "label": "Yes"
+        },
+        {
+          "id": "7a8e2527b11e4204870853de6de1f145",
+          "edgeType": "Branch",
+          "source": "de3038d65a264b8b960fa17d13031e56",
+          "target": "7678b27435374230bf79b118702a4c0f",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.where_is_the_field_to_read == 'form';\n})()\n",
+          "label": "Form"
+        },
+        {
+          "id": "4da94d6944ad463baad42540be79a118",
+          "edgeType": "Branch",
+          "source": "de3038d65a264b8b960fa17d13031e56",
+          "target": "f4fda6d18fd742fba528af9ea1c7f31e",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.where_is_the_field_to_read == 'record';\n})()\n",
+          "label": "Record"
+        },
+        {
+          "id": "b041e70e57fd4eb2b810d7357b7679f3",
+          "edgeType": "Edge",
+          "source": "f4fda6d18fd742fba528af9ea1c7f31e",
+          "target": "0a62c080c2004149a6a605bf4c2ede5f",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "ec6047c5f96f4430af4b4f40e901c1ad",
+          "edgeType": "Edge",
+          "source": "8b93180d9e1d44b58da1baad553ab994",
+          "target": "837a285d4cab49929e14daf2a8197820",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "50fd6d54f9df47899e498d9f8cff7b99",
+          "edgeType": "Edge",
+          "source": "0a62c080c2004149a6a605bf4c2ede5f",
+          "target": "ace9322ec8ea41c2ae7891ecafa5ea8d",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "151012756a814823a30190d9fa1c3273",
+          "edgeType": "Branch",
+          "source": "ace9322ec8ea41c2ae7891ecafa5ea8d",
+          "target": "8b93180d9e1d44b58da1baad553ab994",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.scratchpad_or_hide == 'scratchpad';\n})()\n",
+          "label": "Scratchpad"
+        },
+        {
+          "id": "2ff52a6306b24fc59033e807100024fe",
+          "edgeType": "Branch",
+          "source": "ace9322ec8ea41c2ae7891ecafa5ea8d",
+          "target": "b26472732d574d7fbd5e0ef34cdba188",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.scratchpad_or_hide == 'hide';\n})()\n",
+          "label": "Hide"
+        },
+        {
+          "id": "c94cd0c6ff2a4ec593e718ffe503741b",
+          "edgeType": "Edge",
+          "source": "b26472732d574d7fbd5e0ef34cdba188",
+          "target": "117ed43cb2684b8c992ad68c91c1c60d",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "bfc176b9409e4571a3c2b96c5bfa76db",
+          "edgeType": "Edge",
+          "source": "117ed43cb2684b8c992ad68c91c1c60d",
+          "target": "438f708cbe5a4d949ba1af0bf895db2a",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "095bc57900aa4029b08279652d4d56af",
+          "edgeType": "Edge",
+          "source": "7678b27435374230bf79b118702a4c0f",
+          "target": "88d56559a61641e6bad7af5878d7c38b",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "12b07ec3aff248fb967b67a87f4faa95",
+          "edgeType": "Branch",
+          "source": "88d56559a61641e6bad7af5878d7c38b",
+          "target": "a71a96e805e94851b4e1840ca1d87368",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.type_of_field_to_read == 'string';\n})()\n",
+          "label": "String"
+        },
+        {
+          "id": "c74a7743b6014d24adb5b4e7c3b87a35",
+          "edgeType": "Edge",
+          "source": "28aebb504e0a4240a5a4c7e24594af52",
+          "target": "ec158eca230141fbb761fa33c34efc67",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "f9704caf71fe482e9a4fb3b5665769b9",
+          "edgeType": "Branch",
+          "source": "88d56559a61641e6bad7af5878d7c38b",
+          "target": "ff92b897370a4656961ffb5bc60bf912",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.type_of_field_to_read == 'choice';\n})()\n",
+          "label": "Choice"
+        },
+        {
+          "id": "6d6bda4f6421499ca4b86557e8724455",
+          "edgeType": "Edge",
+          "source": "ff92b897370a4656961ffb5bc60bf912",
+          "target": "cc4bcd6951744164b45811659bfd6ad4",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "582d2152a80144ef80ca871dcb5e7e30",
+          "edgeType": "Branch",
+          "source": "cc4bcd6951744164b45811659bfd6ad4",
+          "target": "787d364f5b334274aba5227e4f10105a",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.value_or_display_value_of_choice == 'display';\n})",
+          "label": "Display"
+        },
+        {
+          "id": "8f0356cbb0734407ab2227d72ebf532b",
+          "edgeType": "Edge",
+          "source": "787d364f5b334274aba5227e4f10105a",
+          "target": "ec158eca230141fbb761fa33c34efc67",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "a7e17601a7c74897b582371a97fb5900",
+          "edgeType": "Branch",
+          "source": "cc4bcd6951744164b45811659bfd6ad4",
+          "target": "64ac47466c064fb086f0cb24bbfa2b87",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.value_or_display_value_of_choice == 'value';\n})",
+          "label": "Value"
+        },
+        {
+          "id": "a0841f75141441aeba77fbd04c701e61",
+          "edgeType": "Edge",
+          "source": "64ac47466c064fb086f0cb24bbfa2b87",
+          "target": "ec158eca230141fbb761fa33c34efc67",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "dd5591dfe5b24beda152f27389df8e02",
+          "edgeType": "Edge",
+          "source": "a71a96e805e94851b4e1840ca1d87368",
+          "target": "ec158eca230141fbb761fa33c34efc67",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "ffd9b095185d410a997bfd4bcfb91225",
+          "edgeType": "Edge",
+          "source": "f00f2feac9564957beb11af24319ab31",
+          "target": "7cde8e026d964afca6af502978e17939",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "405201e1889c43eea4c5b345ce1508ca",
+          "edgeType": "Edge",
+          "source": "7cde8e026d964afca6af502978e17939",
+          "target": "c35cb0df6a0e44c49812ddfa6f26ccc8",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "fb3432b3d34d4925aaa00d5c31435a7e",
+          "edgeType": "Branch",
+          "source": "c35cb0df6a0e44c49812ddfa6f26ccc8",
+          "target": "ec158eca230141fbb761fa33c34efc67",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.ui_policy_scripting == 'no';\n})()\n",
+          "label": "No"
+        },
+        {
+          "id": "669544a9b3954f8a81727770836452f8",
+          "edgeType": "Branch",
+          "source": "c35cb0df6a0e44c49812ddfa6f26ccc8",
+          "target": "76cca5dd25374e34a29292dc7f48c1ca",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.ui_policy_scripting == 'yes';\n})()\n",
+          "label": "Yes"
+        },
+        {
+          "id": "d7210913867e4a96ae17e99e00a45889",
+          "edgeType": "Edge",
+          "source": "ec158eca230141fbb761fa33c34efc67",
+          "target": "a27210f37f614e42bc8ff378f97f6779",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "9f67bccb90f746f48f41acb0023c6cad",
+          "edgeType": "Branch",
+          "source": "a27210f37f614e42bc8ff378f97f6779",
+          "target": "438f708cbe5a4d949ba1af0bf895db2a",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "",
+          "label": "Always"
+        },
+        {
+          "id": "6b438284a3944315ab8dfbd443b858c8",
+          "edgeType": "Edge",
+          "source": "438f708cbe5a4d949ba1af0bf895db2a",
+          "target": "eea9477be1b5407890b229c7b1344440",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "db3db1cc880542c6b9505fb19d96d2df",
+          "edgeType": "Branch",
+          "source": "eea9477be1b5407890b229c7b1344440",
+          "target": "43954caed7e545cab862927dc26edfda",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.another_scripting_question == 'yes';\n})()\n",
+          "label": "Yes"
+        },
+        {
+          "id": "e6180d58635044cb9570cc60ca1dd318",
+          "edgeType": "Branch",
+          "source": "eea9477be1b5407890b229c7b1344440",
+          "target": "26ae07dbcda34032bd405bdb4252faff",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.another_scripting_question == 'no';\n})()",
+          "label": "No"
+        },
+        {
+          "id": "bd7e62d1437e441f90e058ab891ef393",
+          "edgeType": "Branch",
+          "source": "476c027fd7c04387bc6abdcac720366a",
+          "target": "4b41e4e035544d58bbcd4b6ef86bb2ed",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.where_is_the_field_to_update == 'form_record';\n})()\n",
+          "label": "Form or Record"
+        },
+        {
+          "id": "502e249ea2324efaa9bc9d6b367a4f48",
+          "edgeType": "Edge",
+          "source": "4b41e4e035544d58bbcd4b6ef86bb2ed",
+          "target": "aa0cd68113ec427a801f9a0aa2d385d6",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "606689e215dc4b7383210b0cad84a406",
+          "edgeType": "Branch",
+          "source": "aa0cd68113ec427a801f9a0aa2d385d6",
+          "target": "f18afaebd3164533821acf0e8476b425",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.type_of_field_to_update == 'string';\n})()\n",
+          "label": "String"
+        },
+        {
+          "id": "29eae30d37724b16b12de677c146b038",
+          "edgeType": "Edge",
+          "source": "f18afaebd3164533821acf0e8476b425",
+          "target": "ec158eca230141fbb761fa33c34efc67",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "4202ddf57c604366ae2025bdd1769265",
+          "edgeType": "Edge",
+          "source": "24764327a496478f80c17b348e0929a1",
+          "target": "ec158eca230141fbb761fa33c34efc67",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "e4be82f931a447eb9d7d7d6962dc8fc0",
+          "edgeType": "Edge",
+          "source": "5441467849a54dde8bf93409c63afff5",
+          "target": "c2166c314cea484ebe98f98e2af2976a",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "42151518f56944ecbae672ba4b376dc4",
+          "edgeType": "Branch",
+          "source": "de3038d65a264b8b960fa17d13031e56",
+          "target": "402ebda953af4d9c9fd8c8fa9f883fec",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.where_is_the_field_to_read == 'table';\n})()\n",
+          "label": "Table"
+        },
+        {
+          "id": "b8625fdf6fa14218b136441a59978841",
+          "edgeType": "Branch",
+          "source": "de3038d65a264b8b960fa17d13031e56",
+          "target": "837a285d4cab49929e14daf2a8197820",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.where_is_the_field_to_read == 'scratchpad';\n})()\n",
+          "label": "Scratchpad"
+        },
+        {
+          "id": "de0cd497f0ed4c97b475a3e1f83431fc",
+          "edgeType": "Edge",
+          "source": "837a285d4cab49929e14daf2a8197820",
+          "target": "ec158eca230141fbb761fa33c34efc67",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "328d9444a4ce4c6a95cf052b83ab65cf",
+          "edgeType": "Edge",
+          "source": "4fc4f322dce34b3cbbf801e5a0fb666f",
+          "target": "ec158eca230141fbb761fa33c34efc67",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "f9fbc8f65b88483ab56b9c75d5d38b00",
+          "edgeType": "Edge",
+          "source": "c633414dd7c84429be7f3a38b7e6a332",
+          "target": "ec158eca230141fbb761fa33c34efc67",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "0cb57c7c84f64414829987267718a64b",
+          "edgeType": "Edge",
+          "source": "b632371e9303455ab1e4bf66258e8c02",
+          "target": "517589b6e1d748afa20b9d19445b9a89",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "84d1bca41ebd4809b3513acb2a9ef873",
+          "edgeType": "Branch",
+          "source": "517589b6e1d748afa20b9d19445b9a89",
+          "target": "8d2ffc5c3eb1447dafbb3cf0f99a7d0f",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.field_you_are_looking_to_read == 'sysid';\n})()",
+          "label": "Sys_id"
+        },
+        {
+          "id": "6aec2c1d752642e1aa8bcea4739b12a5",
+          "edgeType": "Edge",
+          "source": "8d2ffc5c3eb1447dafbb3cf0f99a7d0f",
+          "target": "ec158eca230141fbb761fa33c34efc67",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "0ed0409d08d846de91778e57df2a302a",
+          "edgeType": "Branch",
+          "source": "517589b6e1d748afa20b9d19445b9a89",
+          "target": "daf33a58196a4a9bb760a6234da72f21",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.field_you_are_looking_to_read == 'other';\n})()",
+          "label": "Other"
+        },
+        {
+          "id": "488b6368509049ee8abf248bb1886fb9",
+          "edgeType": "Edge",
+          "source": "daf33a58196a4a9bb760a6234da72f21",
+          "target": "ec158eca230141fbb761fa33c34efc67",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "5560c8db5e634acf8aca3ca991fe5760",
+          "edgeType": "Branch",
+          "source": "01d1b4ce967a47098c524c897454db48",
+          "target": "f4cfdff3e0234a32bcea8332850efea2",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.when_does_script_need_to_occur == 'no';\n})()\n",
+          "label": "No"
+        },
+        {
+          "id": "269bb170e50e4c80a8e6cfd3816fb0b7",
+          "edgeType": "Edge",
+          "source": "f4cfdff3e0234a32bcea8332850efea2",
+          "target": "b840a73eb42742fc84f8e93ca3eca559",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "1af9c950e1cf4a13a7755aecea2e1aca",
+          "edgeType": "Edge",
+          "source": "606d3f8bb53e415a87d63c66cccac91c",
+          "target": "ec158eca230141fbb761fa33c34efc67",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "732ad51ffcc04ca983dc19eb11cf7fc1",
+          "edgeType": "Branch",
+          "source": "476c027fd7c04387bc6abdcac720366a",
+          "target": "15461a2d85e84d058c308164fd0e5f8a",
+          "sourcePort": "",
+          "targetPort": "",
+          "expression": "(function execute() {\nreturn vaInputs.where_is_the_field_to_update == 'table';\n})()\n",
+          "label": "Table"
+        },
+        {
+          "id": "2dad9274c64549a3af0e391bbf9e146c",
+          "edgeType": "Edge",
+          "source": "70804d5bc41142b5b47f2fb13136c49f",
+          "target": "ec158eca230141fbb761fa33c34efc67",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "dc1cc8dba6e040e29b0dc4b9c26495b5",
+          "edgeType": "Edge",
+          "source": "402ebda953af4d9c9fd8c8fa9f883fec",
+          "target": "23572c33e5054bf2a2fa26be44e58993",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "1bb458510ac84856956bffea8cba2bf1",
+          "edgeType": "Edge",
+          "source": "23572c33e5054bf2a2fa26be44e58993",
+          "target": "70804d5bc41142b5b47f2fb13136c49f",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "839358e11f1f41e088d4203d5816792e",
+          "edgeType": "Edge",
+          "source": "52fc4f3f65904250ad6be78ff0dc9729",
+          "target": "ec158eca230141fbb761fa33c34efc67",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "4ba96bb717f347bf844872cae2693771",
+          "edgeType": "Edge",
+          "source": "15461a2d85e84d058c308164fd0e5f8a",
+          "target": "f6a1837fa58b4005bc14c06f234064be",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "dc769bc5e0074fd5a9cc7055bd0c5957",
+          "edgeType": "Edge",
+          "source": "f6a1837fa58b4005bc14c06f234064be",
+          "target": "52fc4f3f65904250ad6be78ff0dc9729",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "13e7ede559c8491899bc7cd1b6e09796",
+          "edgeType": "Edge",
+          "source": "081c29c029234175995f7afc1bff7a8e",
+          "target": "0bc0fa31e39b49c49e24ef817f18750c",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "2ce4500a963249d59cd109cc0d47d4ed",
+          "edgeType": "Edge",
+          "source": "0bc0fa31e39b49c49e24ef817f18750c",
+          "target": "35026d63624c4b54a807a072fbc113fd",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "743b2a93fde04097b0d9b9e5a04142a5",
+          "edgeType": "Edge",
+          "source": "c2166c314cea484ebe98f98e2af2976a",
+          "target": "14d7b1de3da846a39aa1a11003960c87",
+          "sourcePort": "",
+          "targetPort": ""
+        },
+        {
+          "id": "26c1a59a0d414ab1bc722c148e14bd31",
+          "edgeType": "Edge",
+          "source": "14d7b1de3da846a39aa1a11003960c87",
+          "target": "43954caed7e545cab862927dc26edfda",
+          "sourcePort": "",
+          "targetPort": ""
+        }
+      ]
+    }
+  },
+  "graph_api_version": "1.0.3",
+  "variables": {
+    "ce8703f855704d4f9b4422eb21b7f11f": {
+      "id": "ce8703f855704d4f9b4422eb21b7f11f",
+      "name": "when_does_script_need_to_occur",
+      "label": "When Does Script Need To Occur",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Yes",
+          "value": "yes"
+        },
+        {
+          "label": "No",
+          "value": "no"
+        }
+      ]
+    },
+    "ad514d8885bf47f5a051dda778d1250e": {
+      "id": "ad514d8885bf47f5a051dda778d1250e",
+      "name": "type_of_action",
+      "label": "Type Of Action",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Set a field to read-only, mandatory, visible or clear the field value",
+          "value": "ui_policy"
+        },
+        {
+          "label": "Read a Field",
+          "value": "read"
+        },
+        {
+          "label": "Update a Field",
+          "value": "update"
+        },
+        {
+          "label": "Create a Record",
+          "value": "create"
+        }
+      ]
+    },
+    "8de10c0425b8415f8fef4b04aed588c8": {
+      "id": "8de10c0425b8415f8fef4b04aed588c8",
+      "name": "where_is_the_field_to_read",
+      "label": "Where Is The Field To Read",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "On the form",
+          "value": "form"
+        },
+        {
+          "label": "On the record but not on the form",
+          "value": "record"
+        },
+        {
+          "label": "On a different table without a related field linking to it from this record",
+          "value": "table"
+        },
+        {
+          "label": "On scratchpad",
+          "value": "scratchpad"
+        }
+      ]
+    },
+    "89308d6a01904056a0120aaf209b9983": {
+      "id": "89308d6a01904056a0120aaf209b9983",
+      "name": "where_is_the_field_to_update",
+      "label": "Where Is The Field To Update",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "On the form and/or record",
+          "value": "form_record"
+        },
+        {
+          "label": "On a different table",
+          "value": "table"
+        }
+      ]
+    },
+    "8301af42f5d34e9f9aa875d20db56b5a": {
+      "id": "8301af42f5d34e9f9aa875d20db56b5a",
+      "name": "type_of_field_to_read",
+      "label": "Type Of Field To Read",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "String",
+          "value": "string"
+        },
+        {
+          "label": "Date",
+          "value": "date"
+        },
+        {
+          "label": "Reference",
+          "value": "reference"
+        },
+        {
+          "label": "Choice",
+          "value": "choice"
+        }
+      ]
+    },
+    "e3750fe7255f42f1873fb43fa6fa01d4": {
+      "id": "e3750fe7255f42f1873fb43fa6fa01d4",
+      "name": "scratchpad_or_hide",
+      "label": "Scratchpad Or Hide",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Using the scratchpad",
+          "value": "scratchpad"
+        },
+        {
+          "label": "Adding the field and hiding it",
+          "value": "hide"
+        }
+      ]
+    },
+    "586d60a73bad445a834ad0531326ba82": {
+      "id": "586d60a73bad445a834ad0531326ba82",
+      "name": "value_or_display_value_of_choice",
+      "label": "Value Or Display Value Of Choice",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Value",
+          "value": "value"
+        },
+        {
+          "label": "Display",
+          "value": "display"
+        }
+      ]
+    },
+    "6172058c58bb4caeba342f5a794ed563": {
+      "id": "6172058c58bb4caeba342f5a794ed563",
+      "name": "helpful",
+      "label": "Helpful",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Yes",
+          "value": "yes"
+        },
+        {
+          "label": "No",
+          "value": "no"
+        }
+      ]
+    },
+    "7657d909db5449ecb5e23ae7e87b03f4": {
+      "id": "7657d909db5449ecb5e23ae7e87b03f4",
+      "name": "ui_policy_scripting",
+      "label": "UI Policy Scripting",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Yes",
+          "value": "yes"
+        },
+        {
+          "label": "No",
+          "value": "no"
+        }
+      ]
+    },
+    "5acdbef8f26f477abd81b6ebd694306d": {
+      "id": "5acdbef8f26f477abd81b6ebd694306d",
+      "name": "another_scripting_question",
+      "label": "Another Scripting Question",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "Yes",
+          "value": "yes"
+        },
+        {
+          "label": "No",
+          "value": "no"
+        }
+      ]
+    },
+    "8df7b2edc02f412db9d895e167424bb4": {
+      "id": "8df7b2edc02f412db9d895e167424bb4",
+      "name": "type_of_field_to_update",
+      "label": "Type Of Field To Update",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "String",
+          "value": "string"
+        },
+        {
+          "label": "Date",
+          "value": "date"
+        },
+        {
+          "label": "Reference",
+          "value": "reference"
+        },
+        {
+          "label": "Field on Reference",
+          "value": "field_on_reference"
+        },
+        {
+          "label": "Choice",
+          "value": "choice"
+        }
+      ]
+    },
+    "cefb2e99b80c4bca88ff97ce168462e2": {
+      "id": "cefb2e99b80c4bca88ff97ce168462e2",
+      "name": "field_you_are_looking_to_read",
+      "label": "Field You Are Looking To Read",
+      "varType": "choice",
+      "choices": [
+        {
+          "label": "sys_id",
+          "value": "sysid"
+        },
+        {
+          "label": "Any other field on that record",
+          "value": "other"
+        }
+      ]
+    }
+  }
+}</graph>
+        <key_phrases>ServiceNow Scripting,javascript,client script,ui policy,business rule,server side scripting</key_phrases>
+        <live_agent>false</live_agent>
+        <name>ServiceNow Script from Update Set</name>
+        <roles>public</roles>
+        <sys_class_name>sys_cb_topic</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-01-10 23:24:47</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_domain>global</sys_domain>
+        <sys_id>4b5dcf6bdb762b0026b78709689619f7</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>ServiceNow Script from Update Set</sys_name>
+        <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+        <sys_update_name>sys_cb_topic_4b5dcf6bdb762b0026b78709689619f7</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-01-10 23:39:36</sys_updated_on>
+        <variables/>
+    </sys_cb_topic>
+    <sys_variable_value action="delete_multiple" query="document_key=4b5dcf6bdb762b0026b78709689619f7"/>
+</record_update>

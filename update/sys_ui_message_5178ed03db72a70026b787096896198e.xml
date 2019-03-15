@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_message">
+    <sys_ui_message action="INSERT_OR_UPDATE">
+        <application>Virtual Agent</application>
+        <key>The g_form.getValue can only read fields on the form. Since you are looking for a field of the reference field on your form, we must first get the record information from the server and then we have access to any fields for the reference field.\\n  var my</key>
+        <language>en</language>
+        <message>The g_form.getValue can only read fields on the form. Since you are looking for a field of the reference field on your form, we must first get the record information from the server and then we have access to any fields for the reference field.\\n  var my_field_value = g_form.getReference('name_of_your_reference_field',getmyfieldvalue);\t \tfunction getmyfieldvalue(my_field_value) { \t\talert (my_field_value.name); \t}</message>
+        <sys_class_name>sys_ui_message</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-01-09 02:46:59</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>5178ed03db72a70026b787096896198e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>The g_form.getValue can only read fields on the form. Since you are looking for a field of the reference field on your form, we must first get the record information from the server and then we have access to any fields for the reference field.\\n  var my</sys_name>
+        <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+        <sys_update_name>sys_ui_message_5178ed03db72a70026b787096896198e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-01-09 02:46:59</sys_updated_on>
+    </sys_ui_message>
+</record_update>

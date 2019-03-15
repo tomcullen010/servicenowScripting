@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<database>
+<?xml version="1.0" encoding="UTF-8"?><database>
     <element label="Building Access Approval" max_length="40" name="x_snc_servicenow_s_building_access_approval" type="collection">
         <element label="Building" max_length="32" name="building" reference="cmn_building" type="reference"/>
         <element label="Name" max_length="40" name="name" type="string"/>

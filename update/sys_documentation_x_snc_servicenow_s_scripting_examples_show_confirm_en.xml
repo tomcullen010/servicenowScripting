@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<record_update>
+<?xml version="1.0" encoding="UTF-8"?><record_update>
     <sys_documentation element="show_confirm" label="Show Confirm" language="en" table="x_snc_servicenow_s_scripting_examples">
         <sys_documentation action="INSERT_OR_UPDATE">
             <element>show_confirm</element>

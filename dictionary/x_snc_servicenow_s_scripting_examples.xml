@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<database>
+<?xml version="1.0" encoding="UTF-8"?><database>
     <element extends="task" label="Scripting Examples" max_length="40" name="x_snc_servicenow_s_scripting_examples" sizeclass="16" text_index="true" type="collection">
         <element attributes="edge_encryption_enabled=true" label="Account Number" max_length="40" name="account_number" type="string"/>
         <element label="Building" max_length="32" name="building" reference="cmn_building" type="reference"/>
@@ -8,8 +7,8 @@
         <element attributes="no_sort=true,slushbucket_ref_no_expand=true" label="Building List 3" max_length="1024" name="building_list_3" reference="x_snc_servicenow_s_building_list" type="glide_list"/>
         <element attributes="edge_encryption_enabled=true" choice="3" default="No" label="Disable Attachments" max_length="40" name="disable_attachments" type="string">
             <choice>
-                <element label="No" sequence="0" value="No"/>
-                <element label="Yes" sequence="1" value="Yes"/>
+                <element inactive_on_update="false" label="No" sequence="0" value="No"/>
+                <element inactive_on_update="false" label="Yes" sequence="1" value="Yes"/>
             </choice>
         </element>
         <element attributes="edge_encryption_enabled=true" label="Email Address" max_length="100" name="email_address" type="string"/>
@@ -17,8 +16,8 @@
         <element label="End Date" max_length="40" name="end_date" type="glide_date"/>
         <element attributes="edge_encryption_enabled=true" choice="3" default="No" label="Hide Field" max_length="40" name="hide_field" type="string">
             <choice>
-                <element label="No" sequence="0" value="No"/>
-                <element label="Yes" sequence="1" value="Yes"/>
+                <element inactive_on_update="false" label="No" sequence="0" value="No"/>
+                <element inactive_on_update="false" label="Yes" sequence="1" value="Yes"/>
             </choice>
         </element>
         <element attributes="edge_encryption_enabled=true" label="Hide This Field" max_length="40" name="hide_this_field" type="string"/>
@@ -27,8 +26,8 @@
         <element default="javascript:gs.getUserID();" dynamic_default_value="2fd8e97bef3221002841f7f775c0fbc1" label="Logged in User - Default Value 2" max_length="32" name="logged_in_user_default_value_2" reference="sys_user" type="reference" use_dynamic_default="true"/>
         <element attributes="edge_encryption_enabled=true" choice="3" default="No" label="Mandatory" max_length="40" name="mandatory" type="string">
             <choice>
-                <element label="No" sequence="0" value="No"/>
-                <element label="Yes" sequence="1" value="Yes"/>
+                <element inactive_on_update="false" label="No" sequence="0" value="No"/>
+                <element inactive_on_update="false" label="Yes" sequence="1" value="Yes"/>
             </choice>
         </element>
         <element label="Mandatory Field" max_length="32" name="mandatory_field" reference="sys_user" type="reference"/>
