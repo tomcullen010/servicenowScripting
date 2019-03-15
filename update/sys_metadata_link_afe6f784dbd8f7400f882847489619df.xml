@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>3c6f2f9a1369e240e5adbd522244b091</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_snc_servicenow_s_servicenow_scripting">
+    <x_snc_servicenow_s_servicenow_scripting action="INSERT_OR_UPDATE">
+        <code_url>https://slalosc2.service-now.com/nav_to.do?uri=sys_ui_action.do?sys_id=cc86e09f13fde200dd7db5b12244b06b</code_url>
+        <code_url_2/>
+        <details/>
+        <example_steps/>
+        <example_url/>
+        <module>e0b4d4b313892a00e5adbd522244b077</module>
+        <number>SNSCRIPT0001178</number>
+        <replaced_by/>
+        <script>//Need to add verification to confirm record has been saved&#13;
+//gs.info('My sys_id is '+current.sys_id);&#13;
+//current.insert();&#13;
+var newrecord = new GlideRecord('x_snc_servicenow_s_building_access_approval');&#13;
+newrecord.scripting_record = current.sys_id;&#13;
+&#13;
+var sysID = newrecord.insert();&#13;
+&#13;
+gs.addInfoMessage('A new record ' + newrecord.number + " was created");&#13;
+//action.setRedirectURL(newrecord);&#13;
+//setRedirect() sets the next page that the user will see&#13;
+action.setRedirectURL(current);&#13;
+//setReturn() sets what page the user will return to after they submit or hit Back on the next page they see.&#13;
+action.setReturnURL(current);&#13;
+</script>
+        <script_2/>
+        <script_type>UI Action</script_type>
+        <short_description>Create Related Record</short_description>
+        <state>Submitted</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-09-01 16:39:43</sys_created_on>
+        <sys_id>3c6f2f9a1369e240e5adbd522244b091</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-09-16 15:15:25</sys_updated_on>
+        <tested_on_helsinki>No</tested_on_helsinki>
+    </x_snc_servicenow_s_servicenow_scripting>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-15 19:01:51</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>afe6f784dbd8f7400f882847489619df</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SNSCRIPT0001178</sys_name>
+        <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+        <sys_update_name>sys_metadata_link_afe6f784dbd8f7400f882847489619df</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-03-15 19:01:51</sys_updated_on>
+        <tablename>x_snc_servicenow_s_servicenow_scripting</tablename>
+    </sys_metadata_link>
+</record_update>

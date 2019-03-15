@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>d599ab4113296240e5adbd522244b0f1</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_snc_servicenow_s_servicenow_scripting">
+    <x_snc_servicenow_s_servicenow_scripting action="INSERT_OR_UPDATE">
+        <code_url/>
+        <code_url_2/>
+        <details>1.	Created a Priority Lowered Field and put it under the Priority Field.  This captures the priority changes in real time and can toggle between true and false while the technician is making up her mind.&#13;
+</details>
+        <example_steps/>
+        <example_url/>
+        <module/>
+        <number>SNSCRIPT0001104</number>
+        <replaced_by/>
+        <script>a.	Created a client script: Make WorkNote Reqd w Priority Lwr.  This script set the Work Notes to mandatory, set the Priority Lowered field to true, and posted a warning message&#13;
+function onChange(control, oldValue, newValue) {			&#13;
+   if (oldValue &gt; newValue) {&#13;
+   // if ((oldValue == '1' || '2') &amp;&amp; (newValue == '3' || '4' || '5')) {&#13;
+        g_form.setMandatory('work_notes', false);&#13;
+        g_form.setValue('u_priority_lowered', false);&#13;
+        }&#13;
+&#13;
+   else if (oldValue &lt; newValue) {&#13;
+			&#13;
+    g_form.setMandatory('work_notes', true);&#13;
+    g_form.setValue('u_priority_lowered', true);&#13;
+    g_form.showErrorBox('u_priority_lowered', getMessage("When you lower the Priority, you must explain why in the Work Notes"));&#13;
+    }&#13;
+&#13;
+    else {&#13;
+    }&#13;
+&#13;
+return;&#13;
+}&#13;
+</script>
+        <script_2/>
+        <script_type>Business Rule</script_type>
+        <short_description>Priority Lowered</short_description>
+        <state>Submitted</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-08-28 19:00:36</sys_created_on>
+        <sys_id>d599ab4113296240e5adbd522244b0f1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-08-28 19:00:36</sys_updated_on>
+        <tested_on_helsinki/>
+    </x_snc_servicenow_s_servicenow_scripting>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-15 19:02:10</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>88077fc4dbd8f7400f882847489619f8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SNSCRIPT0001104</sys_name>
+        <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+        <sys_update_name>sys_metadata_link_88077fc4dbd8f7400f882847489619f8</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-03-15 19:02:10</sys_updated_on>
+        <tablename>x_snc_servicenow_s_servicenow_scripting</tablename>
+    </sys_metadata_link>
+</record_update>

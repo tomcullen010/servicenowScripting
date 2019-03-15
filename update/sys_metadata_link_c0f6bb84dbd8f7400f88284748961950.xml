@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>49b02b4d13e56240e5adbd522244b0b7</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_snc_servicenow_s_servicenow_scripting">
+    <x_snc_servicenow_s_servicenow_scripting action="INSERT_OR_UPDATE">
+        <code_url/>
+        <code_url_2/>
+        <details/>
+        <example_steps/>
+        <example_url/>
+        <module/>
+        <number>SNSCRIPT0001049</number>
+        <replaced_by/>
+        <script>/**&#13;
+ Service-now.com&#13;
+&#13;
+ Description: Functions called by role delegation Record Producers and Workflows&#13;
+**/ &#13;
+&#13;
+function getDelegatableRoles(group) {&#13;
+   answer = "";&#13;
+&#13;
+   if (gs.hasRole("admin")) {  // admin can grant any grantable role in any group&#13;
+      var role = new GlideRecord("sys_user_role");&#13;
+      role.addQuery("grantable", true);&#13;
+      role.addQuery("can_delegate", true);&#13;
+      role.query();&#13;
+      var i = 0;&#13;
+      while (role.next()) {&#13;
+         if (i &gt; 0)&#13;
+            answer += ",";&#13;
+         answer += role.sys_id;&#13;
+         i++;&#13;
+      }&#13;
+   } else {  // non-admin role delegator can delegate roles they have&#13;
+      var roles = new GlideRecord("sys_user_has_role");&#13;
+      roles.addQuery("user", gs.getUserID());&#13;
+      roles.addQuery("role.can_delegate", true);&#13;
+      roles.addQuery("role.grantable", true);&#13;
+      roles.query();&#13;
+      var i = 0;&#13;
+      while (roles.next()) {&#13;
+         if (i &gt; 0)&#13;
+            answer += ",";&#13;
+         answer += roles.role;&#13;
+         i++;&#13;
+      }&#13;
+   }&#13;
+   return answer;&#13;
+}&#13;
+&#13;
+function getMyRoleDelegationGroups() {&#13;
+  // admin can delegate to all groups&#13;
+  if (gs.hasRole("admin"))&#13;
+    return "";&#13;
+&#13;
+  // find groups where user has the role_delegator role in that group&#13;
+  var hasRoles = new GlideRecord("sys_user_has_role");&#13;
+  hasRoles.addQuery("user", gs.getUserID());&#13;
+  hasRoles.addQuery("role.name", "role_delegator");&#13;
+  hasRoles.query();&#13;
+  var al = new java.util.ArrayList();&#13;
+  while (hasRoles.next()) {&#13;
+    if (!al.contains(hasRoles.sys_id))&#13;
+      al.add(hasRoles.granted_by.sys_id);&#13;
+  }&#13;
+&#13;
+  var answer = "sys_idIN";&#13;
+  for (var i = 0; i &lt; al.size(); i++) {&#13;
+    if (i &gt; 0)&#13;
+      answer += ",";&#13;
+    answer += al.get(i);&#13;
+  }&#13;
+  return answer;&#13;
+}&#13;
+&#13;
+function getRoleDelegatorOptions() {&#13;
+  if (current.variables.role_delegator_group == "")&#13;
+    return '';&#13;
+&#13;
+  var userIDs = new Array();&#13;
+  var userGR = new GlideRecord('sys_user_grmember');&#13;
+  userGR.addQuery("group", current.variables.role_delegator_group);&#13;
+  userGR.query();&#13;
+  while (userGR.next())&#13;
+    userIDs.push(userGR.user.toString());&#13;
+  &#13;
+  return 'sys_idIN' + userIDs.join(',');&#13;
+}&#13;
+&#13;
+function getRoleDelegatorGroupOptions() {&#13;
+  if (current.variables.role_delegator_user == "")&#13;
+    return '';&#13;
+&#13;
+  var groupIDs = new Array();&#13;
+  var userGR = new GlideRecord('sys_user_grmember');&#13;
+  userGR.addQuery("user", current.variables.role_delegator_user);&#13;
+  userGR.query();&#13;
+  while (userGR.next())&#13;
+    groupIDs.push(userGR.group.toString());&#13;
+  &#13;
+  return 'sys_idIN' + groupIDs.join(',');&#13;
+}&#13;
+&#13;
+function getUsersForRoleDelegation() {&#13;
+  if (current.variables.delegate_roles_group == "")&#13;
+    return '';&#13;
+&#13;
+  var userIDs = new Array();&#13;
+  var userGR = new GlideRecord('sys_user_grmember');&#13;
+  userGR.addQuery("group", current.variables.delegate_roles_group);&#13;
+  if (!gs.hasRole("admin"))&#13;
+    userGR.addQuery("user", "!=", gs.getUserID());&#13;
+  userGR.query();&#13;
+  while (userGR.next())&#13;
+    userIDs.push(userGR.user.toString());&#13;
+  &#13;
+  return 'sys_idIN' + userIDs.join(',');&#13;
+}</script>
+        <script_2/>
+        <script_type/>
+        <short_description>Functions called by role delegation Record Producers and Workflows</short_description>
+        <state>Submitted</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-08-28 18:21:34</sys_created_on>
+        <sys_id>49b02b4d13e56240e5adbd522244b0b7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-08-28 18:21:34</sys_updated_on>
+        <tested_on_helsinki/>
+    </x_snc_servicenow_s_servicenow_scripting>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-15 19:01:54</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>c0f6bb84dbd8f7400f88284748961950</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SNSCRIPT0001049</sys_name>
+        <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+        <sys_update_name>sys_metadata_link_c0f6bb84dbd8f7400f88284748961950</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-03-15 19:01:54</sys_updated_on>
+        <tablename>x_snc_servicenow_s_servicenow_scripting</tablename>
+    </sys_metadata_link>
+</record_update>

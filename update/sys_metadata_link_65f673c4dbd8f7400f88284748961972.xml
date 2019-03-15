@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>813aef4113296240e5adbd522244b0e8</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_snc_servicenow_s_servicenow_scripting">
+    <x_snc_servicenow_s_servicenow_scripting action="INSERT_OR_UPDATE">
+        <code_url/>
+        <code_url_2/>
+        <details/>
+        <example_steps/>
+        <example_url/>
+        <module/>
+        <number>SNSCRIPT0001110</number>
+        <replaced_by/>
+        <script>var oldName = 'Koch Fertilizer';&#13;
+&#13;
+var newName = 'Koch Ag &amp; Energy Services';&#13;
+var oldNamePattern = new RegExp(oldName, 'g');&#13;
+&#13;
+var kb = new GlideRecord('kb_knowledge');&#13;
+kb.addQuery('short_description','CONTAINS',oldName);&#13;
+kb.addOrCondition('text', 'CONTAINS', oldName);&#13;
+kb.query();&#13;
+while (kb.next()) {&#13;
+    kb.short_description = (kb.short_description + '').replace(oldNamePattern, newName);&#13;
+    kb.text = (kb.text + '').replace(oldNamePattern, newName);&#13;
+    //kb.log('I got ' + kb.number + ': ' + kb.short_description);&#13;
+    kb.update();&#13;
+}&#13;
+</script>
+        <script_2/>
+        <script_type>Scheduled Jobs</script_type>
+        <short_description>Replace a regualar expression (string) in a KB Article</short_description>
+        <state>Submitted</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-08-28 19:03:08</sys_created_on>
+        <sys_id>813aef4113296240e5adbd522244b0e8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-08-28 19:03:08</sys_updated_on>
+        <tested_on_helsinki/>
+    </x_snc_servicenow_s_servicenow_scripting>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-15 19:01:59</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>65f673c4dbd8f7400f88284748961972</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SNSCRIPT0001110</sys_name>
+        <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+        <sys_update_name>sys_metadata_link_65f673c4dbd8f7400f88284748961972</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-03-15 19:01:59</sys_updated_on>
+        <tablename>x_snc_servicenow_s_servicenow_scripting</tablename>
+    </sys_metadata_link>
+</record_update>

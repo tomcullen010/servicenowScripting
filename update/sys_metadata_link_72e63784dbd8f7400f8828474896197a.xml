@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>1fb467cd13e56240e5adbd522244b0a8</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_snc_servicenow_s_servicenow_scripting">
+    <x_snc_servicenow_s_servicenow_scripting action="INSERT_OR_UPDATE">
+        <code_url/>
+        <code_url_2/>
+        <details/>
+        <example_steps/>
+        <example_url/>
+        <module/>
+        <number>SNSCRIPT0001068</number>
+        <replaced_by/>
+        <script>In the dictionary attributes on the caller_id field:&#13;
+ref_auto_completer=AJAXTableCompleter,ref_ac_display_value=false,ref_ac_columns=first_name;last_name;employee_number;company;location;title,ref_ac_order_by=first_name;last_name,ref_ac_columns_search&#13;
+&#13;
+You can just add this in a record producer to the refernece variable&#13;
+ref_ac_columns=first_name;last_name;employee_number;company;location;title,ref_ac_order_by=first_name;last_name,ref_ac_columns_search&#13;
+</script>
+        <script_2/>
+        <script_type/>
+        <short_description>Setting up display and "starts with" fields for a refernce field, such as caller_id on HR Case form.</short_description>
+        <state>Submitted</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-08-28 18:39:11</sys_created_on>
+        <sys_id>1fb467cd13e56240e5adbd522244b0a8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-08-28 18:39:11</sys_updated_on>
+        <tested_on_helsinki/>
+    </x_snc_servicenow_s_servicenow_scripting>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-15 19:01:48</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>72e63784dbd8f7400f8828474896197a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SNSCRIPT0001068</sys_name>
+        <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+        <sys_update_name>sys_metadata_link_72e63784dbd8f7400f8828474896197a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-03-15 19:01:48</sys_updated_on>
+        <tablename>x_snc_servicenow_s_servicenow_scripting</tablename>
+    </sys_metadata_link>
+</record_update>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>ccf262c413156a00e5adbd522244b090</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_snc_servicenow_s_servicenow_scripting">
+    <x_snc_servicenow_s_servicenow_scripting action="INSERT_OR_UPDATE">
+        <code_url/>
+        <code_url_2/>
+        <details>KB Update – this script updates the html text field in the knowledge record.  They wanted to update all their knowledge records to update an assignment group.  This looped through the records, checked for the value and replaced it with the new one.</details>
+        <example_steps/>
+        <example_url/>
+        <module/>
+        <number>SNSCRIPT0001044</number>
+        <replaced_by/>
+        <script>var kb = new GlideRecord ( "kb_knowledge" );&#13;
+&#13;
+var maxrows = 2200; //Set this number to the total number of records you are expecting to update&#13;
+var cur_row_num = 0;&#13;
+var kb_name;&#13;
+var kb_text;&#13;
+&#13;
+&#13;
+kb.orderBy ("number");&#13;
+kb.addQuery ( 'text', '!=', ''); //only returning KB articles that are not blank&#13;
+kb.query();&#13;
+&#13;
+//This will give us our count of records.  Feel free to comment out.&#13;
+gs.log ( "Parsing through the " + kb.getRowCount() + " records in the Knowledge table" );&#13;
+&#13;
+//Just doing a check to make sure we're not going to process too many records&#13;
+if (maxrows &gt; kb.getRowCount()) {&#13;
+  	//gs.log (kb.getRowCount());&#13;
+&#13;
+ 	 maxrows = kb.getRowCount();&#13;
+	//Let's start our Loop…&#13;
+	for (i=0; i&lt;maxrows; i++)&#13;
+  	{&#13;
+		//Store our number for reference purpose&#13;
+  		kb_name = kb.number + '';&#13;
+  		//Store our Text Value to search and parse&#13;
+  		kb_text = kb.text;&#13;
+		//What are we searching for??  **UPDATE HERE**&#13;
+  		if (kb_text.indexOf("N-INCSSP-MET-APP_-_CORP_CLARITY_SUPPORT") &gt; -1)&#13;
+  		{&#13;
+			//If we found it in the text, then let's replace and update  **UPDATE HERE**&#13;
+   			kb_text = kb_text.replace("N-INCSSP-MET-APP_-_CORP_CLARITY_SUPPORT","TEXT_WAS_REPLACED");&#13;
+  			kb.text = kb_text;&#13;
+  			kb.update();&#13;
+&#13;
+  			//gs.log ("KB Number = " + kb_name + " Text = " + kb_text);&#13;
+&#13;
+&#13;
+    		}&#13;
+		&#13;
+		//Add our row count and next record&#13;
+  		cur_row_num++;&#13;
+  		kb.next();&#13;
+  &#13;
+  &#13;
+	}&#13;
+}</script>
+        <script_2/>
+        <script_type/>
+        <short_description>Update the HTML text field in the knowledge record</short_description>
+        <state>Submitted</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-08-13 01:02:16</sys_created_on>
+        <sys_id>ccf262c413156a00e5adbd522244b090</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-08-28 18:13:58</sys_updated_on>
+        <tested_on_helsinki/>
+    </x_snc_servicenow_s_servicenow_scripting>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-15 19:02:09</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>33f63fc4dbd8f7400f88284748961992</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SNSCRIPT0001044</sys_name>
+        <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+        <sys_update_name>sys_metadata_link_33f63fc4dbd8f7400f88284748961992</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-03-15 19:02:09</sys_updated_on>
+        <tablename>x_snc_servicenow_s_servicenow_scripting</tablename>
+    </sys_metadata_link>
+</record_update>

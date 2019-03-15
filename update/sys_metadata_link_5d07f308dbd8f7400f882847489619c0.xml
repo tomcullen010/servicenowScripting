@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>fd6f670513296240e5adbd522244b037</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_snc_servicenow_s_servicenow_scripting">
+    <x_snc_servicenow_s_servicenow_scripting action="INSERT_OR_UPDATE">
+        <code_url/>
+        <code_url_2/>
+        <details/>
+        <example_steps/>
+        <example_url/>
+        <module/>
+        <number>SNSCRIPT0001131</number>
+        <replaced_by/>
+        <script>var po = new GlideRecord('proc_po');&#13;
+   //po.assigned_to = current.u_requested_for; &#13;
+   po.short_description = current.short_description;&#13;
+   po.vendor = current.company;&#13;
+   po.u_billing_contact = current.company.contact;&#13;
+   po.bill_to = current.company.contact.location;&#13;
+   po.requested_by = current.caller;&#13;
+   po.requested = current.opened_at;&#13;
+   po.total_cost = current.u_total_charges;&#13;
+&#13;
+   po.u_fmnow = true;&#13;
+   po.u_work_order = current.sys_id;&#13;
+   &#13;
+   var sysID = po.insert();&#13;
+&#13;
+   gs.addInfoMessage("Purchase order " + po.number + " created");&#13;
+   action.setRedirectURL(po);&#13;
+   action.setReturnURL(current);&#13;
+&#13;
+&#13;
+   current.u_purchase_order = sysID;&#13;
+   current.update();&#13;
+</script>
+        <script_2/>
+        <script_type>UI Action</script_type>
+        <short_description>Generate PO from a Work Order</short_description>
+        <state>Submitted</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-08-28 19:25:53</sys_created_on>
+        <sys_id>fd6f670513296240e5adbd522244b037</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-08-28 19:25:53</sys_updated_on>
+        <tested_on_helsinki/>
+    </x_snc_servicenow_s_servicenow_scripting>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-15 19:02:15</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>5d07f308dbd8f7400f882847489619c0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SNSCRIPT0001131</sys_name>
+        <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+        <sys_update_name>sys_metadata_link_5d07f308dbd8f7400f882847489619c0</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-03-15 19:02:15</sys_updated_on>
+        <tablename>x_snc_servicenow_s_servicenow_scripting</tablename>
+    </sys_metadata_link>
+</record_update>

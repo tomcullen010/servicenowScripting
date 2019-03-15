@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>363a241313312600dd7db5b12244b0db</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="x_snc_servicenow_s_scripting_examples">
+    <x_snc_servicenow_s_scripting_examples action="INSERT_OR_UPDATE">
+        <account_number/>
+        <action_status/>
+        <active>true</active>
+        <activity_due/>
+        <additional_assignee_list/>
+        <approval>not requested</approval>
+        <approval_history/>
+        <approval_set/>
+        <assigned_to/>
+        <assignment_group display_value="Service Desk" name="Service Desk">d625dccec0a8016700a222a0f7900d06</assignment_group>
+        <building/>
+        <building_list/>
+        <building_list_2/>
+        <building_list_3/>
+        <business_duration/>
+        <business_service/>
+        <calendar_duration/>
+        <close_notes/>
+        <closed_at/>
+        <closed_by/>
+        <cmdb_ci/>
+        <comments/>
+        <comments_and_work_notes/>
+        <company/>
+        <contact_type/>
+        <contract/>
+        <correlation_display/>
+        <correlation_id/>
+        <delivery_plan/>
+        <delivery_task/>
+        <description/>
+        <disable_attachments>No</disable_attachments>
+        <due_date/>
+        <email_address/>
+        <email_address_lower_case/>
+        <end_date/>
+        <escalation>0</escalation>
+        <expected_start/>
+        <follow_up/>
+        <group_list/>
+        <hide_field>No</hide_field>
+        <hide_this_field/>
+        <home_phone/>
+        <impact>3</impact>
+        <knowledge>false</knowledge>
+        <location/>
+        <logged_in_user_default_value display_value="System Administrator">6816f79cc0a8016401c5a33be04be441</logged_in_user_default_value>
+        <logged_in_user_default_value_2 display_value="System Administrator">6816f79cc0a8016401c5a33be04be441</logged_in_user_default_value_2>
+        <made_sla>true</made_sla>
+        <mandatory>No</mandatory>
+        <mandatory_field/>
+        <needs_attention>false</needs_attention>
+        <number>TASK0021985</number>
+        <opened_at>2016-09-16 15:06:11</opened_at>
+        <opened_by display_value="System Administrator">6816f79cc0a8016401c5a33be04be441</opened_by>
+        <order/>
+        <owner/>
+        <parent/>
+        <position/>
+        <priority>4</priority>
+        <reassignment_count>0</reassignment_count>
+        <rejection_goto/>
+        <service_offering/>
+        <short_description/>
+        <show_alert>false</show_alert>
+        <show_confirm>false</show_confirm>
+        <show_error_box>false</show_error_box>
+        <show_field_message>false</show_field_message>
+        <show_messages>false</show_messages>
+        <skills/>
+        <sla_due/>
+        <start_date/>
+        <state>1</state>
+        <submitted_by display_value="System Administrator">6816f79cc0a8016401c5a33be04be441</submitted_by>
+        <submitted_by_location/>
+        <submitted_by_lowercase/>
+        <sys_class_name>x_snc_servicenow_s_scripting_examples</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-09-16 15:06:17</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>363a241313312600dd7db5b12244b0db</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-09-16 15:06:17</sys_updated_on>
+        <time_worked/>
+        <u_building_access_approval_request/>
+        <u_workflow_stage/>
+        <upon_approval>proceed</upon_approval>
+        <upon_reject>cancel</upon_reject>
+        <urgency>3</urgency>
+        <user_input/>
+        <variables/>
+        <vulnerability/>
+        <watch_list/>
+        <wf_activity/>
+        <work_end/>
+        <work_notes/>
+        <work_notes_list/>
+        <work_start/>
+    </x_snc_servicenow_s_scripting_examples>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-15 19:02:38</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>0717fb48dbd8f7400f88284748961997</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>TASK0021985</sys_name>
+        <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+        <sys_update_name>sys_metadata_link_0717fb48dbd8f7400f88284748961997</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-03-15 19:02:38</sys_updated_on>
+        <tablename>x_snc_servicenow_s_scripting_examples</tablename>
+    </sys_metadata_link>
+</record_update>

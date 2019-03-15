@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>3e93f78513296240e5adbd522244b07c</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_snc_servicenow_s_servicenow_scripting">
+    <x_snc_servicenow_s_servicenow_scripting action="INSERT_OR_UPDATE">
+        <code_url/>
+        <code_url_2/>
+        <details/>
+        <example_steps/>
+        <example_url/>
+        <module/>
+        <number>SNSCRIPT0001171</number>
+        <replaced_by/>
+        <script>//	Note: current.opened_by is already set to the first UserID that matches the From: email address&#13;
+&#13;
+current.opened_for = gs.getUserID();&#13;
+current.comments = "received from: " + email.origemail + "\n\n" + email.body_text;&#13;
+current.short_description = email.subject;&#13;
+&#13;
+//current.category = "request";&#13;
+//current.incident_state = 1;&#13;
+//current.notify = 2;&#13;
+current.contact_type = "email";&#13;
+current.description = email.body_text;&#13;
+&#13;
+if (email.body.assign != undefined)&#13;
+   current.assigned_to = email.body.assign;&#13;
+&#13;
+if (email.importance != undefined) {&#13;
+   if (email.importance == "High")&#13;
+      current.priority = 1;&#13;
+}&#13;
+&#13;
+if (email.body.priority != undefined) &#13;
+   current.priority = email.body.priority;&#13;
+&#13;
+current.insert();</script>
+        <script_2/>
+        <script_type>Inbound Email Action</script_type>
+        <short_description>To create an HR Case on new inbound email</short_description>
+        <state>Submitted</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-08-28 19:44:14</sys_created_on>
+        <sys_id>3e93f78513296240e5adbd522244b07c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-08-28 19:44:14</sys_updated_on>
+        <tested_on_helsinki/>
+    </x_snc_servicenow_s_servicenow_scripting>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-15 19:01:51</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>e7e6f784dbd8f7400f882847489619e1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SNSCRIPT0001171</sys_name>
+        <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+        <sys_update_name>sys_metadata_link_e7e6f784dbd8f7400f882847489619e1</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-03-15 19:01:51</sys_updated_on>
+        <tablename>x_snc_servicenow_s_servicenow_scripting</tablename>
+    </sys_metadata_link>
+</record_update>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>6872d17b13012a00dd7db5b12244b051</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_snc_servicenow_s_servicenow_scripting">
+    <x_snc_servicenow_s_servicenow_scripting action="INSERT_OR_UPDATE">
+        <code_url/>
+        <code_url_2/>
+        <details>For example, you may want to have a related list completed without having to click at the bottom.</details>
+        <example_steps/>
+        <example_url/>
+        <module>e0b4d4b313892a00e5adbd522244b077</module>
+        <number>SNSCRIPT0001013</number>
+        <replaced_by/>
+        <script>function showMyForm(){&#13;
+	var tableName = 'u_job_request';&#13;
+	&#13;
+	//Create and open the dialog form&#13;
+	var dialog = new GlideDialogForm('Create Job Request', tableName); //Provide dialog title and table name&#13;
+	dialog.setSysID(-1); //Pass in sys_id to edit existing record, -1 to create new record&#13;
+	//   dialog.addParm('sysparm_view', 'ResolveDialog'); //Specify a form view&#13;
+	dialog.addParm('sysparm_form_only', 'true'); //Add or remove related lists&#13;
+	dialog.addParm('sysparm_collection','u_asrf'); //table the glidedialogform is being invoked from&#13;
+	dialog.addParm('sysparm_collection_key','u_asrf'); //the field that has the reference back to the incident table&#13;
+	dialog.addParm('sysparm_collectionID','ddc624877b467500c9b6b7793f4d4d99');// sys id of the incident record that we want to populate the u_task&#13;
+	&#13;
+	dialog.setSysID(sysID);&#13;
+	&#13;
+	dialog.render(); //Open the dialog&#13;
+}</script>
+        <script_2/>
+        <script_type/>
+        <short_description>Have a form Pop Up for completion </short_description>
+        <state>Submitted</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-08-12 00:32:39</sys_created_on>
+        <sys_id>6872d17b13012a00dd7db5b12244b051</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-08-28 22:29:15</sys_updated_on>
+        <tested_on_helsinki/>
+    </x_snc_servicenow_s_servicenow_scripting>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-15 19:01:56</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>34f6bf84dbd8f7400f88284748961951</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SNSCRIPT0001013</sys_name>
+        <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+        <sys_update_name>sys_metadata_link_34f6bf84dbd8f7400f88284748961951</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-03-15 19:01:56</sys_updated_on>
+        <tablename>x_snc_servicenow_s_servicenow_scripting</tablename>
+    </sys_metadata_link>
+</record_update>

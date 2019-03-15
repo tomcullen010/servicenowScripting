@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>c9303b9213ada240dd7db5b12244b0ed</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_snc_servicenow_s_servicenow_scripting">
+    <x_snc_servicenow_s_servicenow_scripting action="INSERT_OR_UPDATE">
+        <code_url/>
+        <code_url_2/>
+        <details>This UI Action will allow you to create an agile story from a defect record.  I have a very similar UI action on the "enhancement" record as well.&#13;
+&#13;
+This requires that you create a reference field on the defect form "u _sdlc _product_ reference"</details>
+        <example_steps/>
+        <example_url/>
+        <module/>
+        <number>SNSCRIPT0001179</number>
+        <replaced_by/>
+        <script>function openFormDialog(){&#13;
+    var sysId;&#13;
+    if (typeof rowSysId == 'undefined')&#13;
+        sysId = gel('sys_uniqueValue').value;&#13;
+    else&#13;
+        sysId = rowSysId;&#13;
+Utility.getInstance().showBackground(document.body, 999, "");&#13;
+    var values = {};&#13;
+    values["type"] = "Development";&#13;
+    values["short_description"] = g_form.getValue("short_description");&#13;
+    values["description"] = g_form.getValue("description");&#13;
+    values["assigned_to"] = g_form.getValue("assigned_to");&#13;
+    values["cmdb_ci"] = g_form.getValue("cmdb_ci");&#13;
+    values["classification"] = "Defect";&#13;
+    values["defect"] = sysId;&#13;
+values["product"] = g_form.getValue("u_sdlc_product_reference");&#13;
+    new FormDialogDefinition(null, "rm_story", $("rm_defect.form_scroll"), "scrum", "true").setAfterCloseCallback(function(action_verb, sys_id, updated_table, display_value){ &#13;
+        var gr = new GlideRecord("rm_story");&#13;
+        gr.addQuery("sys_id", sys_id);&#13;
+        gr.query();&#13;
+        if (gr.next()){&#13;
+            gr.defect = sysId;&#13;
+            gr.update(function(){&#13;
+                Utility.getInstance().hideBackground("");&#13;
+                if (GlideList2.get("rm_defect.rm_story.defect"))&#13;
+                    GlideList2.get("rm_defect.rm_story.defect").refresh();&#13;
+            });&#13;
+        } else {&#13;
+            Utility.getInstance().hideBackground("");&#13;
+            if (GlideList2.get("rm_defect.rm_story.defect"))&#13;
+                GlideList2.get("rm_defect.rm_story.defect").refresh();&#13;
+        }&#13;
+    }).setCloseCallback(function(){&#13;
+        Utility.getInstance().hideBackground("");&#13;
+    }).open(null, "defect", sysId, values);&#13;
+}&#13;
+</script>
+        <script_2/>
+        <script_type>UI Action</script_type>
+        <short_description>Create Story</short_description>
+        <state>Submitted</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-09-01 16:42:12</sys_created_on>
+        <sys_id>c9303b9213ada240dd7db5b12244b0ed</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-09-01 16:42:12</sys_updated_on>
+        <tested_on_helsinki>No</tested_on_helsinki>
+    </x_snc_servicenow_s_servicenow_scripting>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-15 19:02:08</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>bff63fc4dbd8f7400f8828474896198c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SNSCRIPT0001179</sys_name>
+        <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+        <sys_update_name>sys_metadata_link_bff63fc4dbd8f7400f8828474896198c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-03-15 19:02:08</sys_updated_on>
+        <tablename>x_snc_servicenow_s_servicenow_scripting</tablename>
+    </sys_metadata_link>
+</record_update>

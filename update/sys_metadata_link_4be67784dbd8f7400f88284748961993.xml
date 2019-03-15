@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>2781ef4d13e56240e5adbd522244b002</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_snc_servicenow_s_servicenow_scripting">
+    <x_snc_servicenow_s_servicenow_scripting action="INSERT_OR_UPDATE">
+        <code_url/>
+        <code_url_2/>
+        <details/>
+        <example_steps/>
+        <example_url/>
+        <module/>
+        <number>SNSCRIPT0001055</number>
+        <replaced_by/>
+        <script>========================================= Date Adjustment Examples ===================================================&#13;
+&#13;
+Another way (I didn't need to use parseInt, it just worked - despite u_review_frequency being a String choice list):&#13;
+&#13;
+Condition: current.u_last_rental.changes() || current.u_review_frequency.changes()&#13;
+&#13;
+Script:&#13;
+var d = new GlideDate();&#13;
+d.setValue(current.u_last_rental_review);&#13;
+d.addMonths(current.u_review_frequency);&#13;
+current.u_next_review.setValue(d);&#13;
+&#13;
+&#13;
+var tempDate = current.u_last_rental_review.getGlideObject();&#13;
+tempDate.addDays(parseInt(current.u_review_frequency, 10));&#13;
+current.u_next_review = tempDate;&#13;
+current.update();</script>
+        <script_2/>
+        <script_type/>
+        <short_description>Date Adjustment Examples</short_description>
+        <state>Submitted</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-08-28 18:25:15</sys_created_on>
+        <sys_id>2781ef4d13e56240e5adbd522244b002</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-08-28 18:25:15</sys_updated_on>
+        <tested_on_helsinki/>
+    </x_snc_servicenow_s_servicenow_scripting>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-15 19:01:49</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>4be67784dbd8f7400f88284748961993</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SNSCRIPT0001055</sys_name>
+        <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+        <sys_update_name>sys_metadata_link_4be67784dbd8f7400f88284748961993</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-03-15 19:01:49</sys_updated_on>
+        <tablename>x_snc_servicenow_s_servicenow_scripting</tablename>
+    </sys_metadata_link>
+</record_update>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>aa70bb9213ada240dd7db5b12244b0b1</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_snc_servicenow_s_servicenow_scripting">
+    <x_snc_servicenow_s_servicenow_scripting action="INSERT_OR_UPDATE">
+        <code_url/>
+        <code_url_2/>
+        <details>Type:  Business Rule&#13;
+Purpose:  I use this on a Release record, to show how behavior and governance can be applied to a process.  This particular business rule, on save/submit, looks for the existence of a specific attachment (Attachment starts with BRD), and if it is not found, it will perform a number of actions:&#13;
+Display an error message at the top of the screen (should the correct attachment not be found)&#13;
+Set assignment group to software&#13;
+It will update notes in to the journal field on the form&#13;
+Check for the existence of an attachment that begins with BRD and abort the action if it does not exist</details>
+        <example_steps/>
+        <example_url/>
+        <module/>
+        <number>SNSCRIPT0001180</number>
+        <replaced_by/>
+        <script>(function executeRule(current, previous /*null when async*/) {&#13;
+/*  To make this more robust query the sys_attachment table for the attachment.  &#13;
+There are 2 fields&#13;
+to query on that table for a match, table and SysID that will match the record that &#13;
+has the attachment. You can also query for an attachment name etc too.&#13;
+  */&#13;
+//Demonstrate that any field on a record can be update by automation&#13;
+//gs.setReturn (previous.getLink(true));&#13;
+current.work_notes.setDisplayValue("Work notes added by Release progression gate business rule");&#13;
+gq = new GlideRecord('sys_attachment');&#13;
+gq.addQuery('table_sys_id', current.sys_id);&#13;
+gq.addQuery('file_name', "STARTSWITH", 'BRD');&#13;
+gq.query();&#13;
+if (gq.next()) {&#13;
+gs.addInfoMessage("We found an BRD attachment for the current record");&#13;
+} else {&#13;
+//gs.setRedirect(current);&#13;
+gs.addInfoMessage("We did not find an attachment for the current record");&#13;
+current.setAbortAction(true);&#13;
+}&#13;
+//gs.setReturn (previous.getLink(true));&#13;
+action.setRedirectURL(current);&#13;
+})(current, previous);</script>
+        <script_2/>
+        <script_type>Business Rule</script_type>
+        <short_description>Release Progression Gate</short_description>
+        <state>Submitted</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-09-01 16:43:25</sys_created_on>
+        <sys_id>aa70bb9213ada240dd7db5b12244b0b1</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>greg.buonaiuto</sys_updated_by>
+        <sys_updated_on>2017-05-17 13:20:15</sys_updated_on>
+        <tested_on_helsinki>No</tested_on_helsinki>
+    </x_snc_servicenow_s_servicenow_scripting>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-15 19:02:04</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>b2f63bc4dbd8f7400f882847489619a8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SNSCRIPT0001180</sys_name>
+        <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+        <sys_update_name>sys_metadata_link_b2f63bc4dbd8f7400f882847489619a8</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-03-15 19:02:04</sys_updated_on>
+        <tablename>x_snc_servicenow_s_servicenow_scripting</tablename>
+    </sys_metadata_link>
+</record_update>

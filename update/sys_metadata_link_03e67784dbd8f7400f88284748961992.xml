@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>24d5afcd13e56240e5adbd522244b08d</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_snc_servicenow_s_servicenow_scripting">
+    <x_snc_servicenow_s_servicenow_scripting action="INSERT_OR_UPDATE">
+        <code_url/>
+        <code_url_2/>
+        <details/>
+        <example_steps/>
+        <example_url/>
+        <module/>
+        <number>SNSCRIPT0001079</number>
+        <replaced_by/>
+        <script>Within a Run Script Activity&#13;
+Note that user_name and group_name variables are references&#13;
+PassVariables();&#13;
+ &#13;
+function PassVariables() {&#13;
+   &#13;
+   //workflow.scratchpad.adUser = "eric.hemmer";&#13;
+   workflow.scratchpad.adUser = current.variables.user_name.user_name;&#13;
+   //workflow.scratchpad.adGroups = "Database";&#13;
+   workflow.scratchpad.adGroups = current.variables.group_name.name;&#13;
+   //current.calendar_duration = current.variables.calendar_duration;&#13;
+&#13;
+}&#13;
+</script>
+        <script_2/>
+        <script_type>Workflow</script_type>
+        <short_description>Another way of passing variables in a workflow that uses RBA to temporarilty elevate privledges</short_description>
+        <state>Submitted</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-08-28 18:43:58</sys_created_on>
+        <sys_id>24d5afcd13e56240e5adbd522244b08d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-08-28 18:43:58</sys_updated_on>
+        <tested_on_helsinki/>
+    </x_snc_servicenow_s_servicenow_scripting>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-15 19:01:49</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>03e67784dbd8f7400f88284748961992</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SNSCRIPT0001079</sys_name>
+        <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+        <sys_update_name>sys_metadata_link_03e67784dbd8f7400f88284748961992</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-03-15 19:01:49</sys_updated_on>
+        <tablename>x_snc_servicenow_s_servicenow_scripting</tablename>
+    </sys_metadata_link>
+</record_update>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>bc18ef0113296240e5adbd522244b05e</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_snc_servicenow_s_servicenow_scripting">
+    <x_snc_servicenow_s_servicenow_scripting action="INSERT_OR_UPDATE">
+        <code_url/>
+        <code_url_2/>
+        <details/>
+        <example_steps/>
+        <example_url/>
+        <module/>
+        <number>SNSCRIPT0001095</number>
+        <replaced_by/>
+        <script>gs.log('***** We made it into the Calc Parts GrandTotal business rule');&#13;
+&#13;
+var grand_total = 0;&#13;
+&#13;
+var WO_SysId = current.parent.sys_id;&#13;
+&#13;
+var WO_task_SysId = current.work_order_task.sys_id;&#13;
+&#13;
+gs.log('***** the sys id of the work order task is: ' + WO_task_SysId);&#13;
+&#13;
+var parts = new GlideRecord('wm_part_requirement');&#13;
+parts.addQuery('work_order_task',WO_task_SysId);&#13;
+&#13;
+parts.query();&#13;
+&#13;
+while (parts.next()){&#13;
+   //grand_total = grand_total + parts.u_total_cost;&#13;
+   //grand_total += parts.u_total_cost;&#13;
+   grand_total += parseFloat(parts.u_parts_subtotal);&#13;
+   &#13;
+}&#13;
+&#13;
+gs.log('***** the GRAND TOTAL is: ' + grand_total);&#13;
+&#13;
+var work_order_task = new GlideRecord('wm_task');&#13;
+work_order_task.addQuery('sys_id',WO_task_SysId);&#13;
+&#13;
+work_order_task.query();&#13;
+while (work_order_task.next()) {&#13;
+   work_order_task.u_parts_charge = grand_total;&#13;
+   work_order_task.update();&#13;
+}&#13;
+</script>
+        <script_2/>
+        <script_type>Business Rule</script_type>
+        <short_description>Setting a Grand Total Cost on a Work Order Task from all the Required Parts</short_description>
+        <state>Submitted</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-08-28 18:53:51</sys_created_on>
+        <sys_id>bc18ef0113296240e5adbd522244b05e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-08-28 18:53:51</sys_updated_on>
+        <tested_on_helsinki/>
+    </x_snc_servicenow_s_servicenow_scripting>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-15 19:02:06</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>dbf6bbc4dbd8f7400f8828474896190c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SNSCRIPT0001095</sys_name>
+        <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+        <sys_update_name>sys_metadata_link_dbf6bbc4dbd8f7400f8828474896190c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-03-15 19:02:06</sys_updated_on>
+        <tablename>x_snc_servicenow_s_servicenow_scripting</tablename>
+    </sys_metadata_link>
+</record_update>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>a213f38513296240e5adbd522244b047</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_snc_servicenow_s_servicenow_scripting">
+    <x_snc_servicenow_s_servicenow_scripting action="INSERT_OR_UPDATE">
+        <code_url/>
+        <code_url_2/>
+        <details/>
+        <example_steps/>
+        <example_url/>
+        <module/>
+        <number>SNSCRIPT0001166</number>
+        <replaced_by/>
+        <script>Client Script&#13;
+function onChange(control, oldValue, newValue, isLoading, isTemplate) {&#13;
+	if (isLoading || newValue == '') {&#13;
+	   return;&#13;
+	}&#13;
+   &#13;
+   var model = g_form.getReference('model');&#13;
+   var unit_cost = model.cost;&#13;
+   var quantity = g_form.getValue('required_quantity');&#13;
+   &#13;
+   var ajax = new GlideAjax('CalcPartsSubTotal');&#13;
+   ajax.addParam('sysparm_name','Sub_Total');&#13;
+   ajax.addParam('sysparm_cost',parseFloat(unit_cost));&#13;
+   ajax.addParam('sysparm_qnty',quantity);&#13;
+   ajax.getXMLWait();&#13;
+   &#13;
+   var PartsSubTotal = ajax.getAnswer();&#13;
+   &#13;
+  // alert('PartsSubTotal is: '+ parseFloat(PartsSubTotal));&#13;
+     &#13;
+   g_form.setValue('u_total_cost.display', parseFloat(PartsSubTotal));&#13;
+   &#13;
+}&#13;
+Script Include&#13;
+&#13;
+var CalcPartsSubTotal = Class.create();&#13;
+&#13;
+CalcPartsSubTotal.prototype = Object.extendsObject(AbstractAjaxProcessor, {&#13;
+   Sub_Total: function() {&#13;
+      var answer = '';&#13;
+      var UnitCost = this.getParameter('sysparm_cost');&#13;
+      var Quantity = this.getParameter('sysparm_qnty');&#13;
+	  &#13;
+	  gs.log('***** the UnitCost passed in is: ' + UnitCost);&#13;
+	  gs.log('***** the Quantity passed in is: ' + Quantity);&#13;
+	  &#13;
+	  answer = parseFloat(UnitCost)*parseFloat(Quantity);&#13;
+	  &#13;
+	  gs.log('***** the Answer calculated is: ' + answer);&#13;
+	  &#13;
+	  return parseFloat(answer);&#13;
+   }&#13;
+});&#13;
+&#13;
+An Simple alternative would have been to use this business rule, but the update only happens after the Save.&#13;
+&#13;
+&#13;
+Finally, here is a client script that works by itself.&#13;
+The key is using .display and parseFloat together.&#13;
+&#13;
+function onChange(control, oldValue, newValue, isLoading, isTemplate) {&#13;
+	if (isLoading || newValue == '') {&#13;
+	   return;&#13;
+	}&#13;
+   &#13;
+   var model = g_form.getReference('model');&#13;
+   var unit_cost = model.cost;&#13;
+   var quantity = g_form.getValue('required_quantity');&#13;
+   &#13;
+   var PartsSubTotal = unit_cost*quantity;&#13;
+    &#13;
+   g_form.setValue('u_total_cost.display', parseFloat(PartsSubTotal));&#13;
+   &#13;
+}&#13;
+</script>
+        <script_2/>
+        <script_type>Script Includes</script_type>
+        <short_description>Calculating with Currency via a Client Script that Performs an Ajax call to a Script Include</short_description>
+        <state>Submitted</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-08-28 19:42:15</sys_created_on>
+        <sys_id>a213f38513296240e5adbd522244b047</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-08-28 19:42:15</sys_updated_on>
+        <tested_on_helsinki/>
+    </x_snc_servicenow_s_servicenow_scripting>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-15 19:02:02</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>56f677c4dbd8f7400f882847489619d2</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SNSCRIPT0001166</sys_name>
+        <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+        <sys_update_name>sys_metadata_link_56f677c4dbd8f7400f882847489619d2</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-03-15 19:02:02</sys_updated_on>
+        <tablename>x_snc_servicenow_s_servicenow_scripting</tablename>
+    </sys_metadata_link>
+</record_update>

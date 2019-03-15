@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>b83559bb13012a00dd7db5b12244b0ce</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_snc_servicenow_s_servicenow_scripting">
+    <x_snc_servicenow_s_servicenow_scripting action="INSERT_OR_UPDATE">
+        <code_url/>
+        <code_url_2/>
+        <details>For example, you may choose to auto fill the assignment group based on the application selected.&#13;
+</details>
+        <example_steps/>
+        <example_url/>
+        <module/>
+        <number>SNSCRIPT0001018</number>
+        <replaced_by/>
+        <script>Check "Form Button"&#13;
+Set "Condition" to "current.u_request_form_status == 'Waiting Mgmt Approval'  &amp;&amp; current.u_requestor_name.manager == gs.getUserID()"&#13;
+Set "Script" to :&#13;
+current.u_request_form_status = 'Review/Work In Progress';&#13;
+current.update();&#13;
+</script>
+        <script_2/>
+        <script_type>UI Action</script_type>
+        <short_description>Configure UI Action based on Conditions </short_description>
+        <state>Submitted</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-08-12 00:44:11</sys_created_on>
+        <sys_id>b83559bb13012a00dd7db5b12244b0ce</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-08-14 03:14:29</sys_updated_on>
+        <tested_on_helsinki/>
+    </x_snc_servicenow_s_servicenow_scripting>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-15 19:02:05</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>8ff6bbc4dbd8f7400f88284748961902</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SNSCRIPT0001018</sys_name>
+        <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+        <sys_update_name>sys_metadata_link_8ff6bbc4dbd8f7400f88284748961902</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-03-15 19:02:05</sys_updated_on>
+        <tablename>x_snc_servicenow_s_servicenow_scripting</tablename>
+    </sys_metadata_link>
+</record_update>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>c1d13b4513296240e5adbd522244b077</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_snc_servicenow_s_servicenow_scripting">
+    <x_snc_servicenow_s_servicenow_scripting action="INSERT_OR_UPDATE">
+        <code_url/>
+        <code_url_2/>
+        <details/>
+        <example_steps/>
+        <example_url/>
+        <module/>
+        <number>SNSCRIPT0001153</number>
+        <replaced_by/>
+        <script>You have to run this multiple times to catch each occurance of the string you are replacing.&#13;
+var gr = new GlideRecord('kb_knowledge');&#13;
+gr.query();&#13;
+while (gr.next()) {&#13;
+    var needUpdate;&#13;
+    if (gr.short_description.indexOf('TransNow') &gt;= 0) {&#13;
+        gr.short_description = gr.short_description.replace('TransNow', 'ServiceNow');&#13;
+        needUpdate = true;&#13;
+    }&#13;
+    if (gr.text.indexOf('TransNow') &gt;= 0) {&#13;
+        gr.text = gr.text.replace('TransNow', 'ServiceNow');&#13;
+        needUpdate = true;&#13;
+    }&#13;
+    if (needUpdate) {&#13;
+        gr.update();&#13;
+        gs.log('Updated: ' + gr.number);&#13;
+    }&#13;
+}&#13;
+</script>
+        <script_2/>
+        <script_type>Background Script</script_type>
+        <short_description>Script to replace text in knowledge base articles</short_description>
+        <state>Submitted</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-08-28 19:36:28</sys_created_on>
+        <sys_id>c1d13b4513296240e5adbd522244b077</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-08-28 19:36:28</sys_updated_on>
+        <tested_on_helsinki/>
+    </x_snc_servicenow_s_servicenow_scripting>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-15 19:02:07</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>13f6fbc4dbd8f7400f88284748961915</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SNSCRIPT0001153</sys_name>
+        <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+        <sys_update_name>sys_metadata_link_13f6fbc4dbd8f7400f88284748961915</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-03-15 19:02:07</sys_updated_on>
+        <tablename>x_snc_servicenow_s_servicenow_scripting</tablename>
+    </sys_metadata_link>
+</record_update>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>b8616f4d13e56240e5adbd522244b0c6</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_snc_servicenow_s_servicenow_scripting">
+    <x_snc_servicenow_s_servicenow_scripting action="INSERT_OR_UPDATE">
+        <code_url/>
+        <code_url_2/>
+        <details/>
+        <example_steps/>
+        <example_url/>
+        <module/>
+        <number>SNSCRIPT0001053</number>
+        <replaced_by/>
+        <script>========================================= Case Statement Examples ===================================================&#13;
+// Use of toString() is super important for the switch&#13;
+var status = asset.install_status.toString();&#13;
+var substatus = asset.substatus.toString();&#13;
+switch (status) {&#13;
+case '6':&#13;
+   ci.install_status = this&#13;
+         ._inferCIStatusForInStockOrInTransitAsset(substatus);&#13;
+   return 1;&#13;
+case '8':&#13;
+   ci.install_status = this._inferCIStatusForMissingAsset(substatus);&#13;
+   return 1;&#13;
+case '9':&#13;
+   ci.install_status = this&#13;
+         ._inferCIStatusForInStockOrInTransitAsset(substatus);&#13;
+   return 1;&#13;
+default:&#13;
+   ci.install_status = status;&#13;
+   return 1;&#13;
+}&#13;
+&#13;
+switch (current.u_client_class.toString()) {&#13;
+     case 'Direct Purchase':&#13;
+     current.partner = false;&#13;
+     current.customer = true;&#13;
+     break;&#13;
+     case 'Client of Direct Purchase':&#13;
+     current.partner = false;&#13;
+     current.customer = true;&#13;
+     break;&#13;
+     case 'Reseller':&#13;
+     current.partner = true;&#13;
+     current.customer = false;&#13;
+     break;&#13;
+     case 'Client of Reseller':&#13;
+     current.partner = true;&#13;
+     current.customer = false;&#13;
+     break;&#13;
+     case 'Consultant':&#13;
+     current.partner = true;&#13;
+     current.customer = false;&#13;
+     break;&#13;
+}</script>
+        <script_2/>
+        <script_type/>
+        <short_description>Case Statement Examples</short_description>
+        <state>Submitted</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-08-28 18:24:40</sys_created_on>
+        <sys_id>b8616f4d13e56240e5adbd522244b0c6</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-08-28 18:24:40</sys_updated_on>
+        <tested_on_helsinki/>
+    </x_snc_servicenow_s_servicenow_scripting>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-15 19:02:06</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>03f6bbc4dbd8f7400f88284748961906</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SNSCRIPT0001053</sys_name>
+        <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+        <sys_update_name>sys_metadata_link_03f6bbc4dbd8f7400f88284748961906</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-03-15 19:02:06</sys_updated_on>
+        <tablename>x_snc_servicenow_s_servicenow_scripting</tablename>
+    </sys_metadata_link>
+</record_update>

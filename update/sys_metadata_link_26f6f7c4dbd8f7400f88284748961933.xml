@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>a59eafc113296240e5adbd522244b045</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_snc_servicenow_s_servicenow_scripting">
+    <x_snc_servicenow_s_servicenow_scripting action="INSERT_OR_UPDATE">
+        <code_url/>
+        <code_url_2/>
+        <details/>
+        <example_steps/>
+        <example_url/>
+        <module/>
+        <number>SNSCRIPT0001122</number>
+        <replaced_by/>
+        <script>function onChange(control, oldValue, newValue, isTemplate) {&#13;
+   if (newValue != ''){&#13;
+      &#13;
+      var date = g_form.getValue('u_demo_date').toString();&#13;
+      var short_date = date.substr(0,10);&#13;
+      alert(short_date);&#13;
+  &#13;
+      //Type appropriate comment here, and begin script below&#13;
+      if (short_date == '2013-01-08') {&#13;
+	     g_form.removeOption('u_options', 'Hemmer to Shadow Remotely');&#13;
+		 g_form.setValue('u_options','Another SC to Shadow Remotely');&#13;
+      } &#13;
+      else {&#13;
+		 //g_form.addOption('u_options', 'Hemmer to Shadow Remotely', 'Hemmer to Shadow Remotely', 1);	&#13;
+      }&#13;
+   }&#13;
+}</script>
+        <script_2/>
+        <script_type>Client Script</script_type>
+        <short_description>Adding / Removing Choices to a field on a Form based on a date value via a Client Script</short_description>
+        <state>Submitted</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-08-28 19:22:15</sys_created_on>
+        <sys_id>a59eafc113296240e5adbd522244b045</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-08-28 19:22:15</sys_updated_on>
+        <tested_on_helsinki/>
+    </x_snc_servicenow_s_servicenow_scripting>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-15 19:02:03</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>26f6f7c4dbd8f7400f88284748961933</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SNSCRIPT0001122</sys_name>
+        <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+        <sys_update_name>sys_metadata_link_26f6f7c4dbd8f7400f88284748961933</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-03-15 19:02:03</sys_updated_on>
+        <tablename>x_snc_servicenow_s_servicenow_scripting</tablename>
+    </sys_metadata_link>
+</record_update>

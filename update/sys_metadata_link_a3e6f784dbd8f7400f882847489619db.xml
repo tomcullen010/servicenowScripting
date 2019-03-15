@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>39252bcd13e56240e5adbd522244b0e0</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_snc_servicenow_s_servicenow_scripting">
+    <x_snc_servicenow_s_servicenow_scripting action="INSERT_OR_UPDATE">
+        <code_url/>
+        <code_url_2/>
+        <details/>
+        <example_steps/>
+        <example_url/>
+        <module/>
+        <number>SNSCRIPT0001073</number>
+        <replaced_by/>
+        <script>workflow.scratchpad.dc = "10.1.33.50";&#13;
+&#13;
+//set naming conventions&#13;
+var display_name = workflow.inputs.u_lastname + ", " + workflow.inputs.u_firstname;&#13;
+var logon_name = workflow.inputs.u_firstname + "." + workflow.inputs.u_lastname;&#13;
+var userPrincipalName = logon_name + "@twtelecom.com";&#13;
+&#13;
+// EH - Modification - Put userPrincipalName into workflow scratchpad&#13;
+workflow.scratchpad.email = userPrincipalName;&#13;
+&#13;
+//Sets the CN_Name that will appear in Active Directory list&#13;
+//This will also be used as the Username input for Create AD User Account RBA activity&#13;
+workflow.scratchpad.CN_Name = logon_name;&#13;
+&#13;
+//Construct the JSON for user variables&#13;
+var user = {};&#13;
+user.givenName = String(workflow.inputs.u_firstname);&#13;
+user.SN = String(workflow.inputs.u_lastname);&#13;
+user.DisplayName = display_name;&#13;
+user.sAMAccountName = logon_name;&#13;
+user.userPrincipalName = userPrincipalName;&#13;
+user.mail = userPrincipalName;&#13;
+user.company = "TW Telecom";&#13;
+user.description = "Added through ServiceNow";&#13;
+user.wWWHomePage = "www.twtelecom.com";&#13;
+&#13;
+//Handle optional fields&#13;
+&#13;
+//Handle optional fields&#13;
+if(workflow.inputs.u_department)&#13;
+	user.department = String(workflow.inputs.u_department);&#13;
+&#13;
+if(workflow.inputs.u_title)&#13;
+	user.title = String(workflow.inputs.u_title);&#13;
+&#13;
+if(workflow.inputs.u_office.name){&#13;
+	user.PhysicalDeliveryOfficeName = String(workflow.inputs.u_office.name);}&#13;
+&#13;
+if(workflow.inputs.u_phone){&#13;
+	user.telephoneNumber = String(workflow.inputs.u_phone);}&#13;
+&#13;
+//We changed this one to be in line with the qualified naming structure used by TW Telecom&#13;
+&#13;
+if(workflow.inputs.u_manager.user_name){&#13;
+   //user.Manager = "CN=" + workflow.inputs.u_manager.user_name + ",OU=Time Warner Telecom,DC=twtelecom,DC=com";}&#13;
+   user.Manager = "CN=" + workflow.inputs.u_manager.user_name + ",OU=Time Warner Telecom,DC=ad,DC=twtelecom,DC=com";&#13;
+}&#13;
+	  &#13;
+// EH - Modification - Put userPrincipalName into workflow scratchpad&#13;
+//workflow.scratchpad.user_manager = user.Manager;&#13;
+&#13;
+//Set Address&#13;
+if(workflow.inputs.u_office){&#13;
+   if(workflow.inputs.u_office.street)&#13;
+		user.streetAddress = String(workflow.inputs.u_office.street);&#13;
+   if(workflow.inputs.u_office.city)&#13;
+		user.l =  String(workflow.inputs.u_office.city);&#13;
+   if(workflow.inputs.u_office.state)&#13;
+		user.st = String(workflow.inputs.u_office.state);&#13;
+   if(workflow.inputs.u_office.zip)&#13;
+		user.postalCode = String(workflow.inputs.u_office.zip);&#13;
+}&#13;
+&#13;
+//Set Country&#13;
+user.co = "United States";&#13;
+user.c = "US";&#13;
+user.countryCode = "840";&#13;
+&#13;
+//Encode JSON and set User Data input variable for Create AD User Account&#13;
+workflow.scratchpad.userdata = new JSON().encode(user);&#13;
+workflow.debug('user data JSON: '+ workflow.scratchpad.userdata);&#13;
+&#13;
+//setup groups&#13;
+if(workflow.inputs.u_group){&#13;
+   workflow.scratchpad.processgroups = true;&#13;
+   var str = workflow.inputs.u_group.toString();&#13;
+   var arr = str.split(",");&#13;
+   workflow.info("Groups ARE " + workflow.inputs.u_group);&#13;
+   workflow.info("length is " + arr.length);&#13;
+   var desc = [];&#13;
+   for(var i=0; i &lt; arr.length; i++){ //str holds sys_id, so need to find name&#13;
+   	var grp = new GlideRecord('sys_user_group');&#13;
+   	workflow.info("Array pos: " + arr[i]);&#13;
+   	grp.get(arr[i]);&#13;
+   	desc.push(grp.name);&#13;
+   	workflow.info("group: " + desc[i]);&#13;
+	}&#13;
+&#13;
+	workflow.scratchpad.groups = desc.join(',');&#13;
+	workflow.debug(desc);&#13;
+}&#13;
+else&#13;
+   workflow.scratchpad.processgroups = false;&#13;
+</script>
+        <script_2/>
+        <script_type>Workflow</script_type>
+        <short_description>Setting Variables in Create User Account Activity</short_description>
+        <state>Submitted</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-08-28 18:41:48</sys_created_on>
+        <sys_id>39252bcd13e56240e5adbd522244b0e0</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-08-28 18:41:48</sys_updated_on>
+        <tested_on_helsinki/>
+    </x_snc_servicenow_s_servicenow_scripting>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-15 19:01:51</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>a3e6f784dbd8f7400f882847489619db</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SNSCRIPT0001073</sys_name>
+        <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+        <sys_update_name>sys_metadata_link_a3e6f784dbd8f7400f882847489619db</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-03-15 19:01:51</sys_updated_on>
+        <tablename>x_snc_servicenow_s_servicenow_scripting</tablename>
+    </sys_metadata_link>
+</record_update>

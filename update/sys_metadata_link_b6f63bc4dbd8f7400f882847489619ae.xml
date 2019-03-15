@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>b3aae38113296240e5adbd522244b0b1</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_snc_servicenow_s_servicenow_scripting">
+    <x_snc_servicenow_s_servicenow_scripting action="INSERT_OR_UPDATE">
+        <code_url/>
+        <code_url_2/>
+        <details/>
+        <example_steps/>
+        <example_url/>
+        <module/>
+        <number>SNSCRIPT0001114</number>
+        <replaced_by/>
+        <script>function onChange(control, oldValue, newValue, isLoading, isTemplate) {&#13;
+   if ((newValue == '') || (isLoading &amp;&amp; newValue == null) || (!isLoading &amp;&amp; newValue == oldValue)) {&#13;
+	   return;&#13;
+   }&#13;
+	&#13;
+	if (!isLoading &amp;&amp; newValue != oldValue) {&#13;
+	    g_form.setValue('u_caller_authenticated', false);&#13;
+	}&#13;
+	&#13;
+	var authenticated = g_form.getValue('u_caller_authenticated');&#13;
+	&#13;
+	if (authenticated == 'false') {&#13;
+		alert ("You must authenticate the caller before proceeding");&#13;
+		g_form.flash("u_service_call.u_caller_authenticated", "#FFFACD", 0);&#13;
+		g_form.showFieldMsg('u_caller','Authenticate this caller','info');&#13;
+		//confirm ("You must authenticate the caller before proceeding.  Have you authenticated this user?");&#13;
+		//if (answer == true) {&#13;
+		// g_form.setValue('u_caller_authenticated', 'true');&#13;
+	    //return false;&#13;
+		//}&#13;
+	}&#13;
+	else {&#13;
+	    g_form.hideFieldMsg('u_caller');	&#13;
+	}&#13;
+}&#13;
+</script>
+        <script_2/>
+        <script_type>Client Script</script_type>
+        <short_description>To remind an agent to authenticate a caller</short_description>
+        <state>Submitted</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-08-28 19:05:18</sys_created_on>
+        <sys_id>b3aae38113296240e5adbd522244b0b1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-08-28 19:05:18</sys_updated_on>
+        <tested_on_helsinki/>
+    </x_snc_servicenow_s_servicenow_scripting>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-15 19:02:05</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>b6f63bc4dbd8f7400f882847489619ae</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SNSCRIPT0001114</sys_name>
+        <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+        <sys_update_name>sys_metadata_link_b6f63bc4dbd8f7400f882847489619ae</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-03-15 19:02:05</sys_updated_on>
+        <tablename>x_snc_servicenow_s_servicenow_scripting</tablename>
+    </sys_metadata_link>
+</record_update>

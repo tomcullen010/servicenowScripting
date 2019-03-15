@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>cbdfd34d13e56240e5adbd522244b00e</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_snc_servicenow_s_servicenow_scripting">
+    <x_snc_servicenow_s_servicenow_scripting action="INSERT_OR_UPDATE">
+        <code_url/>
+        <code_url_2/>
+        <details/>
+        <example_steps/>
+        <example_url/>
+        <module/>
+        <number>SNSCRIPT0001046</number>
+        <replaced_by/>
+        <script/>
+        <script_2/>
+        <script_type/>
+        <short_description>Recalculated Demand Risk Value Size</short_description>
+        <state>Submitted</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-08-28 18:18:14</sys_created_on>
+        <sys_id>cbdfd34d13e56240e5adbd522244b00e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-08-28 18:18:14</sys_updated_on>
+        <tested_on_helsinki/>
+    </x_snc_servicenow_s_servicenow_scripting>
+    <sys_attachment action="INSERT_OR_UPDATE">
+        <average_image_color/>
+        <chunk_size_bytes/>
+        <compressed>true</compressed>
+        <content_type>text/xml</content_type>
+        <encryption_context/>
+        <file_name>Recalculate Demand Risk Value Size.xml</file_name>
+        <image_height/>
+        <image_width/>
+        <size_bytes>5332</size_bytes>
+        <size_compressed>1615</size_compressed>
+        <state/>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-08-28 18:18:09</sys_created_on>
+        <sys_id>a5ff934d13e56240e5adbd522244b075</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-08-28 18:18:09</sys_updated_on>
+        <table_name>x_snc_servicenow_s_servicenow_scripting</table_name>
+        <table_sys_id>cbdfd34d13e56240e5adbd522244b00e</table_sys_id>
+    </sys_attachment>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>H4sIAAAAAAAAAA==</data>
+        <length>16</length>
+        <position>0</position>
+        <sys_attachment display_value="Recalculate Demand Risk Value Size.xml" sys_id="a5ff934d13e56240e5adbd522244b075">a5ff934d13e56240e5adbd522244b075</sys_attachment>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-08-28 18:18:09</sys_created_on>
+        <sys_id>e5ff934d13e56240e5adbd522244b075</sys_id>
+    </sys_attachment_doc>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>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</data>
+        <length>2140</length>
+        <position>1</position>
+        <sys_attachment display_value="Recalculate Demand Risk Value Size.xml" sys_id="a5ff934d13e56240e5adbd522244b075">a5ff934d13e56240e5adbd522244b075</sys_attachment>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-08-28 18:18:09</sys_created_on>
+        <sys_id>69ff934d13e56240e5adbd522244b075</sys_id>
+    </sys_attachment_doc>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-15 19:02:08</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>b7f63fc4dbd8f7400f88284748961990</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SNSCRIPT0001046</sys_name>
+        <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+        <sys_update_name>sys_metadata_link_b7f63fc4dbd8f7400f88284748961990</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-03-15 19:02:08</sys_updated_on>
+        <tablename>x_snc_servicenow_s_servicenow_scripting</tablename>
+    </sys_metadata_link>
+</record_update>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>dd0e903b13892a00e5adbd522244b0c1</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_snc_servicenow_s_servicenow_scripting">
+    <x_snc_servicenow_s_servicenow_scripting action="INSERT_OR_UPDATE">
+        <code_url/>
+        <code_url_2/>
+        <details/>
+        <example_steps/>
+        <example_url/>
+        <module/>
+        <number>SNSCRIPT0001009</number>
+        <replaced_by/>
+        <script>var supplierRec = current.supplier_profile.getRefRecord();&#13;
+var vendorRec = new GlideRecord("core_company");&#13;
+vendorRec.initialize();&#13;
+vendorRec.vendor = true;&#13;
+vendorRec.name = supplierRec.u_vendor_name;&#13;
+vendorRec.vendor_type = supplierRec.u_vendor_type;&#13;
+vendorRec.street = supplierRec.u_vendor_address;&#13;
+vendorRec.city = supplierRec.u_vendor_city;&#13;
+vendorRec.state = supplierRec.u_vendor_state_province;&#13;
+vendorRec.zip = supplierRec.u_vendor_zip_postcode;&#13;
+vendorRec.phone = supplierRec.u_vendor_phone;&#13;
+vendorRec.fax_phone = supplierRec.u_vendor_fax;&#13;
+vendorRec.notes = supplierRec.u_notes;&#13;
+vendorRec.vendor_manager = supplierRec.u_internal_vendor_manager;&#13;
+vendorRec.website = supplierRec.u_website;&#13;
+vendorRec.manufacturer = supplierRec.u_manufacturer;&#13;
+var vendorID = vendorRec.insert();&#13;
+&#13;
+supplierRec.u_vendor = vendorID;&#13;
+supplierRec.update();&#13;
+&#13;
+</script>
+        <script_2/>
+        <script_type/>
+        <short_description>Vendor Record Creator</short_description>
+        <state>Submitted</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-08-11 20:43:02</sys_created_on>
+        <sys_id>dd0e903b13892a00e5adbd522244b0c1</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-08-28 22:29:15</sys_updated_on>
+        <tested_on_helsinki/>
+    </x_snc_servicenow_s_servicenow_scripting>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-15 19:02:11</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>1807ffc4dbd8f7400f8828474896196c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SNSCRIPT0001009</sys_name>
+        <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+        <sys_update_name>sys_metadata_link_1807ffc4dbd8f7400f8828474896196c</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-03-15 19:02:11</sys_updated_on>
+        <tablename>x_snc_servicenow_s_servicenow_scripting</tablename>
+    </sys_metadata_link>
+</record_update>

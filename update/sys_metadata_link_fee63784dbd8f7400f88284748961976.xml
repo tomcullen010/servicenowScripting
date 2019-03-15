@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>1c392b4113296240e5adbd522244b00d</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_snc_servicenow_s_servicenow_scripting">
+    <x_snc_servicenow_s_servicenow_scripting action="INSERT_OR_UPDATE">
+        <code_url/>
+        <code_url_2/>
+        <details>Represented by an An Expense Line (fm_expense_line) and an An Expense Allocation (fm_expense_allocation).&#13;
+</details>
+        <example_steps/>
+        <example_url/>
+        <module/>
+        <number>SNSCRIPT0001103</number>
+        <replaced_by/>
+        <script>Business Rule to Create the Expense Line&#13;
+var tableName = current.sys_class_name;&#13;
+var recordId = current.sys_id;  &#13;
+var cost = current.cost;&#13;
+&#13;
+createExpenseLine(tableName,recordId,cost);&#13;
+&#13;
+function createExpenseLine(tableName,recordId,cost){&#13;
+  var expLine = new GlideRecord('fm_expense_line');&#13;
+  expLine.cost_table = tableName;&#13;
+  expLine.cost_id = recordId;&#13;
+  expLine.source_table = tableName;&#13;
+  expLine.source_id = recordId;&#13;
+  expLine.amount = cost;&#13;
+  expLine.short_description = "Asset Assignment";&#13;
+  expLine.summary_type = 'run_business';&#13;
+  expLine.state = 'pending';&#13;
+  expLine.process_date = gs.now();&#13;
+  expLine.insert();&#13;
+}&#13;
+&#13;
+&#13;
+Expense Allocation&#13;
+Summary TYpe = Run Business</script>
+        <script_2/>
+        <script_type>Business Rule</script_type>
+        <short_description>Represented by an An Expense Line (fm_expense_line) and an An Expense Allocation (fm_expense_allocat</short_description>
+        <state>Submitted</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-08-28 19:00:06</sys_created_on>
+        <sys_id>1c392b4113296240e5adbd522244b00d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-08-28 19:00:06</sys_updated_on>
+        <tested_on_helsinki/>
+    </x_snc_servicenow_s_servicenow_scripting>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-15 19:01:48</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>fee63784dbd8f7400f88284748961976</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SNSCRIPT0001103</sys_name>
+        <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+        <sys_update_name>sys_metadata_link_fee63784dbd8f7400f88284748961976</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-03-15 19:01:48</sys_updated_on>
+        <tablename>x_snc_servicenow_s_servicenow_scripting</tablename>
+    </sys_metadata_link>
+</record_update>

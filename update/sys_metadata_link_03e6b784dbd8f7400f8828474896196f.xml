@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>2a1aef4113296240e5adbd522244b040</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_snc_servicenow_s_servicenow_scripting">
+    <x_snc_servicenow_s_servicenow_scripting action="INSERT_OR_UPDATE">
+        <code_url/>
+        <code_url_2/>
+        <details/>
+        <example_steps/>
+        <example_url/>
+        <module/>
+        <number>SNSCRIPT0001109</number>
+        <replaced_by/>
+        <script>knowledgeReviewProcess();&#13;
+knowledgeReviewReminder();&#13;
+&#13;
+function knowledgeReviewProcess() {&#13;
+&#13;
+	var kbRec = new GlideRecord('kb_knowledge');&#13;
+	kbRec.addQuery('workflow_state', 'published');&#13;
+	kbRec.addQuery('u_needs_review', 'false');&#13;
+	kbRec.addQuery('u_under_review', 'false');&#13;
+	kbRec.addQuery('u_reviewed_date', '&lt;=', gs.daysAgo(180));&#13;
+	kbRec.query();&#13;
+&#13;
+	while(kbRec.next()) {&#13;
+		kbRec.u_needs_review = 'true';&#13;
+		kbRec.u_reminder_count = 0;&#13;
+		kbRec.u_under_review_date = gs.nowDateTime();&#13;
+		kbRec.update();&#13;
+		gs.eventQueue("disney_kb.owner.review", kbRec);&#13;
+	}&#13;
+}&#13;
+&#13;
+function knowledgeReviewReminder() {&#13;
+&#13;
+	var kbRec = new GlideRecord('kb_knowledge');&#13;
+	kbRec.addQuery('workflow_state', 'published');&#13;
+	kbRec.addQuery('u_needs_review', 'true');&#13;
+	kbRec.addQuery('u_reminder_count', '&gt;=', 0);&#13;
+	kbRec.addQuery('u_reminder_count', '&lt;', 3);&#13;
+	kbRec.addQuery('u_under_review_date', '&lt;=', gs.daysAgo(10));&#13;
+	kbRec.query();&#13;
+	&#13;
+	while(kbRec.next()) {&#13;
+		if(kbRec.u_reminder_count == 0) {&#13;
+			gs.eventQueue("disney_kb.owner.reminder", kbRec);&#13;
+			kbRec.u_under_review_date = gs.nowDateTime();&#13;
+			kbRec.u_reminder_count++;&#13;
+		}&#13;
+		else if(kbRec.u_reminder_count == 1) {&#13;
+			gs.eventQueue("disney_kb.manager.reminder", kbRec);&#13;
+			kbRec.u_under_review_date = gs.nowDateTime();&#13;
+			kbRec.u_reminder_count++;&#13;
+		}&#13;
+		else if(kbRec.u_reminder_count == 2) {&#13;
+			gs.eventQueue("disney_kb.group.reminder", kbRec);&#13;
+			kbRec.u_under_review_date = gs.nowDateTime();&#13;
+			kbRec.u_reminder_count++;&#13;
+		}&#13;
+		kbRec.update();&#13;
+	}&#13;
+}&#13;
+</script>
+        <script_2/>
+        <script_type>Scheduled Jobs</script_type>
+        <short_description>Remind KB Reviewers to review articles</short_description>
+        <state>Submitted</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-08-28 19:02:44</sys_created_on>
+        <sys_id>2a1aef4113296240e5adbd522244b040</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-08-28 19:02:44</sys_updated_on>
+        <tested_on_helsinki/>
+    </x_snc_servicenow_s_servicenow_scripting>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-15 19:01:49</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>03e6b784dbd8f7400f8828474896196f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SNSCRIPT0001109</sys_name>
+        <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+        <sys_update_name>sys_metadata_link_03e6b784dbd8f7400f8828474896196f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-03-15 19:01:49</sys_updated_on>
+        <tablename>x_snc_servicenow_s_servicenow_scripting</tablename>
+    </sys_metadata_link>
+</record_update>

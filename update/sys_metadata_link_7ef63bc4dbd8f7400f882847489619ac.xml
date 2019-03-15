@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>b085ebcd13e56240e5adbd522244b0bd</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_snc_servicenow_s_servicenow_scripting">
+    <x_snc_servicenow_s_servicenow_scripting action="INSERT_OR_UPDATE">
+        <code_url/>
+        <code_url_2/>
+        <details/>
+        <example_steps/>
+        <example_url/>
+        <module/>
+        <number>SNSCRIPT0001075</number>
+        <replaced_by/>
+        <script>//set up user record&#13;
+var userIdCount = 0;&#13;
+var createUser = false;&#13;
+var firstName = workflow.inputs.u_firstname;&#13;
+var lastName = workflow.inputs.u_lastname;&#13;
+var origUserID = firstName + '.' + lastName;&#13;
+var userID = origUserID.toLowerCase();&#13;
+&#13;
+&#13;
+//grab next available User ID&#13;
+while (!createUser){&#13;
+   if (userIdCount &gt; 0){&#13;
+	  userID = origUserID + userIdCount;&#13;
+   }&#13;
+   &#13;
+   if (doesUserExist(userID)){&#13;
+	  userIdCount++;&#13;
+	  continue;&#13;
+   }&#13;
+   createUser = true;&#13;
+}&#13;
+&#13;
+//insert new user record&#13;
+var gr = new GlideRecord('sys_user');&#13;
+gr.initialize();&#13;
+gr.first_name = firstName;&#13;
+gr.last_name = lastName;&#13;
+gr.user_name = userID;&#13;
+gr.department = workflow.inputs.u_department;&#13;
+gr.mobile_phone = workflow.inputs.u_phone;&#13;
+gr.location = workflow.inputs.u_office;&#13;
+gr.manager = workflow.inputs.u_manager;&#13;
+gr.title = workflow.inputs.u_title;&#13;
+gr.user_password.setDisplayValue("employee");&#13;
+//gr.u_reset_pin = "1234";&#13;
+gr.source = "ServiceNow Orchestration";&#13;
+//gr.company = "b31eb751bd8941009de10472ee055d9e"; //ServiceNow&#13;
+//gr.cost_center = "d9d0a971c0a80a641c20b13d99a48576"; //IT&#13;
+gr.email = userID + '@twelecom.com';&#13;
+gr.active = true;&#13;
+&#13;
+// EH - Modification - Put user sys_id into workflow scratchpad&#13;
+// ADD ad_logon and temp_password to sys_user table.  Add new_user to sc_req_item table&#13;
+gr.u_ad_logon = workflow.scratchpad.CN_Name;&#13;
+gr.u_temp_password = workflow.scratchpad.randompassword;&#13;
+&#13;
+// BTY - Handle custom executive field&#13;
+if (current.variables.is_executive == 'Yes')&#13;
+   gr.u_executive = true;&#13;
+&#13;
+var new_user_SysID = gr.insert();&#13;
+&#13;
+//Update New User in current Sc_Req_Item with newly created user&#13;
+current.u_new_user = new_user_SysID;&#13;
+current.update();&#13;
+</script>
+        <script_2/>
+        <script_type>Workflow</script_type>
+        <short_description>Modifying OnBoarding Script to facilitate a notification - Synch to User/Group Records Activity</short_description>
+        <state>Submitted</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-08-28 18:42:39</sys_created_on>
+        <sys_id>b085ebcd13e56240e5adbd522244b0bd</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-08-28 18:42:39</sys_updated_on>
+        <tested_on_helsinki/>
+    </x_snc_servicenow_s_servicenow_scripting>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-15 19:02:05</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>7ef63bc4dbd8f7400f882847489619ac</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SNSCRIPT0001075</sys_name>
+        <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+        <sys_update_name>sys_metadata_link_7ef63bc4dbd8f7400f882847489619ac</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-03-15 19:02:05</sys_updated_on>
+        <tablename>x_snc_servicenow_s_servicenow_scripting</tablename>
+    </sys_metadata_link>
+</record_update>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>50f96f4113296240e5adbd522244b0cb</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_snc_servicenow_s_servicenow_scripting">
+    <x_snc_servicenow_s_servicenow_scripting action="INSERT_OR_UPDATE">
+        <code_url/>
+        <code_url_2/>
+        <details>his one checks to see if there are more than 5 CI's in the Affected CI's related list.&#13;
+Count all CIs in the related list and return 'true' if greater than five:</details>
+        <example_steps/>
+        <example_url/>
+        <module/>
+        <number>SNSCRIPT0001107</number>
+        <replaced_by/>
+        <script>How many CI's are Affected?&#13;
+You can also create a script.  This one checks to see if there are more than 5 CI's in the Affected CI's related list.&#13;
+Count all CIs in the related list and return 'true' if greater than five:&#13;
+&#13;
+   var ciCount = new GlideAggregate('task_ci');&#13;
+   ciCount.addQuery('task', current.sys_id);&#13;
+   ciCount.addAggregate('COUNT');&#13;
+   ciCount.query();&#13;
+   var ciCount2 = 0;&#13;
+   if(ciCount.next()){&#13;
+      ciCount2 = ciCount.getAggregate('COUNT');&#13;
+      var upd = new GlideRecord('change_request');&#13;
+      upd.get(current.sys_id);&#13;
+      ciCount2;&#13;
+&#13;
+      if(ciCount2 &gt; 5){&#13;
+        answer = true;&#13;
+      }&#13;
+&#13;
+   }&#13;
+</script>
+        <script_2/>
+        <script_type/>
+        <short_description>Change Risk Conditions Script</short_description>
+        <state>Submitted</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-08-28 19:02:04</sys_created_on>
+        <sys_id>50f96f4113296240e5adbd522244b0cb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-08-28 19:02:04</sys_updated_on>
+        <tested_on_helsinki/>
+    </x_snc_servicenow_s_servicenow_scripting>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-15 19:01:54</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>98f6fb84dbd8f7400f882847489619e7</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SNSCRIPT0001107</sys_name>
+        <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+        <sys_update_name>sys_metadata_link_98f6fb84dbd8f7400f882847489619e7</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-03-15 19:01:54</sys_updated_on>
+        <tablename>x_snc_servicenow_s_servicenow_scripting</tablename>
+    </sys_metadata_link>
+</record_update>

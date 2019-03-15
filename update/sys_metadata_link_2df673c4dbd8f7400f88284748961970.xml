@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>8012bb4513296240e5adbd522244b08e</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_snc_servicenow_s_servicenow_scripting">
+    <x_snc_servicenow_s_servicenow_scripting action="INSERT_OR_UPDATE">
+        <code_url/>
+        <code_url_2/>
+        <details/>
+        <example_steps/>
+        <example_url/>
+        <module/>
+        <number>SNSCRIPT0001156</number>
+        <replaced_by/>
+        <script>&#13;
+1.	Create glide_duration field: u_employment_length&#13;
+Calculation&#13;
+length();&#13;
+function length(){&#13;
+   var dif = gs.dateDiff(current.u_start_date,gs.nowDateTime(), false);&#13;
+   return dif;&#13;
+   }&#13;
+&#13;
+2.	Create string field: u_accrual_rate&#13;
+Calculation&#13;
+rate();&#13;
+&#13;
+function rate(){&#13;
+   var dif = gs.dateDiff(current.u_start_date,gs.nowDateTime(), true);&#13;
+   //divide seconds to get years&#13;
+   dif = dif/60/60/24/365;&#13;
+&#13;
+   if(dif &lt;= 1){&#13;
+     return '14 days/year';&#13;
+   }&#13;
+&#13;
+   if(dif &gt; 1 &amp;&amp; dif &lt;= 2){&#13;
+     return '17 days/year';&#13;
+   }&#13;
+&#13;
+   if(dif &gt; 2 &amp;&amp; dif &lt;= 4){&#13;
+     return '19 days/year';&#13;
+   }&#13;
+&#13;
+   if(dif &gt; 4 &amp;&amp; dif &lt;= 9){&#13;
+     return '24 days/year';&#13;
+   }&#13;
+&#13;
+   if(dif &gt; 9){&#13;
+     return '27 days/year';&#13;
+   }&#13;
+&#13;
+&#13;
+}&#13;
+</script>
+        <script_2/>
+        <script_type/>
+        <short_description>Determine PTO Accrual Rate</short_description>
+        <state>Submitted</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-08-28 19:37:31</sys_created_on>
+        <sys_id>8012bb4513296240e5adbd522244b08e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-08-28 19:37:31</sys_updated_on>
+        <tested_on_helsinki/>
+    </x_snc_servicenow_s_servicenow_scripting>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-15 19:01:59</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>2df673c4dbd8f7400f88284748961970</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SNSCRIPT0001156</sys_name>
+        <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+        <sys_update_name>sys_metadata_link_2df673c4dbd8f7400f88284748961970</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-03-15 19:01:59</sys_updated_on>
+        <tablename>x_snc_servicenow_s_servicenow_scripting</tablename>
+    </sys_metadata_link>
+</record_update>

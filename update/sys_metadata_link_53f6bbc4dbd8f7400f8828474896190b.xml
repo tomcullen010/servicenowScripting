@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>bba5ed89135ee200e5adbd522244b05b</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_snc_servicenow_s_servicenow_scripting">
+    <x_snc_servicenow_s_servicenow_scripting action="INSERT_OR_UPDATE">
+        <code_url/>
+        <code_url_2/>
+        <details/>
+        <example_steps/>
+        <example_url/>
+        <module/>
+        <number>SNSCRIPT0001181</number>
+        <replaced_by/>
+        <script/>
+        <script_2/>
+        <script_type>Business Rule</script_type>
+        <short_description>Approval Comments on Parent Task</short_description>
+        <state>Submitted</state>
+        <sys_created_by>alex.yupanqui</sys_created_by>
+        <sys_created_on>2016-10-04 16:11:24</sys_created_on>
+        <sys_id>bba5ed89135ee200e5adbd522244b05b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>alex.yupanqui</sys_updated_by>
+        <sys_updated_on>2016-10-04 16:11:24</sys_updated_on>
+        <tested_on_helsinki>No</tested_on_helsinki>
+    </x_snc_servicenow_s_servicenow_scripting>
+    <sys_attachment action="INSERT_OR_UPDATE">
+        <average_image_color/>
+        <chunk_size_bytes/>
+        <compressed>true</compressed>
+        <content_type>text/xml</content_type>
+        <encryption_context/>
+        <file_name>ApprovalComments_on_ParentTask.xml</file_name>
+        <image_height/>
+        <image_width/>
+        <size_bytes>2162</size_bytes>
+        <size_compressed>891</size_compressed>
+        <state/>
+        <sys_created_by>alex.yupanqui</sys_created_by>
+        <sys_created_on>2016-10-04 16:11:36</sys_created_on>
+        <sys_id>20d5ed89135ee200e5adbd522244b043</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>alex.yupanqui</sys_updated_by>
+        <sys_updated_on>2016-10-04 16:11:36</sys_updated_on>
+        <table_name>x_snc_servicenow_s_servicenow_scripting</table_name>
+        <table_sys_id>bba5ed89135ee200e5adbd522244b05b</table_sys_id>
+    </sys_attachment>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>H4sIAAAAAAAAAA==</data>
+        <length>16</length>
+        <position>0</position>
+        <sys_attachment display_value="ApprovalComments_on_ParentTask.xml" sys_id="20d5ed89135ee200e5adbd522244b043">20d5ed89135ee200e5adbd522244b043</sys_attachment>
+        <sys_created_by>alex.yupanqui</sys_created_by>
+        <sys_created_on>2016-10-04 16:11:36</sys_created_on>
+        <sys_id>60d5ed89135ee200e5adbd522244b043</sys_id>
+    </sys_attachment_doc>
+    <sys_attachment_doc action="INSERT_OR_UPDATE">
+        <data>lVZNc9s2ED2bvwLRxVJaS5Qcq/6gmPGkSaaXtuPapzSDgYCVjDEEMAAoW9P0v3cJkBQp2zPpScDbtw/YDyyVvX/aKLIF66TRi8F0nA4IaG6E1OvF4O7208n54H2eZKVWhgkSf6hgHhaDWTqdn6TnJ+k7MksvZ79cTqcDpLqdo45bWXjCuA+yv/3+18ebW/rHDb3789fr248VjS2N9TQy8hVTDrJJD0MK5+BcXjD+wNZACyu3eDDSIl4RKiYVoMBDK9IDW5LUDqzPvS33nBprOd9KsLsDnYi1lLKogu/L1FjkbLvGbUCFoBu8MMbQanegirBlmoNoHJttkvF7pjHylQQlXOPcB5GkJGhPOVOKLVV7xiGMRKMUxORikVhRWLNlisYFWHTZEyq2FjKseWktSo252Wzw143jDdxwRL5/J4310dgHqo2Hjr2SbFSSTEDsC9xNcAtPwEuPgZS61wXP8CRbSeXB0laM+CqkxeClMAaVtnTUgvONZLNNsjrrFUezDeR3oXbkQx0aQe3rWpF8MpZY4MaKbBLISYZrsPk0TbNJXCYZtqWx0u8i2u6SrDoRq+zvjSBCukKxHUXZEu8d7tixUw9PvsWwKbeSw+tONaHvtWVWVllxATEK9ukKUMx9nr358gHf4PWXYZNfUif8plQwrKv5MyksbKUpHZm81aVS5PEeNGFup/nbyYj8kxwlR3giaXqCLMjxdV2BNpuXf+vjq+So5fy0IIe9dNUIrS1KaHgkn5UUcBPSPjz2zD0cj5AkV8M3azteg2+uOO4UfzTCQvnS6iCHvM61OiehIb7VYSWZ/Dt6Hu7o6uvXPJvUyYrTjCvmHA0dsB9uyOmbaq4F1Bd0ucsdMD1eMjzAN+y9sc/GJu9P0+np5em87xQeQgBK580Gn0NvFr1kiXxhNkzqfK3MkqlIrKGunRbM3+eTrj1CkSRFPjtbnp6dszOx5BcwS9N0nqbinE356mI+vZiL6CpF7bHBtuam1D5/Fy17IBL+1/trHaJv1WYW+8S9+EgqRv3VOLR/DlkY9LJRUxtHoyTfNTIW0BufWhjza8tEO19fsTYfQFP80NmBWDvFqh02Gv2xvHedu3KvtGLH2Gc/a8XZ/PLsou8UWtHDBoPzYZRWwyFfwspYTEzYJE149TuaxL8OefIfTwhNo3IIAAA=</data>
+        <length>1176</length>
+        <position>1</position>
+        <sys_attachment display_value="ApprovalComments_on_ParentTask.xml" sys_id="20d5ed89135ee200e5adbd522244b043">20d5ed89135ee200e5adbd522244b043</sys_attachment>
+        <sys_created_by>alex.yupanqui</sys_created_by>
+        <sys_created_on>2016-10-04 16:11:36</sys_created_on>
+        <sys_id>e0d5ed89135ee200e5adbd522244b043</sys_id>
+    </sys_attachment_doc>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-15 19:02:06</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>53f6bbc4dbd8f7400f8828474896190b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SNSCRIPT0001181</sys_name>
+        <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+        <sys_update_name>sys_metadata_link_53f6bbc4dbd8f7400f8828474896190b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-03-15 19:02:06</sys_updated_on>
+        <tablename>x_snc_servicenow_s_servicenow_scripting</tablename>
+    </sys_metadata_link>
+</record_update>

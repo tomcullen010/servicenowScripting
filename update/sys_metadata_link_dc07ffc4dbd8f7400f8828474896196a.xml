@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>dc5b2b8113296240e5adbd522244b0f4</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_snc_servicenow_s_servicenow_scripting">
+    <x_snc_servicenow_s_servicenow_scripting action="INSERT_OR_UPDATE">
+        <code_url/>
+        <code_url_2/>
+        <details>Populating a Lookup Select Box on a SC Item (Note:  Must easier to use a Refernce Field and Reference Qualifier)&#13;
+</details>
+        <example_steps/>
+        <example_url/>
+        <module/>
+        <number>SNSCRIPT0001121</number>
+        <replaced_by/>
+        <script>// This script populates the Account Level select box with the accounts specific to the application selected in the&#13;
+// Enterprise App select box.&#13;
+function onChange(control, oldValue, newValue, isLoading) {&#13;
+g_form.clearOptions('access_level'); //Used to clear options between changes&#13;
+var enterprise_app = g_form.getValue('Enterprise_App');//Gets the value of the Enterprise App selection from the request form, will be used to query server side and is passed though addParam&#13;
+// used for debugging to see what value is in Enterprise_App select box&#13;
+// alert(enterprise_app);&#13;
+&#13;
+&#13;
+var ga = new GlideAjax('GetAccounts');//Creates a GlideAjax- 'GetAccounts' MUST be the corresponding Script Include&#13;
+//Add parameters GlideAjax variable to pass back to the server&#13;
+ga.addParam('sysparm_name', "getAccounts");//must add a sysparm_name and have that match the Function inside the script include&#13;
+ga.addParam('sysparm_account', enterprise_app);// to add additional information you want to access from the form server side use addParam('sysparm_name', yourVariable)&#13;
+ga.getXML(GetAllAccounts);//Once finished adding parameters use getXML and call a function that will be made below&#13;
+function GetAllAccounts(response){//User defined function that is previously called with getXML and will receive a response from the server&#13;
+var answer = response.responseXML.documentElement.getAttribute("answer");//retrieves response from the servers and makes it usable (string)&#13;
+var accts = answer.split(",");&#13;
+//alert(answer);(Was used to help debug, will throw up a message containing the contents of a variable)&#13;
+g_form.addOption("access_level", "", ""); //creates a starting option for Account&#13;
+for (i=0;i&lt;accts.length;i++) { //For loop that goes through the array&#13;
+g_form.addOption("access_level", accts[i], accts[i]);//Adds options to Account Level choice list from selecting strings from the labs array&#13;
+}//End for&#13;
+}// End of GetAllAccounts function&#13;
+&#13;
+}// End of onChange function&#13;
+</script>
+        <script_2/>
+        <script_type>Client Script</script_type>
+        <short_description>Populating a Lookup Select Box on a SC Item (Note:  Must easier to use a Refernce Field and Referenc</short_description>
+        <state>Submitted</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-08-28 19:08:05</sys_created_on>
+        <sys_id>dc5b2b8113296240e5adbd522244b0f4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-08-28 19:08:05</sys_updated_on>
+        <tested_on_helsinki/>
+    </x_snc_servicenow_s_servicenow_scripting>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-15 19:02:11</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>dc07ffc4dbd8f7400f8828474896196a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SNSCRIPT0001121</sys_name>
+        <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+        <sys_update_name>sys_metadata_link_dc07ffc4dbd8f7400f8828474896196a</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-03-15 19:02:11</sys_updated_on>
+        <tablename>x_snc_servicenow_s_servicenow_scripting</tablename>
+    </sys_metadata_link>
+</record_update>

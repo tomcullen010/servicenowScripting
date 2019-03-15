@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>4d627f4513296240e5adbd522244b022</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_snc_servicenow_s_servicenow_scripting">
+    <x_snc_servicenow_s_servicenow_scripting action="INSERT_OR_UPDATE">
+        <code_url/>
+        <code_url_2/>
+        <details/>
+        <example_steps/>
+        <example_url/>
+        <module/>
+        <number>SNSCRIPT0001160</number>
+        <replaced_by/>
+        <script>// We aren't actually going to write a record here so set abort.&#13;
+current.setAbortAction(true);&#13;
+&#13;
+var ci_list;&#13;
+var x = new CIEnum();&#13;
+&#13;
+//gs.log('CI is ' + producer.name.getDisplayValue());&#13;
+//gs.log('Direction is ' + producer.direction);&#13;
+&#13;
+if (producer.direction == 'parent') {&#13;
+    ci_list = x.go(producer.name.getDisplayValue(), "parent");&#13;
+} else if (producer.direction == 'child') {&#13;
+    ci_list = x.go(producer.name.getDisplayValue(), "child");&#13;
+} else if (producer.direction == 'all') {&#13;
+    ci_list_1 = x.go(producer.name.getDisplayValue(), "parent");&#13;
+    ci_list_2 = x.go(producer.name.getDisplayValue(), "child");&#13;
+    ci_list = ci_list_1 + ',' + ci_list_2;&#13;
+}&#13;
+&#13;
+//This builds a LIST of related tasks&#13;
+//producer.redirect = "/nav_to.do?uri=task_list.do?sysparm_query=cmdb_ci.sys_idIN" + ci_list;&#13;
+&#13;
+&#13;
+//This builds a REPORT of related CI's (but it doesn't set the report type or groupby field)&#13;
+//producer.redirect = "sys_report_template.do?sysparm_table=cmdb_ci&amp;sysparm_type=list&amp;sysparm_query=sys_idIN" + ci_list;&#13;
+&#13;
+//This build a list of related CI's and Groups them by company&#13;
+producer.redirect = "cmdb_ci_list.do?&amp;sysparm_query=sys_idIN" + ci_list + "^GROUPBYcompany";&#13;
+</script>
+        <script_2/>
+        <script_type>SysParm URL</script_type>
+        <short_description>To create a URL redirect from a Service Catalog Record producer that returns a list of CI's grouped </short_description>
+        <state>Submitted</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-08-28 19:38:58</sys_created_on>
+        <sys_id>4d627f4513296240e5adbd522244b022</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-08-28 19:40:01</sys_updated_on>
+        <tested_on_helsinki/>
+    </x_snc_servicenow_s_servicenow_scripting>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-15 19:01:54</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>18f6fb84dbd8f7400f882847489619e4</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SNSCRIPT0001160</sys_name>
+        <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+        <sys_update_name>sys_metadata_link_18f6fb84dbd8f7400f882847489619e4</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-03-15 19:01:54</sys_updated_on>
+        <tablename>x_snc_servicenow_s_servicenow_scripting</tablename>
+    </sys_metadata_link>
+</record_update>

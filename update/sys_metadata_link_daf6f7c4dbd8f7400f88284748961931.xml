@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>a5403f0513296240e5adbd522244b072</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_snc_servicenow_s_servicenow_scripting">
+    <x_snc_servicenow_s_servicenow_scripting action="INSERT_OR_UPDATE">
+        <code_url/>
+        <code_url_2/>
+        <details>Note: Set up the Close Code on the Incident in Advance&#13;
+</details>
+        <example_steps/>
+        <example_url/>
+        <module/>
+        <number>SNSCRIPT0001141</number>
+        <replaced_by/>
+        <script>Script:&#13;
+var sc_rqst = new GlideRecord("sc_request");&#13;
+sc_rqst.short_description = current.short_description;&#13;
+//sc_rqst.cmdb_ci = current.cmdb_ci;&#13;
+sc_rqst.requested_for = current.caller_id;&#13;
+//sc_rqst.priority = current.priority;&#13;
+var sysID = sc_rqst.insert();&#13;
+&#13;
+current.parent = sysID;&#13;
+&#13;
+current.incident_state = 7;&#13;
+current.close_notes = 'Incident converted to Request by agent';&#13;
+current.close_code = 'Converted to Request';&#13;
+&#13;
+var mySysID = current.update();&#13;
+&#13;
+//gs.addInfoMessage("Request " + sc_rqst.number + " created");&#13;
+action.setRedirectURL(sc_rqst);&#13;
+action.setReturnURL(current);&#13;
+</script>
+        <script_2/>
+        <script_type>UI Action</script_type>
+        <short_description>Convert to Request UI Action</short_description>
+        <state>Submitted</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-08-28 19:29:44</sys_created_on>
+        <sys_id>a5403f0513296240e5adbd522244b072</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-08-28 19:29:44</sys_updated_on>
+        <tested_on_helsinki/>
+    </x_snc_servicenow_s_servicenow_scripting>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-15 19:02:03</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>daf6f7c4dbd8f7400f88284748961931</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SNSCRIPT0001141</sys_name>
+        <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+        <sys_update_name>sys_metadata_link_daf6f7c4dbd8f7400f88284748961931</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-03-15 19:02:03</sys_updated_on>
+        <tablename>x_snc_servicenow_s_servicenow_scripting</tablename>
+    </sys_metadata_link>
+</record_update>

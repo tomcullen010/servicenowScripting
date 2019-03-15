@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>f887eb0113296240e5adbd522244b02a</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_snc_servicenow_s_servicenow_scripting">
+    <x_snc_servicenow_s_servicenow_scripting action="INSERT_OR_UPDATE">
+        <code_url/>
+        <code_url_2/>
+        <details/>
+        <example_steps/>
+        <example_url/>
+        <module/>
+        <number>SNSCRIPT0001091</number>
+        <replaced_by/>
+        <script>https://ehemmsc1.service-now.com/cti.do?sysparm_cti_rule=cti&amp;sysparm_caller_phone=%2B17205708914&#13;
+&#13;
+NOTE: the %2B represents the "+"&#13;
+&#13;
+Note: Use this URL: https://wellsfargodevpov.service-now.com/cti.do?sysparm_cti_rule=banker_cti&amp;sysparm_caller_phone=07205708914&amp;sysparm_u_caller_authenticated=true&#13;
+&#13;
+The sysparm_cti_rule must be the same as the name of the initial function in your busines rule.&#13;
+&#13;
+&#13;
+function banker_cti() {&#13;
+	var url = null;&#13;
+	var name = sysparm_caller_name;&#13;
+	eid = sysparm_caller_id;&#13;
+	var phone = sysparm_caller_phone;&#13;
+	var taskID = sysparm_task_id;&#13;
+	var fQuery = sysparm_query;&#13;
+	if (fQuery == null) {&#13;
+		fQuery = '';&#13;
+	}&#13;
+	var view = sysparm_view;&#13;
+	if (view == null || view == '') {&#13;
+		view = "itil";&#13;
+	}&#13;
+	view = 'itil';&#13;
+	&#13;
+	var userID = null;&#13;
+	if (eid != null &amp;&amp; eid != '') {&#13;
+		userID = UserGetSysId("employee_number",eid);&#13;
+	}&#13;
+	if (userID == null &amp;&amp; name != null &amp;&amp; name != '') {&#13;
+		userID = UserGetSysId("name", name);&#13;
+	}&#13;
+	if (userID == null &amp;&amp; phone != null &amp;&amp; phone != '') {&#13;
+		userID = locateUser(phone);&#13;
+	}&#13;
+	if (userID != null) {&#13;
+		var gr = new GlideRecord("u_service_call");  // EH - Edit&#13;
+		gr.addQuery("active", "true");&#13;
+		gr.addQuery("u_caller", userID);  // EH - Edit caller_id to u_caller&#13;
+		//gr.addQuery("u_caller_authenticated", "true");  // EH - Edit to make true&#13;
+		gr.setWorkflow(false);&#13;
+		gr.query();&#13;
+		if (gr.next()) {&#13;
+			url = "sys_user.do?sys_id=" + userID + "&amp;sysparm_view=" + view;&#13;
+		}&#13;
+	} else {&#13;
+		if (taskID != null &amp;&amp; taskID != '') {&#13;
+			url = "task.do?sys_id=" + taskID + "&amp;sysparm_view=" + view;&#13;
+		}&#13;
+	}&#13;
+	if (userID != null) {&#13;
+		if (fQuery.length &gt; 0) {&#13;
+			fQuery += "^";&#13;
+		}&#13;
+		fQuery += "u_caller=" + userID; // EH - Edit caller_id to u_caller&#13;
+		//fQuery += "^u_affected_employee=" + userID;  // EH - Commented out&#13;
+	}&#13;
+	if (url == null) {&#13;
+		url = "u_service_call.do?sys_id=-1";  // EH - Edit&#13;
+		if (fQuery != null) {&#13;
+			url += "&amp;sysparm_query=" + fQuery;&#13;
+		}&#13;
+	}&#13;
+	answer = url;&#13;
+	return url;&#13;
+}&#13;
+&#13;
+function UserGetSysId(field, value) {&#13;
+	var user = new GlideRecord("sys_user");&#13;
+	user.addQuery(field, value);&#13;
+	user.query();&#13;
+	if (user.next())&#13;
+		return user.sys_id;&#13;
+	else&#13;
+		return null;&#13;
+}&#13;
+&#13;
+function locateUser(phone) {&#13;
+	// Check user records&#13;
+	var userGr = new GlideRecord('sys_user');&#13;
+	userGr.addQuery('phone', phone)&#13;
+	.addOrCondition('mobile_phone', phone);&#13;
+	userGr.query();&#13;
+	if (userGr.next()) {&#13;
+		return userGr.sys_id;&#13;
+	}&#13;
+	&#13;
+	// Check notification device records&#13;
+	var deviceGr = new GlideRecord('cmn_notif_device');&#13;
+	deviceGr.addQuery('phone_number', phone);&#13;
+	deviceGr.query();&#13;
+	if (deviceGr.next()) {&#13;
+		return deviceGr.user;&#13;
+	}&#13;
+}&#13;
+&#13;
+</script>
+        <script_2/>
+        <script_type>Business Rule</script_type>
+        <short_description>CTI Processing for something other than Incident</short_description>
+        <state>Submitted</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-08-28 18:51:17</sys_created_on>
+        <sys_id>f887eb0113296240e5adbd522244b02a</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-08-28 18:54:46</sys_updated_on>
+        <tested_on_helsinki/>
+    </x_snc_servicenow_s_servicenow_scripting>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-15 19:02:13</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>4907b308dbd8f7400f88284748961979</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SNSCRIPT0001091</sys_name>
+        <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+        <sys_update_name>sys_metadata_link_4907b308dbd8f7400f88284748961979</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-03-15 19:02:13</sys_updated_on>
+        <tablename>x_snc_servicenow_s_servicenow_scripting</tablename>
+    </sys_metadata_link>
+</record_update>

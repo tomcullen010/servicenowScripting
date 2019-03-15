@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>23f0ab4d13e56240e5adbd522244b0c9</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_snc_servicenow_s_servicenow_scripting">
+    <x_snc_servicenow_s_servicenow_scripting action="INSERT_OR_UPDATE">
+        <code_url/>
+        <code_url_2/>
+        <details/>
+        <example_steps/>
+        <example_url/>
+        <module/>
+        <number>SNSCRIPT0001051</number>
+        <replaced_by/>
+        <script>var alm = new GlideRecord ( "alm_hardware" );&#13;
+var temp_sysid;&#13;
+var alm_serial_number;&#13;
+var alm_ci;&#13;
+var ci_serial_number;&#13;
+var alm_name;&#13;
+var ci_name;&#13;
+var match=0;&#13;
+&#13;
+var maxrows=22000;&#13;
+var total_hardware=0;&#13;
+var cur_row_num = 0;&#13;
+var ci_sys_id;&#13;
+var correct_ci_serial_number;&#13;
+var correct_ci_sys_id;&#13;
+var correct_ci_name;&#13;
+var breakloop=0;&#13;
+alm.orderBy ( "ci" );&#13;
+alm.addQuery ( 'ci', '!=', '' );&#13;
+alm.addQuery ( 'serial_number', '!=', '' );&#13;
+alm.query();&#13;
+gs.log ( "Parsing through the " + alm.getRowCount() + " records in the ALM hardware table" );&#13;
+if (maxrows &gt; alm.getRowCount())&#13;
+  maxrows = alm.getRowCount();&#13;
+for (i=0;i&lt;maxrows;i++)&#13;
+  {&#13;
+  if (breakloop == 1)&#13;
+    break;&#13;
+  cur_row_num++;&#13;
+  alm.next();&#13;
+  alm_name = alm.display_name + '';&#13;
+  alm_serial_number = "_" + alm.serial_number;&#13;
+  alm_serial_number = alm_serial_number.substr ( 1, alm_serial_number.length-1 );  // turns the object into a string&#13;
+  alm_ci = alm.ci + '';&#13;
+//  gs.log ( "Got ALM: " + alm_name + " serial: " + alm_serial_number + " ci: " + alm_ci );&#13;
+//  var ci_db = new GlideRecord ( "cmdb_ci_hardware" );&#13;
+  var ci_db = new GlideRecord ( "cmdb_ci" );&#13;
+  match = 0;&#13;
+  ci_db.addQuery ( 'sys_id', alm_ci );&#13;
+  ci_db.query();&#13;
+//  gs.log ( "Querying CMDB for sys id: " + alm_ci + " returned " + ci_db.getRowCount() + " rows" );&#13;
+  while ( ci_db.next() )&#13;
+    {&#13;
+    ci_serial_number = "_" + ci_db.serial_number;&#13;
+    ci_serial_number = ci_serial_number.substr ( 1, ci_serial_number.length-1 ); // turns the object into a string&#13;
+    ci_sys_id = ci_db.sys_id + '';&#13;
+    ci_name = ci_db.display_name + '';&#13;
+    if (ci_serial_number != alm_serial_number)&#13;
+      { // we have a mismatch. Find the correct serial number CI and fix it in the database&#13;
+      gs.log ( "Mismatch on row " + cur_row_num + " CI SN: " + ci_serial_number + " HW SN: " + alm_serial_number + " CI id: " + ci_sys_id + " alm ref: " + alm_ci);&#13;
+//      var correct_ci_db = new GlideRecord ( "cmdb_ci_hardware" );&#13;
+      var correct_ci_db = new GlideRecord ( "cmdb_ci" );&#13;
+      correct_ci_db.addQuery ( 'serial_number', alm_serial_number );&#13;
+      correct_ci_db.query();&#13;
+      var num_hardware_records_with_correct_serial_num;&#13;
+      num_hardware_records_with_correct_serial_num = correct_ci_db.getRowCount();&#13;
+      correct_ci_sys_id = '';&#13;
+      while ( correct_ci_db.next() )&#13;
+        {&#13;
+        correct_ci_serial_number = correct_ci_db.serial_number;&#13;
+        correct_ci_sys_id = correct_ci_db.sys_id;&#13;
+        correct_ci_name = correct_ci_db.display_name;&#13;
+        gs.log ( "The correct CI with serial number " + correct_ci_serial_number + " is ID: " + correct_ci_sys_id + " name: " + correct_ci_name );&#13;
+        }  // find the correct serial number for the mismatched reference&#13;
+      &#13;
+      if (correct_ci_sys_id != '')&#13;
+        { //  Now update the ALM CI with the reference to the CI&#13;
+        gs.log ( "Now updating the ALM CI reference with the sys_id " + correct_ci_sys_id );&#13;
+        alm.ci = correct_ci_sys_id;&#13;
+        alm.update();&#13;
+        } //  Now update the ALM CI with the reference to the CI&#13;
+      if (num_hardware_records_with_correct_serial_num == 0)&#13;
+        { // There were no hardware records with the correct serial num. undo the reference&#13;
+        gs.log ( "There were no hardware records with the correct serial number.  Removing the reference to the wrong one" );&#13;
+        alm.ci = '';&#13;
+        alm.update();&#13;
+        } // There were no hardware records with the correct serial num. undo the reference&#13;
+      }  //  check to see if the serial number for the referenced CI record matches&#13;
+    }  // search through all the CMDB CIs that match this hardware record &#13;
+  }  // search through all the hardware records in the alm_hardware database&#13;
+</script>
+        <script_2/>
+        <script_type/>
+        <short_description>mass bulk fix across all the ci's at comcast to fix a discrepancy in their data</short_description>
+        <state>Submitted</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-08-28 18:23:03</sys_created_on>
+        <sys_id>23f0ab4d13e56240e5adbd522244b0c9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-08-28 18:23:03</sys_updated_on>
+        <tested_on_helsinki/>
+    </x_snc_servicenow_s_servicenow_scripting>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-15 19:01:49</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>87e67784dbd8f7400f88284748961990</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SNSCRIPT0001051</sys_name>
+        <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+        <sys_update_name>sys_metadata_link_87e67784dbd8f7400f88284748961990</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-03-15 19:01:49</sys_updated_on>
+        <tablename>x_snc_servicenow_s_servicenow_scripting</tablename>
+    </sys_metadata_link>
+</record_update>

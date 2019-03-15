@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>419aa38113296240e5adbd522244b0fb</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_snc_servicenow_s_servicenow_scripting">
+    <x_snc_servicenow_s_servicenow_scripting action="INSERT_OR_UPDATE">
+        <code_url/>
+        <code_url_2/>
+        <details/>
+        <example_steps/>
+        <example_url/>
+        <module/>
+        <number>SNSCRIPT0001113</number>
+        <replaced_by/>
+        <script>Step 1: Inactivity Monitor&#13;
+&#13;
+Step 2: Event&#13;
+&#13;
+Step 3: Business Rule&#13;
+&#13;
+&#13;
+Step 4: Notification&#13;
+&#13;
+The Following Customer Requires a Customer Contact&#13;
+&#13;
+Click here to view Service Call: ${URI_REF}&#13;
+&#13;
+Number: ${number}&#13;
+Caller: ${u_caller}&#13;
+&#13;
+Customer description: ${short_description}&#13;
+&#13;
+Step 5: Script Action&#13;
+&#13;
+&#13;
+gs.log('*** EH - we made it into the script action');&#13;
+var sc = new GlideRecord('u_service_call');&#13;
+if (sc.get(event.instance)) {&#13;
+    sc.u_customer_contacted = false;&#13;
+	sc.update();&#13;
+}&#13;
+//gs.log('*** EH' + event.parm1);&#13;
+&#13;
+NOTE:  The Event Instance is the sys_id of the task.&#13;
+</script>
+        <script_2/>
+        <script_type>Script Actions</script_type>
+        <short_description>Inactivity Monitor</short_description>
+        <state>Submitted</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-08-28 19:04:50</sys_created_on>
+        <sys_id>419aa38113296240e5adbd522244b0fb</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-08-28 19:04:50</sys_updated_on>
+        <tested_on_helsinki/>
+    </x_snc_servicenow_s_servicenow_scripting>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-15 19:01:51</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>23e6f784dbd8f7400f882847489619e3</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SNSCRIPT0001113</sys_name>
+        <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+        <sys_update_name>sys_metadata_link_23e6f784dbd8f7400f882847489619e3</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-03-15 19:01:51</sys_updated_on>
+        <tablename>x_snc_servicenow_s_servicenow_scripting</tablename>
+    </sys_metadata_link>
+</record_update>

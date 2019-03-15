@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>01c76f0113296240e5adbd522244b01a</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_snc_servicenow_s_servicenow_scripting">
+    <x_snc_servicenow_s_servicenow_scripting action="INSERT_OR_UPDATE">
+        <code_url/>
+        <code_url_2/>
+        <details/>
+        <example_steps/>
+        <example_url/>
+        <module/>
+        <number>SNSCRIPT0001092</number>
+        <replaced_by/>
+        <script>NOTE:  There are some modifictions to the on-screem messages from the Wiki Script: http://wiki.servicenow.com/index.php?title=Assignment_Based_on_Workload_Script&#13;
+var assignTo = getLowestUser();&#13;
+gs.addInfoMessage("Auto-assigning to " + assignTo.name);&#13;
+current.assigned_to = assignTo.sys_id;&#13;
+ &#13;
+function getLowestUser() {&#13;
+    var userList = new Array();&#13;
+    var cg = new GlideRecord('sys_user_grmember');&#13;
+    cg.addQuery('group', current.assignment_group);&#13;
+    cg.query(); &#13;
+    while(cg.next()) {&#13;
+        var tech = cg.user.toString();&#13;
+        var cnt = countTickets(tech);&#13;
+        //gs.addInfoMessage("Tech counts " + cg.user.name + ' ' + cnt + " " + tech);&#13;
+        userList.push( { sys_id: tech, name: cg.user.name, count: cnt } );&#13;
+    }&#13;
+    for(var i=0; i &lt; userList.length; i++) {&#13;
+        //gs.addInfoMessage(userList[i].sys_id + " " + userList[i].name + " " + userList[i].count);&#13;
+    }&#13;
+    userList.sort(function(a, b) {&#13;
+        //gs.addInfoMessage("Sorting: " + a.sys_id + "(" + a.count + "); " + b.sys_id + "(" + b.count + ")");&#13;
+        return a.count - b.count; });&#13;
+    if (userList.length &lt;= 0)&#13;
+        return "";&#13;
+    //return userList[0].sys_id;&#13;
+	return userList[0];&#13;
+}&#13;
+ &#13;
+function countTickets(tech){&#13;
+    var ct = new GlideRecord('u_service_call');&#13;
+    ct.addQuery('assigned_to',tech);&#13;
+    ct.addQuery('active',true);&#13;
+    ct.query();&#13;
+    return ct.getRowCount();&#13;
+}&#13;
+&#13;
+NOTE:  You may also want to couple this busines rule with this client script&#13;
+&#13;
+function onChange(control, oldValue, newValue, isLoading, isTemplate) {&#13;
+   if (isLoading || newValue == '') {&#13;
+      return;&#13;
+   }&#13;
+&#13;
+	g_form.setValue('assigned_to', '');&#13;
+   //Type appropriate comment here, and begin script below&#13;
+   &#13;
+}&#13;
+</script>
+        <script_2/>
+        <script_type>Business Rule</script_type>
+        <short_description>Load Balancing Tasks Among Members of a Group</short_description>
+        <state>Submitted</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-08-28 18:52:45</sys_created_on>
+        <sys_id>01c76f0113296240e5adbd522244b01a</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-08-28 18:52:45</sys_updated_on>
+        <tested_on_helsinki/>
+    </x_snc_servicenow_s_servicenow_scripting>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-15 19:01:46</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>92e63f44dbd8f7400f8828474896198d</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SNSCRIPT0001092</sys_name>
+        <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+        <sys_update_name>sys_metadata_link_92e63f44dbd8f7400f8828474896198d</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-03-15 19:01:46</sys_updated_on>
+        <tablename>x_snc_servicenow_s_servicenow_scripting</tablename>
+    </sys_metadata_link>
+</record_update>

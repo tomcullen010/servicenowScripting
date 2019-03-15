@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>15f0734513296240e5adbd522244b067</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_snc_servicenow_s_servicenow_scripting">
+    <x_snc_servicenow_s_servicenow_scripting action="INSERT_OR_UPDATE">
+        <code_url/>
+        <code_url_2/>
+        <details/>
+        <example_steps/>
+        <example_url/>
+        <module/>
+        <number>SNSCRIPT0001146</number>
+        <replaced_by/>
+        <script>function onChange(control, oldValue, newValue, isLoading) {&#13;
+   g_form.setValue('existing_access', 'No');&#13;
+   g_form.hideAllFieldMsgs();&#13;
+   if (newValue != ''){&#13;
+      var ga = new GlideAjax('AppAccessChecker');&#13;
+      ga.addParam('sysparm_name','userHasAccount');&#13;
+      ga.addParam('sysparm_app_id', g_form.getValue('Enterprise_App'));&#13;
+      ga.addParam('sysparm_user_id', g_form.getValue('u_requested_for'));&#13;
+      ga.getXMLWait();&#13;
+&#13;
+      if (ga.getAnswer() == 'true'){&#13;
+         g_form.showFieldMsg('Enterprise_App', 'An active application account has been found for this user.  If your account is locked out or you have forgotten your password, please use the Password Reset Request. Otherwise, provide a reason for the application account update below.', 'info');&#13;
+         g_form.setValue('existing_access', 'Yes');&#13;
+      }&#13;
+   }&#13;
+}&#13;
+</script>
+        <script_2/>
+        <script_type>Client Script</script_type>
+        <short_description>To perform an Ajax call to see if someone already has access to an application</short_description>
+        <state>Submitted</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-08-28 19:32:35</sys_created_on>
+        <sys_id>15f0734513296240e5adbd522244b067</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-08-28 19:32:45</sys_updated_on>
+        <tested_on_helsinki/>
+    </x_snc_servicenow_s_servicenow_scripting>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-15 19:01:48</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>7ee63784dbd8f7400f88284748961973</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SNSCRIPT0001146</sys_name>
+        <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+        <sys_update_name>sys_metadata_link_7ee63784dbd8f7400f88284748961973</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-03-15 19:01:48</sys_updated_on>
+        <tablename>x_snc_servicenow_s_servicenow_scripting</tablename>
+    </sys_metadata_link>
+</record_update>

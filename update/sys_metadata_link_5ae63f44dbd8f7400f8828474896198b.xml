@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>01c2338513296240e5adbd522244b06c</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_snc_servicenow_s_servicenow_scripting">
+    <x_snc_servicenow_s_servicenow_scripting action="INSERT_OR_UPDATE">
+        <code_url/>
+        <code_url_2/>
+        <details/>
+        <example_steps/>
+        <example_url/>
+        <module/>
+        <number>SNSCRIPT0001162</number>
+        <replaced_by/>
+        <script>var vDate = new Date();&#13;
+gs.print(vDate);&#13;
+gs.print(formDate(vDate));&#13;
+ &#13;
+function formDate(d){&#13;
+return '' + d.getFullYear() + '/' + pad(d.getMonth()) + '/' + pad(d.getDate());&#13;
+}&#13;
+ &#13;
+function pad(digit){&#13;
+if (digit &lt; 10)&#13;
+return '0' + digit;&#13;
+return digit;&#13;
+}&#13;
+ &#13;
+ &#13;
+output:&#13;
+*** Script: Mon Aug 06 2012 01:01:08 GMT-0700 (PDT)&#13;
+*** Script: 2012/07/06&#13;
+</script>
+        <script_2/>
+        <script_type/>
+        <short_description>Formating Date and Time Fields</short_description>
+        <state>Submitted</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-08-28 19:40:27</sys_created_on>
+        <sys_id>01c2338513296240e5adbd522244b06c</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-08-28 19:40:27</sys_updated_on>
+        <tested_on_helsinki/>
+    </x_snc_servicenow_s_servicenow_scripting>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-15 19:01:46</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>5ae63f44dbd8f7400f8828474896198b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SNSCRIPT0001162</sys_name>
+        <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+        <sys_update_name>sys_metadata_link_5ae63f44dbd8f7400f8828474896198b</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-03-15 19:01:46</sys_updated_on>
+        <tablename>x_snc_servicenow_s_servicenow_scripting</tablename>
+    </sys_metadata_link>
+</record_update>

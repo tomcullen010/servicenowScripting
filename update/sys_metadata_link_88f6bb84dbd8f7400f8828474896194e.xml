@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_metadata_link">
+    <sys_metadata_link action="INSERT_OR_UPDATE">
+        <directory>update</directory>
+        <documentkey>4826630113296240e5adbd522244b000</documentkey>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_snc_servicenow_s_servicenow_scripting">
+    <x_snc_servicenow_s_servicenow_scripting action="INSERT_OR_UPDATE">
+        <code_url/>
+        <code_url_2/>
+        <details/>
+        <example_steps/>
+        <example_url/>
+        <module/>
+        <number>SNSCRIPT0001083</number>
+        <replaced_by/>
+        <script>Accessing Variables from a Workflow (not available in sc_request table)&#13;
+You can access variables from within the workflow using the following syntax:&#13;
+current.variables.variable_name&#13;
+So, to set the task's company field to the 'company' variable, do:&#13;
+task.company = current.variables.company&#13;
+within your task activity.&#13;
+&#13;
+Likewise you can add a 'run script' activity to set the sc_req_item's company field&#13;
+current.company = current.variables.company &#13;
+&#13;
+This is also very helpful&#13;
+http://wiki.servicenow.com/index.php?title=Administering_Applications_and_Modules#Example:_URL_module_that_opens_an_incident_list_with_a_custom_filter.2C_sort.2C_and_groupby&#13;
+</script>
+        <script_2/>
+        <script_type>Workflow</script_type>
+        <short_description>To pass a Service Catalog Variable to a Workflow field</short_description>
+        <state>Submitted</state>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2016-08-28 18:45:21</sys_created_on>
+        <sys_id>4826630113296240e5adbd522244b000</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2016-08-28 18:45:21</sys_updated_on>
+        <tested_on_helsinki/>
+    </x_snc_servicenow_s_servicenow_scripting>
+</record_update>
+]]></payload>
+        <sys_class_name>sys_metadata_link</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2019-03-15 19:01:53</sys_created_on>
+        <sys_customer_update>false</sys_customer_update>
+        <sys_id>88f6bb84dbd8f7400f8828474896194e</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>SNSCRIPT0001083</sys_name>
+        <sys_package display_value="ServiceNow Scripting" source="x_snc_servicenow_s">4e23d43313892a00e5adbd522244b054</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="ServiceNow Scripting">4e23d43313892a00e5adbd522244b054</sys_scope>
+        <sys_update_name>sys_metadata_link_88f6bb84dbd8f7400f8828474896194e</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2019-03-15 19:01:53</sys_updated_on>
+        <tablename>x_snc_servicenow_s_servicenow_scripting</tablename>
+    </sys_metadata_link>
+</record_update>
